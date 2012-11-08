@@ -1,0 +1,8 @@
+package com.j3ltd.common;
+
+public class Gender {
+
+	public static Object Male;
+	public static Object Female;
+	
+}

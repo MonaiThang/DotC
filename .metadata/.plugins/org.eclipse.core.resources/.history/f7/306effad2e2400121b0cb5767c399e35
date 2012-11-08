@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE faces-config 
+ 		PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+ "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+     <application>
+    <message-bundle>com.j3ltd.web.messages.ApplicationMessages</message-bundle>
+    <locale-config>
+       <default-locale>en</default-locale>
+       <supported-locale>fr</supported-locale>
+    </locale-config>
+  </application>
+    
+	<managed-bean>
+		<managed-bean-name>myBean</managed-bean-name>
+		<managed-bean-class>mypackage.MyBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>welcome</managed-bean-name>
+		<managed-bean-class>com.j3ltd.web.Welcome</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<navigation-rule>
+	   <from-view-id>/welcome.jsp</from-view-id>
+	   <navigation-case>
+	     	<description>
+	       		Choose locale changes locale then returns to welcome page
+	     	</description>
+	     		<from-outcome>chooseLocale</from-outcome>
+	     		<to-view-id>/welcome.jsp</to-view-id>
+	   </navigation-case> 
+  	</navigation-rule> 
+
+</faces-config>

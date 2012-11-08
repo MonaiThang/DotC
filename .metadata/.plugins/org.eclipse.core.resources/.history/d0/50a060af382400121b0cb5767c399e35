@@ -1,0 +1,7 @@
+package com.j3ltd.common;
+
+public class Gender {
+
+	public static final String Male = null;
+	
+}

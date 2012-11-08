@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.j3ltd.server.exceptions.PersonEntityExistsException"/>
+<fullyQualifiedTypeName name="com.j3ltd.server.exceptions.PersonPasswordException"/>
+<fullyQualifiedTypeName name="com.j3ltd.server.exceptions.PersonEmailException"/>
+<fullyQualifiedTypeName name="javax.management.Query"/>
+</qualifiedTypeNameHistroy>

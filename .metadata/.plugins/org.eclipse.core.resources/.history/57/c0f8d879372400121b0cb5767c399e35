@@ -1,0 +1,5 @@
+package com.j3ltd.web.utilities;
+
+public class EmailValidator {
+
+}

@@ -1,0 +1,5 @@
+package com.j3ltd.web.messages;
+
+public class MessageFactory {
+
+}
