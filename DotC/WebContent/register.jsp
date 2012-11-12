@@ -74,15 +74,12 @@
   <h:outputText value=" "/><h:message for="dateOfBirth" styleClass="formUserError"/>
   </h:panelGroup>
   
-  <h:outputLabel for="genders" value="#{msg.registrationgenders}"/>
-  <h:selectOneRadio id="genders" value="#{registrationBean.person.genders}">  
-    <f:selectItems value="#{registrationBean.genders}"/>  
-  </h:selectOneRadio>
-  
-  <h:outputLabel for="maritalStatus" value="#{msg.registrationMaritalStatus}"/>
-  <h:selectOneRadio id="maritalStatus" value="#{registrationBean.person.maritalStatus}">  
-    <f:selectItems value="#{registrationBean.maritalStati}"/>  
-  </h:selectOneRadio>
+  <h:outputLabel for="Gender" value="#{msg.registrationGender}"/>
+  <h:panelGroup>
+  <h:inputText id="Gender" value="#{registrationBean.person.gender}"
+    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="Gender" styleClass="formUserError"/>
+  </h:panelGroup>
   
   <h:outputLabel for="line1" value="#{msg.registrationAddress1}"/>
   <h:panelGroup>

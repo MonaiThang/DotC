@@ -17,13 +17,13 @@ public class Person implements Serializable {
   private String firstName;
   private String lastName;
   private String title;
-  private String genders;
+  private String gender;
   private java.util.Date dateOfBirth;
   private String suffix;
+  private String maritalStatus;
   private String daytimePhone;
   private String eveningPhone;
   private String webSite;
-  private String maritalStatus;
   private Address address;
   private String localeLanguage;
   private String localeCountry;
@@ -87,11 +87,11 @@ public class Person implements Serializable {
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
-  public String getgenders() {
-    return genders;
+  public String getgender() {
+    return gender;
   }
-  public void setgenders(String genders) {
-    this.genders = genders;
+  public void setgenders(String gender) {
+    this.gender = gender;
   }
   public String getLastName() {
     return lastName;
@@ -129,4 +129,5 @@ public class Person implements Serializable {
   public void setPassword(String password) {
     this.password = password;
   }
+
 }

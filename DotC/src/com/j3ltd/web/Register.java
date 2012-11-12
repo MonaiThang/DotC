@@ -1,5 +1,7 @@
 package com.j3ltd.web;
 
+
+
 import com.j3ltd.common.*;
 import com.j3ltd.server.sessionremote.*;
 import com.j3ltd.server.entities.*;
@@ -12,6 +14,9 @@ import javax.faces.application.*;
 import javax.faces.model.SelectItem;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
+
+
 
 public class Register {
 
