@@ -1,7 +1,0 @@
-package com.j3ltd.common;
-
-public class MaritalStatus {
-
-	public static Object Single;
-	
-}

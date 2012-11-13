@@ -1,5 +1,0 @@
-package com.j3ltd.web;
-
-public class Gender {
-	Male, Female, Undisclosed
-}

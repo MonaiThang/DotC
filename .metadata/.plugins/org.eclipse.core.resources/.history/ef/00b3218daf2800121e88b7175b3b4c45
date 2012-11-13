@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13517750622780" configfile="/DotC/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="welcome" x="122" y="178" id="pf13517833714491" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf13517833714492" inlinks="pf13517833714492" path="/welcome.jsp"/>
-  <links id="pf13517833714492" target="pf13517833714491" source="pf13517833714491" outcome="chooseLocale">
-    <bendPoints d1Height="-36" d2Height="-36"/>
-    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
-    <bendPoints d1Width="-64" d2Width="-64"/>
-  </links>
-</pageflow:Pageflow>
