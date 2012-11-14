@@ -4,11 +4,9 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-public class Address implements Serializable {
-  /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Address implements Serializable 
+{
+  private static final long serialVersionUID = 1L;
   private int id;
   private String line1;
   private String line2;
@@ -16,13 +14,6 @@ public class Address implements Serializable {
   private String line4;
   private String postcode;
   private String country;
-  
-  public String getCountry() {
-    return country;
-  }
-  public void setCountry(String country) {
-    this.country = country;
-  }
   
   @Id
   @GeneratedValue
@@ -61,5 +52,11 @@ public class Address implements Serializable {
   }
   public void setPostcode(String postcode) {
     this.postcode = postcode;
+  }
+  public String getCountry() {
+	 return country;
+  }
+  public void setCountry(String country) {
+	 this.country = country;
   }
 }

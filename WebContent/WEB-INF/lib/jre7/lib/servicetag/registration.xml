@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<registration_data version="1.0">
+   <environment>
+      <hostname>charliie-PC</hostname>
+      <hostId/>
+      <osName>Windows 7</osName>
+      <osVersion>6.1</osVersion>
+      <osArchitecture>amd64</osArchitecture>
+      <systemModel>1141PV8</systemModel>
+      <systemManufacturer>LENOVO</systemManufacturer>
+      <cpuManufacturer>GenuineIntel</cpuManufacturer>
+      <serialNumber>R9LMVYZ</serialNumber>
+   </environment>
+   <registry urn="urn:st:9afe93f1-7d3e-415b-98aa-931310369f44" version="1.0">
+      <service_tag>
+         <instance_urn>urn:st:ef680bcf-1955-4568-b4a9-3b99fc8575f6</instance_urn>
+         <product_name>Java SE 7 Runtime Environment</product_name>
+         <product_version>1.7.0_07</product_version>
+         <product_urn>JSERE-007-ZZZZ</product_urn>
+         <product_parent_urn>urn:uuid:dc1704fe-264f-11dc-9482-080020a9ed93</product_parent_urn>
+         <product_parent>Java Platform Standard Edition 7 (Java SE 7)</product_parent>
+         <product_defined_inst_id>id=1.7.0_07-b10 amd64,dir=C:\Program Files\Java\jre7</product_defined_inst_id>
+         <product_vendor>Oracle Corporation</product_vendor>
+         <platform_arch>amd64</platform_arch>
+         <timestamp>2012-09-05 09:31:02 GMT</timestamp>
+         <container>global</container>
+         <source>Windows JRE installer</source>
+         <installer_uid>-1</installer_uid>
+      </service_tag>
+   </registry>
+</registration_data>

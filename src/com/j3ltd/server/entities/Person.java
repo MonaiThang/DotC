@@ -6,10 +6,8 @@ import javax.persistence.*;
 
 
 @Entity
-public class Person implements Serializable {
-  /**
-	 * 
-	 */
+public class Person implements Serializable 
+{
   private static final long serialVersionUID = 1L;
   private int    	id;
   private String 	password;
@@ -40,8 +38,8 @@ public class Person implements Serializable {
   
   
   
-  private Address	bp;
-  private Address	temp;
+  private String	bp;
+  private String	temp;
   private String	pulse;
   private String 	breathrate;
   private String	o2sat;
@@ -155,16 +153,16 @@ public String getDisease() {
 public void setDisease(String disease) {
 	this.disease = disease;
 }
-public Address getBp() {
+public String getBp() {
 	return bp;
 }
-public void setBp(Address bp) {
+public void setBp(String bp) {
 	this.bp = bp;
 }
-public Address getTemp() {
+public String getTemp() {
 	return temp;
 }
-public void setTemp(Address temp) {
+public void setTemp(String temp) {
 	this.temp = temp;
 }
 public String getPulse() {

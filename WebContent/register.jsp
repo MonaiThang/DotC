@@ -37,7 +37,11 @@
     <h:commandButton value="#{msg.reset}" type="reset"/>
     </h:panelGroup>
   </f:facet>
-  
+   
+ <h:outputFormat value="#{msg.registrationPersonalInfo}"></h:outputFormat>
+ <br/>
+ <br/>
+ 
   <h:outputLabel for="firstName" value="#{msg.registrationName}"/>
   <h:panelGroup>
   <h:inputText id="firstName" value="#{registrationBean.person.firstName}"
@@ -97,78 +101,7 @@
   <h:outputText value=" "/><h:message for="iddateexpired" styleClass="formUserError"/>
   </h:panelGroup>
   
-  
-  <h:outputLabel for="line1" value="#{msg.registrationCurrentAddress1}"/>
-  <h:panelGroup>
-  <h:inputText id="line1" value="#{registrationBean.person.currentaddress.line1}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line1" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line2" value="#{msg.registrationCurrentAddress2}"/>
-  <h:panelGroup>
-  <h:inputText id="line2" value="#{registrationBean.person.currentaddress.line2}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line2" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line3" value="#{msg.registrationCurrentAddress3}"/>
-  <h:panelGroup>
-  <h:inputText id="line3" value="#{registrationBean.person.currentaddress.line3}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line3" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line4" value="#{msg.registrationCurrentAddress4}"/>
-  <h:panelGroup>
-  <h:inputText id="line4" value="#{registrationBean.person.currentaddress.line4}"
-    maxlength="255" size="50"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line4" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-    <h:outputLabel for="line1" value="#{msg.registrationActualAddress1}"/>
-  <h:panelGroup>
-  <h:inputText id="line1" value="#{registrationBean.person.actualaddress.line1}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line1" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line2" value="#{msg.registrationActualAddress2}"/>
-  <h:panelGroup>
-  <h:inputText id="line2" value="#{registrationBean.person.actualaddress.line2}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line2" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line3" value="#{msg.registrationActualAddress3}"/>
-  <h:panelGroup>
-  <h:inputText id="line3" value="#{registrationBean.person.actualaddress.line3}"
-    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line3" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="line4" value="#{msg.registrationActualAddress4}"/>
-  <h:panelGroup>
-  <h:inputText id="line4" value="#{registrationBean.person.actualaddress.line4}"
-    maxlength="255" size="50"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="line4" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-  <h:outputLabel for="postcode" value="#{msg.registrationPostcode}"/>
-  <h:panelGroup>
-  <h:inputText id="postcode" value="#{registrationBean.person.currentaddress.postcode}"
-    maxlength="50" size="20"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="postcode" styleClass="formUserError"/>  
-  </h:panelGroup>
-  
-  <h:outputLabel for="country" value="#{msg.registrationCountry}"/>
-  <h:panelGroup>
-  <h:inputText id="country" value="#{registrationBean.person.currentaddress.country}"
-    maxlength="150" size="40"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="country" styleClass="formUserError"/>
-  </h:panelGroup>
-  
-    <h:outputLabel for="email" value="*#{msg.registrationEmail}"/>
+  <h:outputLabel for="email" value="*#{msg.registrationEmail}"/>
   <h:panelGroup>
   <h:inputText id="email" value="#{registrationBean.person.email}" 
     maxlength="255" size="50" 
@@ -203,6 +136,96 @@
     required="true" redisplay="true"/><f:verbatim><br/></f:verbatim>
   <h:outputText value=" "/><h:message for="passwordConfirm" styleClass="formUserError"/>
   </h:panelGroup>
+  
+ <h:outputFormat value="#{msg.registrationAddressAndWork}"></h:outputFormat>
+ <br/>
+ <br/>
+  
+  <h:outputLabel for="cline1" value="#{msg.registrationCurrentAddress1}"/>
+  <h:panelGroup>
+  <h:inputText id="cline1" value="#{registrationBean.person.currentaddress.line1}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cline1" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="cline2" value="#{msg.registrationCurrentAddress2}"/>
+  <h:panelGroup>
+  <h:inputText id="cline2" value="#{registrationBean.person.currentaddress.line2}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cline2" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="cline3" value="#{msg.registrationCurrentAddress3}"/>
+  <h:panelGroup>
+  <h:inputText id="cline3" value="#{registrationBean.person.currentaddress.line3}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cline3" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="cline4" value="#{msg.registrationCurrentAddress4}"/>
+  <h:panelGroup>
+  <h:inputText id="cline4" value="#{registrationBean.person.currentaddress.line4}"
+    maxlength="255" size="50"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cline4" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+    <h:outputLabel for="cpostcode" value="#{msg.registrationPostcode}"/>
+  <h:panelGroup>
+  <h:inputText id="cpostcode" value="#{registrationBean.person.currentaddress.postcode}"
+    maxlength="50" size="20"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cpostcode" styleClass="formUserError"/>  
+  </h:panelGroup>
+  
+  <h:outputLabel for="ccountry" value="#{msg.registrationCountry}"/>
+  <h:panelGroup>
+  <h:inputText id="ccountry" value="#{registrationBean.person.currentaddress.country}"
+    maxlength="150" size="40"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="ccountry" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+    <h:outputLabel for="aline1" value="#{msg.registrationActualAddress1}"/>
+  <h:panelGroup>
+  <h:inputText id="aline1" value="#{registrationBean.person.actualaddress.line1}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="aline1" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="aline2" value="#{msg.registrationActualAddress2}"/>
+  <h:panelGroup>
+  <h:inputText id="aline2" value="#{registrationBean.person.actualaddress.line2}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="aline2" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="aline3" value="#{msg.registrationActualAddress3}"/>
+  <h:panelGroup>
+  <h:inputText id="aline3" value="#{registrationBean.person.actualaddress.line3}"
+    maxlength="255" size="50"/>  <f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="aline3" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="aline4" value="#{msg.registrationActualAddress4}"/>
+  <h:panelGroup>
+  <h:inputText id="aline4" value="#{registrationBean.person.actualaddress.line4}"
+    maxlength="255" size="50"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="aline4" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="apostcode" value="#{msg.registrationPostcode}"/>
+  <h:panelGroup>
+  <h:inputText id="apostcode" value="#{registrationBean.person.actualaddress.postcode}"
+    maxlength="50" size="20"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="apostcode" styleClass="formUserError"/>  
+  </h:panelGroup>
+  
+  <h:outputLabel for="acountry" value="#{msg.registrationCountry}"/>
+  <h:panelGroup>
+  <h:inputText id="acountry" value="#{registrationBean.person.actualaddress.country}"
+    maxlength="150" size="40"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="acountry" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  
   
   <h:outputLabel for="phone" value="#{msg.registrationPhone}"/>
   <h:panelGroup>
@@ -239,27 +262,123 @@
   <h:outputText value=" "/><h:message for="bloodgroup" styleClass="formUserError"/>
   </h:panelGroup>
   
-      <h:outputLabel for="nationality" value="#{msg.registrationNationality}"/>
+  <h:outputLabel for="nationality" value="#{msg.registrationNationality}"/>
   <h:panelGroup>
   <h:inputText id="nationality" value="#{registrationBean.person.nationality}"
     maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
   <h:outputText value=" "/><h:message for="nationality" styleClass="formUserError"/>
   </h:panelGroup>
   
-       <h:outputLabel for="religion" value="#{msg.registrationReligion}"/>
+  <h:outputLabel for="religion" value="#{msg.registrationReligion}"/>
   <h:panelGroup>
   <h:inputText id="religion" value="#{registrationBean.person.religion}"
     maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
   <h:outputText value=" "/><h:message for="religion" styleClass="formUserError"/>
-  </h:panelGroup> 
+  </h:panelGroup>
+  
+  
+ <h:outputFormat value="#{msg.registrationRecords}"></h:outputFormat>
+ <br/>
+ <br/> 
   
   <h:outputLabel for="disease" value="#{msg.registrationDisease}"/>
   <h:panelGroup>
   <h:inputText id="disease" value="#{registrationBean.person.disease}"
     maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
   <h:outputText value=" "/><h:message for="disease" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="bp" value="#{msg.registrationBp}"/>
+  <h:panelGroup>
+  <h:inputText id="bp" value="#{registrationBean.person.bp}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="bp" styleClass="formUserError"/>
   </h:panelGroup> 
-   
+
+  <h:outputLabel for="temp" value="#{msg.registrationTemp}"/>
+  <h:panelGroup>
+  <h:inputText id="temp" value="#{registrationBean.person.temp}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="temp" styleClass="formUserError"/>
+  </h:panelGroup>
+
+  <h:outputLabel for="pulse" value="#{msg.registrationPulse}"/>
+  <h:panelGroup>
+  <h:inputText id="pulse" value="#{registrationBean.person.pulse}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="pulse" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="breathrate" value="#{msg.registrationBreathrate}"/>
+  <h:panelGroup>
+  <h:inputText id="breathrate" value="#{registrationBean.person.breathrate}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="breathrate" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="o2sat" value="#{msg.registrationO2sat}"/>
+  <h:panelGroup>
+  <h:inputText id="o2sat" value="#{registrationBean.person.breathrate}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="o2sat" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="weight" value="#{msg.registrationWeight}"/>
+  <h:panelGroup>
+  <h:inputText id="weight" value="#{registrationBean.person.weight}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="weight" styleClass="formUserError"/>
+  </h:panelGroup>  
+  
+  <h:outputLabel for="height" value="#{msg.registrationHeight}"/>
+  <h:panelGroup>
+  <h:inputText id="height" value="#{registrationBean.person.height}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="height" styleClass="formUserError"/>
+  </h:panelGroup>  
+  
+  <h:outputLabel for="bmi" value="#{msg.registrationBmi}"/>
+  <h:panelGroup>
+  <h:inputText id="bmi" value="#{registrationBean.person.bmi}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="bmi" styleClass="formUserError"/>
+  </h:panelGroup>
+  
+  <h:outputLabel for="lmp" value="#{msg.registrationImp}"/>
+  <h:panelGroup>
+  <h:inputText id="lmp" value="#{registrationBean.person.lmp}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="lmp" styleClass="formUserError"/>
+  </h:panelGroup>  
+
+  <h:outputLabel for="symptom" value="#{msg.registrationSymptom}"/>
+  <h:panelGroup>
+  <h:inputText id="symptom" value="#{registrationBean.person.symptom}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="symptom" styleClass="formUserError"/>
+  </h:panelGroup> 
+  
+  <h:outputLabel for="doctor" value="#{msg.registrationDoctor}"/>
+  <h:panelGroup>
+  <h:inputText id="doctor" value="#{registrationBean.person.doctor}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="doctor" styleClass="formUserError"/>
+  </h:panelGroup> 
+
+  <h:outputLabel for="time" value="#{msg.registrationTime}"/>
+  <h:panelGroup>
+  <h:inputText id="time" value="#{registrationBean.person.time}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="time" styleClass="formUserError"/>
+  </h:panelGroup> 
+  
+  <h:outputLabel for="cost" value="#{msg.registrationCost}"/>
+  <h:panelGroup>
+  <h:inputText id="cost" value="#{registrationBean.person.cost}"
+  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+  <h:outputText value=" "/><h:message for="cost" styleClass="formUserError"/>
+  </h:panelGroup> 
+  
 </h:panelGrid>
 </div>
 </h:form>
