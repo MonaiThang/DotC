@@ -10,7 +10,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><h:outputText value="#{msg.pageTitle}"/></title>
 <meta name="description" content="Response Premium Html Responsive Template" />
 <meta name="keywords" content="Responsive Html, Responsive Template, Response" />
 <link rel="shortcut icon" href="http://www.derby-web-design-agency.co.uk/themes/response/images/favicon.png" /> 
@@ -77,13 +76,14 @@
     <!-- End Slider Wrapping -->
     <!-- Start H1 Title -->
     <div class="titles">
-    
+    <div class="featured-titles">
     	<div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
          <f:facet name="header">
 			<h:outputText value="#{msg.welcomeBoxTitle}"/>
 		</f:facet>
+	
         <span></span>
-    
+    </div>
     </div>
     <!-- End H1 Title -->
     <!-- Start Main Body Wrap -->
@@ -96,11 +96,13 @@
             
             	<div class="bti">
                 	<div class="featured-images"><img src="images/responsive-icon.png" width="72" height="53" alt="Responsive"></div>
-                	    <h:commandLink action="register" id="register">
-							<h:outputText value="#{msg.register}"/>
-						</h:commandLink>
+                	    <div class="featured-titles">
+	                	    <h:commandLink  action="register" id="register">
+								<h:outputText value="#{msg.register}"/>
+							</h:commandLink>
+						</div>
                 </div>
-                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+                <div class="featured-text">For new patient must register before login.</div>
             
             </div>
             
@@ -114,9 +116,11 @@
             
             	<div class="bti">
                     <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
-                    <h:outputLink value="doctor.jsf">Doctor</h:outputLink>
+                    	<div class="featured-titles">
+                    		<h:outputLink value="doctor.jsf">Doctor</h:outputLink>
+                		</div>
                 </div>
-                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+                <div class="featured-text">Meet the doctor here !!!</div>
             
             </div>
             
@@ -130,9 +134,11 @@
             	
                 <div class="bti">
                     <div class="featured-images"><img src="images/google-icon.png" width="54" height="53" alt="Responsive"></div>
-                    <div class="featured-titles">cross browser</div>
+                    <div class="featured-titles">
+                    		<h:outputLink value="Pharmarcy.jsf">Pharmarcy</h:outputLink>
+                		</div>
                 </div>
-                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+                <div class="featured-text">After you finish meeting the doctor , please go to the Pharmarcy.</div>
             
             </div>
             
