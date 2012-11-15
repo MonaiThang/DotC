@@ -2,49 +2,145 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
-<%@ page errorPage="errorpage.jsp" %>  
+<%@ page errorPage="errorpage.jsp" %> 
 <f:view>  
 <f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title><h:outputText value="#{msg.pageTitle}"/></title>
-<link href="styles.css" rel="stylesheet" type="text/css">
+<meta name="description" content="Response Premium Html Responsive Template" />
+<meta name="keywords" content="Responsive Html, Responsive Template, Response" />
+<link rel="shortcut icon" href="http://www.derby-web-design-agency.co.uk/themes/response/images/favicon.png" /> 
+<link rel="bookmark icon" href="http://www.derby-web-design-agency.co.uk/themes/response/images/favicon.png" /> 
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<meta name="apple-mobile-web-app-capable" content="yes" /> 
+<meta name="apple-mobile-web-app-status-bar-style" content="grey" /> 
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+<script src="js/twitter.js"></script>    
+<script src="js/custom.js"></script>   
+<script>
+	//// Start Simple Sliders ////
+	$(function() {
+		setInterval("rotateDiv()", 10000);
+	});
+		
+		function rotateDiv() {
+		var currentDiv=$("#simpleslider div.current");
+		var nextDiv= currentDiv.next ();
+		if (nextDiv.length ==0)
+			nextDiv=$("#simpleslider div:first");
+		
+		currentDiv.removeClass('current').addClass('previous').fadeOut('2000');
+		nextDiv.fadeIn('3000').addClass('current',function() {
+			currentDiv.fadeOut('2000', function () {currentDiv.removeClass('previous');});
+		});
+	
+	}
+	//// End Simple Sliders //// 
+</script> 
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
 </head>
+
+
 <body>
 <h:form >
 <div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
-<br/>
-<div class="center">
-<h:panelGrid columns="3" 
-  styleClass="form"
-  headerClass="tableHeader">
-  <f:facet name="header">
-    <h:outputText value="#{msg.welcomeBoxTitle}"/>
-  </f:facet>
-    <h:outputText value="#{msg.login}"/>
+<div id="main">
+	
+    <!-- Start Slider Wrapping -->
+    <div id="sliderwrap">
+		
+        <!-- Start Slider -->
+        <div id="slider" class="nivoSlider">
+            <img src="images/slider-banners/slider01.jpg" alt=""/>
+            <img src="images/slider-banners/slider02.jpg" alt=""/>
+            <img src="images/slider-banners/slider03.jpg" alt=""/>
+        </div>
+        <!-- End Slider -->
+        <!-- Start Slider HTML Captions -->
+        <div id="htmlcaption" class="nivo-html-caption">
+            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+        </div>
+        <!-- End Slider HTML Captions -->
     
-    <h:commandLink action="register" id="register">
-      <h:outputText value="#{msg.register}"/>
-    </h:commandLink>
+    </div>
+    <!-- End Slider Wrapping -->
+    <!-- Start H1 Title -->
+    <div class="titles">
     
-    <h:outputLink value="doctor.jsf">Doctor</h:outputLink>
+    	<div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
+         <f:facet name="header">
+			<h:outputText value="#{msg.welcomeBoxTitle}"/>
+		</f:facet>
+        <span></span>
     
-    <h:outputText value="#{msg.forgotPassword}"/>
+    </div>
+    <!-- End H1 Title -->
+    <!-- Start Main Body Wrap -->
+    <div id="main-wrap">
     
-    <h:outputText value=" "/><h:outputText value=" "/><h:outputText value=" "/>
-    
-    <h:commandLink id="english" action="chooseLocale"
-       actionListener="#{welcomeBean.onChooseLocale}">
-      <h:outputText value="#{msg.english}" />
-    </h:commandLink>
-    <h:outputText value=" "/>
-    <h:commandLink id="french" action="chooseLocale"
-       actionListener="#{welcomeBean.onChooseLocale}">
-      <h:outputText value="#{msg.french}" />
-    </h:commandLink>
-</h:panelGrid>
+    	<!-- Start Featured Boxes -->
+        <div class="boxes-third boxes-first">
+        
+        	<div class="boxes-padding">
+            
+            	<div class="bti">
+                	<div class="featured-images"><img src="images/responsive-icon.png" width="72" height="53" alt="Responsive"></div>
+                	    <h:commandLink action="register" id="register">
+							<h:outputText value="#{msg.register}"/>
+						</h:commandLink>
+                </div>
+                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+            
+            </div>
+            
+            <span class="box-arrow"></span>
+        
+        </div>
+        
+        <div class="boxes-third">
+        
+        	<div class="boxes-padding">
+            
+            	<div class="bti">
+                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    <h:outputLink value="doctor.jsf">Doctor</h:outputLink>
+                </div>
+                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+            
+            </div>
+            
+            <span class="box-arrow"></span>
+        
+        </div>
+        
+        <div class="boxes-third boxes-last">
+        
+        	<div class="boxes-padding">
+            	
+                <div class="bti">
+                    <div class="featured-images"><img src="images/google-icon.png" width="54" height="53" alt="Responsive"></div>
+                    <div class="featured-titles">cross browser</div>
+                </div>
+                <div class="featured-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc, nec sagittis tellus.</div>
+            
+            </div>
+            
+            <span class="box-arrow"></span>
+        
+        </div>
+        <!-- End Featured Boxes -->
+	</div>
 </div>
 </h:form>
 </body>
