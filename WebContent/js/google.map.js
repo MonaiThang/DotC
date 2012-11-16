@@ -4,7 +4,7 @@ function initialize() {
 	zoom: 14,
 	center: new google.maps.LatLng(-37.813165, 144.955814),
 	mapTypeId: google.maps.MapTypeId.TERRAIN
-  }
+  };
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 }
 
