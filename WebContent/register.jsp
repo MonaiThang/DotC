@@ -33,7 +33,7 @@
   <f:facet name="footer">
     <h:panelGroup>
     <h:commandButton value="#{msg.submit}" 
-      action="#{registrationBean.register}" />
+      action="#{com.mkyong.core.App.main}" />
     <h:commandButton value="#{msg.reset}" type="reset"/>
     </h:panelGroup>
   </f:facet>

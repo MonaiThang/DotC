@@ -1,61 +1,63 @@
 package com.mkyong.core;
 
-import java.net.UnknownHostException;
+import java.util.List;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.Mongo;
-import com.mongodb.MongoException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
-/**
- * Java + MongoDB Hello world Example
- * 
- */
+import com.mkyong.config.SpringMongoConfig;
+import com.mkyong.user.User;
+
 public class App {
+
 	public static void main(String[] args) {
+		// For XML
+		// ApplicationContext ctx = new
+		// GenericXmlApplicationContext("mongo-config.xml");
 
-		try {
-			// connect to mongoDB, ip and port number
-			Mongo mongo = new Mongo("localhost", 27017);
+		// For Annotation
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(
+				SpringMongoConfig.class);
 
-			// get database from MongoDB,
-			// if database doesn't exists, mongoDB will create it automatically
-			DB db = mongo.getDB("yourdb");
+		MongoOperations mongoOperation = (MongoOperations) ctx
+				.getBean("mongoTemplate");
 
-			// Get collection from MongoDB, database named "yourDB"
-			// if collection doesn't exists, mongoDB will create it
-			// automatically
-			DBCollection collection = db.getCollection("yourCollection");
+		User user = new User("mkyong", "password123");
 
-			// create a document to store key and value
-			BasicDBObject document = new BasicDBObject();
-			document.put("id", 1001);
-			document.put("msg", "hello world mongoDB in Java");
+		// save
+		mongoOperation.save(user, "users");
 
-			// save it into collection named "yourCollection"
-			collection.insert(document);
+		// find
+		User savedUser = mongoOperation.findOne(
+				new Query(Criteria.where("username").is("mkyong")), User.class,
+				"users");
 
-			// search query
-			BasicDBObject searchQuery = new BasicDBObject();
-			searchQuery.put("id", 1001);
+		System.out.println("savedUser : " + savedUser);
 
-			// query it
-			DBCursor cursor = collection.find(searchQuery);
+		// update
+		mongoOperation.updateMulti(
+				new Query(Criteria.where("username").is("mkyong")),
+				Update.update("password", "new password"), "users");
 
-			// loop over the cursor and print it retrieved result
-			while (cursor.hasNext()) {
-				System.out.println(cursor.next());
-			}
+		// find
+		User updatedUser = mongoOperation.findOne(
+				new Query(Criteria.where("username").is("mkyong")), User.class,
+				"users");
 
-			System.out.println("Done");
-			
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
+		System.out.println("updatedUser : " + updatedUser);
+
+		// delete
+		//mongoOperation.remove(
+				//new Query(Criteria.where("username").is("mkyong")), "users");
+
+		// List
+		List<User> listUser = mongoOperation.findAll(User.class, "users");
+		System.out.println("Number of user = " + listUser.size());
 
 	}
+
 }
