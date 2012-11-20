@@ -31,7 +31,9 @@ public class Register {
 	}
 	
 	public String register() throws Exception {
-		String toReturn = "failure";
+		System.out.println("register");
+		return null;
+		/*String toReturn = "failure";
 		   
 		if (validateData()) {
 			try {
@@ -54,7 +56,7 @@ public class Register {
 								msg.getMessage("errorEmailExists"), null));
 			}					
 		}
-		return toReturn;
+		return toReturn;*/
 	}
 	
 	private boolean validateData() {

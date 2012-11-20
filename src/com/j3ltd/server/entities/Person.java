@@ -79,10 +79,10 @@ public class Person implements Serializable
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
-  public String getgender() {
+  public String getGender() {
     return gender;
   }
-  public void setgenders(String gender) {
+  public void setGenders(String gender) {
     this.gender = gender;
   }
   public String getLastName() {

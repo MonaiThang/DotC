@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page errorPage="errorpage.jsp" %>  
+<%try{%>
 <f:view>  
 <f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
 <html>
@@ -33,7 +34,7 @@
   <f:facet name="footer">
     <h:panelGroup>
     <h:commandButton value="#{msg.submit}" 
-      action="#{com.mkyong.core.App.main}" />
+      action="#{registrationBean.register}" />
     <h:commandButton value="#{msg.reset}" type="reset"/>
     </h:panelGroup>
   </f:facet>
@@ -64,13 +65,6 @@
   <h:outputText value=" "/><h:message for="dateOfBirth" styleClass="formUserError"/>
   </h:panelGroup>
   
-    <h:outputLabel for="gender" value="#{msg.registrationGender}"/>
-  <h:panelGroup>
-  <h:inputText id="gender" value="#{registrationBean.person.gender}"
-    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="gender" styleClass="formUserError"/>
-  </h:panelGroup>
-  
   <h:outputLabel for="age" value="#{msg.registrationAge}"/>
   <h:panelGroup>
   <h:inputText id="age" value="#{registrationBean.person.age}"
@@ -78,12 +72,7 @@
   <h:outputText value=" "/><h:message for="age" styleClass="formUserError"/>
   </h:panelGroup>
    
-  <h:outputLabel for="maritalStatus" value="#{msg.registrationMaritalStatus}"/>
-  <h:panelGroup>
-  <h:inputText id="maritalStatus" value="#{registrationBean.person.maritalStatus}"
-    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="maritalStatus" styleClass="formUserError"/>
-  </h:panelGroup>
+  
   
   <h:outputLabel for="iddateissued" value="#{msg.registrationIdDateIssued}"/>
   <h:panelGroup>
@@ -385,3 +374,6 @@
 </body>
 </html>
 </f:view>
+<%}catch(Exception ex){
+	ex.printStackTrace();
+}%>
