@@ -29,6 +29,8 @@
       <h:outputText value="#{msg.register}"/>
     </h:commandLink>
     
+    <h:outputLink value="doctor.jsf">Doctor</h:outputLink>
+    
     <h:outputText value="#{msg.forgotPassword}"/>
     
     <h:outputText value=" "/><h:outputText value=" "/><h:outputText value=" "/>
