@@ -1,7 +1,5 @@
 package com.j3ltd.web;
 
-
-
 import com.j3ltd.server.sessionremote.*;
 import com.j3ltd.server.entities.*;
 import com.j3ltd.server.exceptions.*;
@@ -12,9 +10,6 @@ import javax.faces.context.*;
 import javax.faces.application.*;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-
-
-
 
 public class Register {
 
@@ -32,8 +27,7 @@ public class Register {
 	
 	public String register() throws Exception {
 		System.out.println("register");
-		return null;
-		/*String toReturn = "failure";
+		String toReturn = "failure";
 		   
 		if (validateData()) {
 			try {
@@ -56,7 +50,7 @@ public class Register {
 								msg.getMessage("errorEmailExists"), null));
 			}					
 		}
-		return toReturn;*/
+		return toReturn;
 	}
 	
 	private boolean validateData() {
