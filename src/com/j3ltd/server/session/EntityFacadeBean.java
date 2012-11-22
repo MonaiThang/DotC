@@ -1,6 +1,5 @@
 package com.j3ltd.server.session;
 
-import javax.ejb.*;
 import com.j3ltd.server.entities.*;
 import com.j3ltd.server.exceptions.*;
 
@@ -10,9 +9,6 @@ import com.j3ltd.server.sessionremote.*;
 @Stateless
 public class EntityFacadeBean implements EntityFacade {
 	@PersistenceContext(unitName="shoestringPU") EntityManager em;
-	  
-	
-	
 	/**
 	 * Perform last minute validation, then if OK save 
 	 * entities (Person and Address in Person)
@@ -40,8 +36,6 @@ public class EntityFacadeBean implements EntityFacade {
 		em.persist(toCreate);
 		return toCreate;
 	}
-
-
 
 	public Person getPerson(String email) throws PersonEmailException {
 		// TODO Auto-generated method stub

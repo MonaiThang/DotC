@@ -1,7 +1,6 @@
 package com.j3ltd.server.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
 @Entity
 public class Address implements Serializable 
