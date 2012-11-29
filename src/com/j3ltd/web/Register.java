@@ -4,6 +4,13 @@ import com.j3ltd.server.sessionremote.*;
 import com.j3ltd.server.entities.*;
 import com.j3ltd.server.exceptions.*;
 import com.j3ltd.web.messages.*;
+
+import com.mongodb.Mongo;
+import com.google.code.morphia.Datastore;
+import com.google.code.morphia.Morphia;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.faces.context.*;
@@ -26,7 +33,26 @@ public class Register {
 	}
 	
 	public String register() throws Exception {
-		System.out.println("register");
+		//Set DateTime Format
+		DateFormat RegisDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date RegisDate = new Date();
+		//ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+		//Map<String, String[]> paramValues = ec.getRequestParameterValuesMap();
+		//Prepare Morphia Framework
+		System.out.println("Setting up MongoDB...");
+		Mongo mongo = new Mongo("localhost",27017);
+		System.out.println("Setting up Morphia...");
+		Morphia morphia = new Morphia();
+		System.out.println("Mapping Entities...");
+		morphia.mapPackage("com.j3ltd.server.entities");
+		System.out.println("Create Datastore...");
+		Datastore ds = morphia.createDatastore(mongo, "regis");
+		System.out.println("Timestamping...");
+		this.person.setTime(RegisDateFormat.format(RegisDate));
+		//Save the POJO
+		System.out.println("Saving...");
+		ds.save(this.person);
+		
 		String toReturn = "failure";
 		   
 		if (validateData()) {
