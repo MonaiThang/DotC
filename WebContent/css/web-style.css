@@ -640,13 +640,12 @@ hr{
 }
 
 .featured-titles{
-	width:68%;
-	float:right;
+	width:100%;
 	padding-top:10px;
 	font-family:'BebasNeueRegular',Arial, Helvetica, sans-serif;
 	color:#da803f;
-	font-size:20pt;
-	text-align:left;
+	font-size:30pt;
+	text-align:center;
 }
 
 .featured-text{

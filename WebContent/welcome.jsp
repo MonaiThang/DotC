@@ -53,7 +53,6 @@
 
 <body>
 <h:form >
-<div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
 <div id="main">
 	
     <!-- Start Slider Wrapping -->
@@ -78,6 +77,7 @@
     <div class="titles">
     <div class="featured-titles">
     	<div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
+    	<div class="featured-text">A low-cost simple telehealth solution for rural areas.</div>
          <f:facet name="header">
 			<h:outputText value="#{msg.welcomeBoxTitle}"/>
 		</f:facet>
@@ -115,7 +115,7 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
-                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    <div class="featured-images"><img src="images/gpluslogo.png" width="53" height="53" alt="Responsive"></div>
                     	<div class="featured-titles">
                     		<h:outputLink value="doctor.jsf">Doctor</h:outputLink>
                 		</div>
