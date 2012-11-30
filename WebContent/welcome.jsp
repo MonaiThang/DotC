@@ -128,6 +128,24 @@
         
         </div>
         
+        <div class="boxes-third">
+        
+        	<div class="boxes-padding">
+            
+            	<div class="bti">
+                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    	<div class="featured-titles">
+                    		<h:outputLink value="Medicalrecord.jsf">Med Records</h:outputLink>
+                		</div>
+                </div>
+                <div class="featured-text">View your medical records.</div>
+            
+            </div>
+            
+            <span class="box-arrow"></span>
+        
+        </div>
+        
         <div class="boxes-third boxes-last">
         
         	<div class="boxes-padding">
