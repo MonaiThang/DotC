@@ -24,13 +24,8 @@ public class Register {
 	private String passwordConfirm;
 	private String emailConfirm;
 
-	public Person getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
-	}
+	public Person getPerson() {	return person;	}
+	public void setPerson(Person person) {	this.person = person;	}
 	
 	public String register() throws Exception {
 		//Set DateTime Format
@@ -46,7 +41,7 @@ public class Register {
 		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
-		Datastore ds = morphia.createDatastore(mongo, "regis");
+		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		System.out.println("Timestamping...");
 		this.person.setTime(RegisDateFormat.format(RegisDate));
 		//Save the POJO
