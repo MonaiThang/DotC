@@ -97,9 +97,7 @@
             	<div class="bti">
                 	<div class="featured-images"><img src="images/responsive-icon.png" width="72" height="53" alt="Responsive"></div>
                 	    <div class="featured-titles">
-	                	    <h:commandLink  action="register" id="register">
-								<h:outputText value="#{msg.register}"/>
-							</h:commandLink>
+								<h:outputLink value="register.jsf">Register</h:outputLink>
 						</div>
                 </div>
                 <div class="featured-text">For new patient must register before login.</div>
@@ -167,6 +165,57 @@
 	</div>
 </div>
 </h:form>
+    <!-- Start Footer Bottom -->
+    <div id="footerbottom">
+    
+    	<div class="footerwrap">
+        
+        	<!-- Start Copyright Div -->
+            <div id="Copyright">&copy;DotC 2012.
+            <!-- End Copyright Div -->
+
+            <!-- Start Social area -->
+            <div class="socialfooter">
+                
+                <ul>
+                <li><a href="localhost:8080/DotC/welcome.jsf" class="social-google"></a></li>
+                <li><a href="localhost:8080/DotC/doctor.jsf" class="social-facebook"></a></li>
+                <li><a href="localhost:8080/DotC/Pharmarcy.jsf" class="social-twitter"></a></li>
+                <li><a href="localhost:8080/DotC/Medicalrecord.jsf" class="social-linkedin"></a></li>
+                </ul>
+                
+            </div>
+            <!-- End Socialarea -->
+        
+        </div>
+    
+    </div>
+    </div>
+    <!-- End Footer Bottom -->
+<!-- End Footer -->
+<!-- Start Scroll To Top Div -->
+<div id="scrolltab"></div>
+<!-- End Scroll To Top Div -->
+<script>
+	//// Start Simple Sliders ////
+	$(function() {
+		setInterval("rotateDiv()", 10000);
+	});
+		
+		function rotateDiv() {
+		var currentDiv=$("#simpleslider div.current");
+		var nextDiv= currentDiv.next ();
+		if (nextDiv.length ==0)
+			nextDiv=$("#simpleslider div:first");
+		
+		currentDiv.removeClass('current').addClass('previous').fadeOut('2000');
+		nextDiv.fadeIn('3000').addClass('current',function() {
+			currentDiv.fadeOut('2000', function () {currentDiv.removeClass('previous');});
+		});
+	
+	}
+	//// End Simple Sliders //// 
+</script> 
 </body>
 </html>
 </f:view>
