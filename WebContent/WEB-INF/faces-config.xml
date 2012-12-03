@@ -32,7 +32,7 @@
 			<property-name>person</property-name>
 			<value>#{registeringPersonBean}</value>
 		</managed-property>
-	</managed-bean>  
+	</managed-bean>
 	
 	<managed-bean>
 		<managed-bean-name>registeringPersonBean</managed-bean-name>
@@ -53,13 +53,7 @@
 		<managed-bean-class>com.j3ltd.server.entities.Address</managed-bean-class>
 		<managed-bean-scope>none</managed-bean-scope>
     </managed-bean>
-    
-	<managed-bean>
-		<managed-bean-name>MedicalRecordBean</managed-bean-name>
-		<managed-bean-class>com.j3ltd.server.entities.Record</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
-	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>SearchRecordBean</managed-bean-name>
 		<managed-bean-class>com.j3ltd.web.SearchRecord</managed-bean-class>
@@ -68,6 +62,12 @@
 			<property-name>record</property-name>
 			<value>#{MedicalRecordBean}</value>
 		</managed-property>
+	</managed-bean>
+    
+	<managed-bean>
+		<managed-bean-name>MedicalRecordBean</managed-bean-name>
+		<managed-bean-class>com.j3ltd.server.entities.Record</managed-bean-class>
+		<managed-bean-scope>none</managed-bean-scope>
 	</managed-bean>
 
 <!--.......................... Navigation Rules ...................-->

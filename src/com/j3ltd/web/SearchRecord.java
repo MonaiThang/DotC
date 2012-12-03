@@ -11,7 +11,7 @@ public class SearchRecord {
 	public Record getRecord() {	return record;	}
 	public void setRecord(Record record) {	this.record = record;	}
 	
-	public String Search() throws Exception{
+	public String search() throws Exception{
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");
 		Mongo mongo = new Mongo("localhost",27017);

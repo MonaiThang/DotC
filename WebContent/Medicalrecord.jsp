@@ -13,23 +13,23 @@
         	<h:form id="SearchRecordForm">
         		<h:panelGrid columns="3" styleClass="form" headerClass="tableHeader" footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
 	        		<h:outputLabel for="PatientCitizenID" value="Patient's Citizen ID"/>
-        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{MedicalRecordBean.Record.PatientCitizenID}"/>
+        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{SearchRecordBean.record.patientCitizenID}"/>
         			<h:message for="error" style="color:red" />
         			
 	        		<h:outputLabel for="PatientFirstname" value="Patient's First Name"/>
-        			<h:inputText id="PatientFirstName" maxlength="50" value="#{MedicalRecordBean.Record.PatientFirstName}"/>
+        			<h:inputText id="PatientFirstName" maxlength="50" value="#{SearchRecordBean.record.patientFirstName}"/>
         			<h:message for="error" style="color:red" />
 	        		
 	        		<h:outputLabel for="PatientLastname" value="Patient's Last Name"/>
-        			<h:inputText id="PatientLastName" maxlength="50" value="#{MedicalRecordBean.Record.PatientLastName}"/>
+        			<h:inputText id="PatientLastName" maxlength="50" value="#{SearchRecordBean.record.patientLastName}"/>
         			<h:message for="error" style="color:red" />
     	    		
     	    		<h:outputLabel for="DoctorFirstname" value="Doctor's First Name"/>
-        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{MedicalRecordBean.Record.DoctorFirstName}"/>
+        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{SearchRecordBean.record.doctorFirstName}"/>
         			<h:message for="error" style="color:red" />
         			
         			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
-        			<h:inputText id="DoctorLastName" maxlength="50" value="#{MedicalRecordBean.Record.DoctorLastName}"/>
+        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchRecordBean.record.doctorLastName}"/>
         			<h:message for="error" style="color:red" />
         		</h:panelGrid>
         		<h:panelGroup>
