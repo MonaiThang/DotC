@@ -43,7 +43,7 @@ public class Person implements Serializable
 	private String	lmp;
 	private String	symptom;
 	private String 	doctor;
-	private String	time;
+	private java.util.Date	timestamp;
 	private Double	cost;
 
 	@Id
@@ -204,11 +204,11 @@ public class Person implements Serializable
 	public void setDoctor(String doctor) {
 		this.doctor = doctor;
 	}
-	public String getTime() {
-		return time;
+	public java.util.Date getTimestamp() {
+		return timestamp;
 	}
-	public void setTime(String time) {
-		this.time = time;
+	public void setTimestamp(java.util.Date timestamp) {
+		this.timestamp = timestamp;
 	}
 	public Double getCost() {
 		return cost;

@@ -85,6 +85,6 @@ public class Record implements Serializable {
 	public Double getCost() {	return cost;	}
 	public void setCost(Double cost) {	this.cost = cost;	}
 
-	public java.util.Date getDateOfBirth() {	return timestamp;	}
-	public void setDateOfBirth(java.util.Date timestamp) {	this.timestamp = timestamp;	}
+	public java.util.Date getTimestamp() {	return timestamp;	}
+	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}
 }

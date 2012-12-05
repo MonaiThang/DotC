@@ -353,13 +353,6 @@
   maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
   <h:outputText value=" "/><h:message for="doctor" styleClass="formUserError"/>
   </h:panelGroup> 
-
-  <h:outputLabel for="time" value="#{msg.registrationTime}"/>
-  <h:panelGroup>
-  <h:inputText id="time" value="#{registrationBean.person.time}"
-  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
-  <h:outputText value=" "/><h:message for="time" styleClass="formUserError"/>
-  </h:panelGroup> 
   
   <h:outputLabel for="cost" value="#{msg.registrationCost}"/>
   <h:panelGroup>

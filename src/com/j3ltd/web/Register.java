@@ -9,9 +9,8 @@ import com.mongodb.Mongo;
 import com.google.code.morphia.Datastore;
 import com.google.code.morphia.Morphia;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.Locale;
 
 import javax.faces.context.*;
 import javax.faces.application.*;
@@ -28,8 +27,6 @@ public class Register {
 	public void setPerson(Person person) {	this.person = person;	}
 	
 	public String register() throws Exception {
-		//Set DateTime Format
-		DateFormat RegisDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date RegisDate = new Date();
 		//ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
 		//Map<String, String[]> paramValues = ec.getRequestParameterValuesMap();
@@ -43,7 +40,7 @@ public class Register {
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		System.out.println("Timestamping...");
-		this.person.setTime(RegisDateFormat.format(RegisDate));
+		this.person.setTimestamp(RegisDate);
 		//Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.person);
