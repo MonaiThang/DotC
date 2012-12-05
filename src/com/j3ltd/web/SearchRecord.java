@@ -25,11 +25,19 @@ public class SearchRecord {
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		//Create query
-		Query<Record> q = ds.createQuery(Record.class).field("PatientFirstName").equal(this.record.getPatientFirstName());
+		Query<Record> q = ds.createQuery(Record.class);
+		//Create criteria
+		q.or(
+				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
+				q.criteria("PatientFirstName").equal(this.record.getPatientFirstName()),
+				q.criteria("PatientLastName").equal(this.record.getPatientLastName()),
+				q.criteria("DoctorFirstName").equal(this.record.getDoctorFirstName()),
+				q.criteria("DoctorLastName").equal(this.record.getDoctorLastName())
+		);
 		querySet = q.asList();
 		System.out.println("Query Result:");
 		for(Record r : querySet){
-			System.out.println(r.getPatientCitizenID()+" "+r.getPatientFirstName()+" "+r.getPatientLastName()+" "+r.getTimestamp());
+			System.out.println(r.getPatientCitizenID()+" "+r.getPatientFirstName()+" "+r.getPatientLastName()+" "+r.getDoctorFirstName()+" "+r.getDoctorLastName());
 		}
 		return null;
 	}
