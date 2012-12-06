@@ -34,13 +34,33 @@
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
         	</h:form>
-        	<h:dataTable value="#{SearchRecordBean.search.querySet}" var="q">
-        		<h:column><f:facet name="header">Record ID</f:facet>#{q.recordID}</h:column>
-        		<h:column><f:facet name="header">Patient's Citizen ID</f:facet>#{q.patientCitizenID}</h:column>
-        		<h:column><f:facet name="header">Patient's First Name</f:facet>#{q.patientFirstName}</h:column>
-        		<h:column><f:facet name="header">Patient's Last Name</f:facet>#{q.patientLastName}</h:column>
-        		<h:column><f:facet name="header">Doctor's First Name</f:facet>#{q.doctorFirstName}</h:column>
-        		<h:column><f:facet name="header">Doctor's Last Name</f:facet>#{q.doctorLastName}</h:column>
+        	
+        	<h:dataTable value="#{SearchRecordBean.querySet}" var="q">
+        	
+        		<h:column>
+        			<f:facet name="header">Record ID</f:facet>
+        			<h:outputText value="#{q.recordID}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Patient's Citizen ID</f:facet>
+        			<h:outputText value="#{q.patientCitizenID}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Patient's First Name</f:facet>
+        			<h:outputText value="#{q.patientFirstName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Patient's Last Name</f:facet>
+        			<h:outputText value="#{q.patientLastName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Doctor's First Name</f:facet>
+        			<h:outputText value="#{q.doctorFirstName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header">Doctor's Last Name</f:facet>
+        			<h:outputText value="#{q.doctorLastName}"/>
+        		</h:column>
         	</h:dataTable>
         </body>
     </html>

@@ -1,5 +1,6 @@
 package com.j3ltd.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.code.morphia.Datastore;
@@ -10,7 +11,7 @@ import com.mongodb.Mongo;
 
 public class SearchRecord {
 	Record record;
-	List<Record> querySet;
+	private List<Record> querySet;
 	public Record getRecord() {	return record;	}
 	public void setRecord(Record record) {	this.record = record;	}
 	
@@ -41,4 +42,12 @@ public class SearchRecord {
 		}
 		return null;
 	}
+	public List<Record> getQuerySet() {
+		return querySet;
+	}
+	public void setQuerySet(List<Record> querySet) {
+		this.querySet = querySet;
+	}
+	
+	
 }
