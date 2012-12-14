@@ -20,14 +20,17 @@ import javax.naming.InitialContext;
 public class Register {
 
 	Person person;
+	Record record;
 	private String passwordConfirm;
 	private String emailConfirm;
 
 	public Person getPerson() {	return person;	}
 	public void setPerson(Person person) {	this.person = person;	}
 	
+	public Record getRecord() {	return record;	}
+	public void setRecord(Record record) {	this.record = record;	}
+	
 	public String register() throws Exception {
-		Date RegisDate = new Date();
 		//ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
 		//Map<String, String[]> paramValues = ec.getRequestParameterValuesMap();
 		//Prepare Morphia Framework
@@ -39,8 +42,6 @@ public class Register {
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		System.out.println("Timestamping...");
-		this.person.setTimestamp(RegisDate);
 		//Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.person);
@@ -68,6 +69,28 @@ public class Register {
 								msg.getMessage("errorEmailExists"), null));
 			}					
 		}
+		return toReturn;
+	}
+	
+	public String record() throws Exception{
+		Date RegisDate = new Date();
+		//Prepare Morphia Framework
+		System.out.println("Setting up MongoDB...");
+		Mongo mongo = new Mongo("localhost",27017);
+		System.out.println("Setting up Morphia...");
+		Morphia morphia = new Morphia();
+		System.out.println("Mapping Entities...");
+		morphia.mapPackage("com.j3ltd.server.entities");
+		System.out.println("Create Datastore...");
+		Datastore ds = morphia.createDatastore(mongo, "dotc");
+		System.out.println("Timestamping...");
+		this.record.setTimestamp(RegisDate);
+		//Save the POJO
+		System.out.println("Saving...");
+		ds.save(this.record);
+		
+		String toReturn = "failure";
+		
 		return toReturn;
 	}
 	

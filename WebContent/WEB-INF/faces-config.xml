@@ -32,6 +32,10 @@
 			<property-name>person</property-name>
 			<value>#{registeringPersonBean}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>record</property-name>
+			<value>#{MedicalRecordBean}</value>
+		</managed-property>
 	</managed-bean>
 	
 	<managed-bean>

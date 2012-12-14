@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Person implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
-	private int    	id;
+	private String	id;
 	private String 	password;
 	private String 	firstName;
 	private String 	lastName;
@@ -19,7 +19,7 @@ public class Person implements Serializable
 
 	private Address	actualaddress;
 	private Address	currentaddress;
-  
+
 	private String	phone;
 	private String 	mobile;
 	private String	emergenncycall;
@@ -27,33 +27,16 @@ public class Person implements Serializable
 	private String	bloodgroup;
 	private String	nationality;
 	private String	religion;
-	private String	disease;
 	private String	localelanguage;
 	private String	localecountry;
 	private String	email;
-  
-	private String	bp;
-	private String	temp;
-	private String	pulse;
-	private String 	breathrate;
-	private String	o2sat;
-	private String	weight;
-	private String	height;
-	private String	bmi;
-	private String	lmp;
-	private String	symptom;
-	private String 	doctorid;
-	private String 	doctorfirstname;
-	private String 	doctorlastname;
-	private java.util.Date	timestamp;
-	private Double	cost;
 
 	@Id
 	@GeneratedValue
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}  
 	public java.util.Date getDateOfBirth() {
@@ -134,85 +117,6 @@ public class Person implements Serializable
 	public void setReligion(String religion) {
 		this.religion = religion;
 	}
-	public String getDisease() {
-		return disease;
-	}
-	public void setDisease(String disease) {
-		this.disease = disease;
-	}
-	public String getBp() {
-		return bp;
-	}
-	public void setBp(String bp) {
-		this.bp = bp;
-	}
-	public String getTemp() {
-		return temp;
-	}
-	public void setTemp(String temp) {
-		this.temp = temp;
-	}
-	public String getPulse() {
-		return pulse;
-	}
-	public void setPulse(String pulse) {
-		this.pulse = pulse;
-	}
-	public String getBreathrate() {
-		return breathrate;
-	}
-	public void setBreathrate(String breathrate) {
-		this.breathrate = breathrate;
-	}
-	public String getO2sat() {
-		return o2sat;
-	}
-	public void setO2sat(String o2sat) {
-		this.o2sat = o2sat;
-	}
-	public String getWeight() {
-		return weight;
-	}
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-	public String getHeight() {
-		return height;
-	}
-	public void setHeight(String height) {
-		this.height = height;
-	}
-	public String getBmi() {
-		return bmi;
-	}
-	public void setBmi(String bmi) {
-		this.bmi = bmi;
-	}
-	public String getLmp() {
-		return lmp;
-	}
-	public void setLmp(String lmp) {
-		this.lmp = lmp;
-	}
-	public String getSymptom() {
-		return symptom;
-	}
-	public void setSymptom(String symptom) {
-		this.symptom = symptom;
-	}
-	
-	public java.util.Date getTimestamp() {
-		return timestamp;
-	}
-	public void setTimestamp(java.util.Date timestamp) {
-		this.timestamp = timestamp;
-	}
-	public Double getCost() {
-		return cost;
-	}
-	public void setCost(Double cost) {
-		this.cost = cost;
-	}
 	public java.util.Date getIddateissued() {
 		return iddateissued;
 	}
@@ -260,23 +164,5 @@ public class Person implements Serializable
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getDoctorid() {
-		return doctorid;
-	}
-	public void setDoctorid(String doctorid) {
-		this.doctorid = doctorid;
-	}
-	public String getDoctorfirstname() {
-		return doctorfirstname;
-	}
-	public void setDoctorfirstname(String doctorfirstname) {
-		this.doctorfirstname = doctorfirstname;
-	}
-	public String getDoctorlastname() {
-		return doctorlastname;
-	}
-	public void setDoctorlastname(String doctorlastname) {
-		this.doctorlastname = doctorlastname;
 	}
 }
