@@ -1,6 +1,7 @@
 package com.j3ltd.server.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class Record implements Serializable {
@@ -23,11 +24,13 @@ public class Record implements Serializable {
 	private Double weight;
 	private Double height;
 	private Double bmi;
-	private String lmp;
+	private java.util.Date lmp;
 	private String symptom;
 	private String disease;
+	
+	private String	PrescriptionID;
+	
 	private java.util.Date timestamp;
-	private Double cost;
 	
 	@Id
 	@GeneratedValue
@@ -73,8 +76,8 @@ public class Record implements Serializable {
 	public Double getBmi() {	return bmi;	}
 	public void setBmi(Double weight, Double height) {	this.bmi = weight/Math.pow(height,2);	}
 
-	public String getLmp() {	return lmp;	}
-	public void setLmp(String lmp) {	this.lmp = lmp;	}
+	public Date getLmp() {	return lmp;	}
+	public void setLmp(Date lmp) {	this.lmp = lmp;	}
 
 	public String getSymptom() {	return symptom;	}
 	public void setSymptom(String symptom) {	this.symptom = symptom;	}
@@ -82,9 +85,9 @@ public class Record implements Serializable {
 	public String getDisease() {	return disease;	}
 	public void setDisease(String disease) {	this.disease = disease;	}
 
-	public Double getCost() {	return cost;	}
-	public void setCost(Double cost) {	this.cost = cost;	}
-
+	public String getPrescriptionID() {	return PrescriptionID;	}
+	public void setPrescriptionID(String prescriptionID) {	PrescriptionID = prescriptionID;	}
+	
 	public java.util.Date getTimestamp() {	return timestamp;	}
 	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}
 }
