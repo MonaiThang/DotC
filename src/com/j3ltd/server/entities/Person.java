@@ -42,7 +42,9 @@ public class Person implements Serializable
 	private String	bmi;
 	private String	lmp;
 	private String	symptom;
-	private String 	doctor;
+	private String 	doctorid;
+	private String 	doctorfirstname;
+	private String 	doctorlastname;
 	private java.util.Date	timestamp;
 	private Double	cost;
 
@@ -198,12 +200,7 @@ public class Person implements Serializable
 	public void setSymptom(String symptom) {
 		this.symptom = symptom;
 	}
-	public String getDoctor() {
-		return doctor;
-	}
-	public void setDoctor(String doctor) {
-		this.doctor = doctor;
-	}
+	
 	public java.util.Date getTimestamp() {
 		return timestamp;
 	}
@@ -263,5 +260,23 @@ public class Person implements Serializable
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getDoctorid() {
+		return doctorid;
+	}
+	public void setDoctorid(String doctorid) {
+		this.doctorid = doctorid;
+	}
+	public String getDoctorfirstname() {
+		return doctorfirstname;
+	}
+	public void setDoctorfirstname(String doctorfirstname) {
+		this.doctorfirstname = doctorfirstname;
+	}
+	public String getDoctorlastname() {
+		return doctorlastname;
+	}
+	public void setDoctorlastname(String doctorlastname) {
+		this.doctorlastname = doctorlastname;
 	}
 }
