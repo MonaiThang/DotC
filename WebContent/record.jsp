@@ -8,7 +8,7 @@
 <f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
 <html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Patient's Record</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
 	</head>
@@ -27,12 +27,21 @@
 					<h:outputFormat value="#{msg.registrationRecords}"></h:outputFormat>
 					<br/>
 					<br/>
-					<h:outputLabel for="citizenID" value="#{msg.registrationID}"/>
+					<h:outputLabel for="recordID" value="#{msg.registrationID}"/>
 					<h:panelGroup>
-						<h:inputText id="citizenID" value="#{registrationBean.record.recordID}"
+						<h:inputText id="recordID" value="#{registrationBean.record.recordID}"
 							maxlength="255" size="30"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
+						<h:message for="recordID" styleClass="formUserError"/>
+					</h:panelGroup>
+					
+					<h:outputLabel for="citizenID" value="#{msg.registrationCitizenID}"/>
+					<h:panelGroup>
+						<h:inputText id="citizenID" value="#{registrationBean.record.patientCitizenID}"
+							maxlength="255" size="30"/>
+						<f:verbatim><br/></f:verbatim>
+						<h:outputText value="" />
 						<h:message for="citizenID" styleClass="formUserError"/>
 					</h:panelGroup>
 						
@@ -41,7 +50,7 @@
 						<h:inputText id="disease" value="#{registrationBean.record.disease}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="disease" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -50,7 +59,7 @@
 						<h:inputText id="systolic" value="#{registrationBean.record.systolic}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="systolic" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -59,7 +68,7 @@
 						<h:inputText id="diastolic" value="#{registrationBean.record.diastolic}"
 						maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" "/>
+						<h:outputText value=""/>
 						<h:message for="diastolic" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -68,7 +77,7 @@
 						<h:inputText id="temp" value="#{registrationBean.record.temp}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="temp" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -77,7 +86,7 @@
 						<h:inputText id="pulse" value="#{registrationBean.record.pulse}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="pulse" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -86,7 +95,7 @@
 						<h:inputText id="breathrate" value="#{registrationBean.record.breathrate}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="breathrate" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -95,7 +104,7 @@
 						<h:inputText id="o2sat" value="#{registrationBean.record.o2sat}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="o2sat" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -104,7 +113,7 @@
 						<h:inputText id="weight" value="#{registrationBean.record.weight}"
 							maxlength="45" size="12" />
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="weight" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -113,16 +122,18 @@
 						<h:inputText id="height" value="#{registrationBean.record.height}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="height" styleClass="formUserError"/>
 					</h:panelGroup>
 					
 					<h:outputLabel for="lmp" value="#{msg.registrationLmp}"/>
 					<h:panelGroup>
 						<h:inputText id="lmp" value="#{registrationBean.record.lmp}"
-							maxlength="45" size="12"/>
+							maxlength="45" size="12">
+							<f:convertDateTime pattern="dd/MM/yyyy"/>
+						</h:inputText>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="lmp" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -131,7 +142,7 @@
 						<h:inputText id="symptom" value="#{registrationBean.record.symptom}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="symptom" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -140,7 +151,7 @@
 						<h:inputText id="doctorid" value="#{registrationBean.record.doctorID}"
 							maxlength="45" size="12"/>
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="doctorid" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -149,7 +160,7 @@
 						<h:inputText id="doctorfirstname" value="#{registrationBean.record.doctorFirstName}"
 							maxlength="45" size="12" />
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="doctorfirstname" styleClass="formUserError"/>
 					</h:panelGroup>
 					
@@ -158,7 +169,7 @@
 						<h:inputText id="doctorlastname" value="#{registrationBean.record.doctorLastName}"
 							maxlength="45" size="12" />
 						<f:verbatim><br/></f:verbatim>
-						<h:outputText value=" " />
+						<h:outputText value="" />
 						<h:message for="doctorlastname" styleClass="formUserError"/>
 					</h:panelGroup>
 				</h:panelGrid>

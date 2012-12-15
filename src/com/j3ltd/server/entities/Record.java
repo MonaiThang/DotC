@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 public class Record implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int RecordID;
+	private String RecordID;
 	
 	private String PatientCitizenID;
 	private String PatientFirstName;
@@ -35,8 +35,8 @@ public class Record implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	public int getRecordID() {	return RecordID;	}
-	public void setRecordID(int RecordID) {	this.RecordID = RecordID;	}
+	public String getRecordID() {	return RecordID;	}
+	public void setRecordID(String RecordID) {	this.RecordID = RecordID;	}
 
 	public String getPatientCitizenID() {	return PatientCitizenID;	}
 	public void setPatientCitizenID(String PatientCitizenID) {	this.PatientCitizenID = PatientCitizenID;	}
@@ -78,7 +78,7 @@ public class Record implements Serializable {
 	public void setHeight(Double height) {	this.height = height;	}
 
 	public Double getBmi() {	return bmi;	}
-	public void setBmi(Double weight, Double height) {	this.bmi = weight/Math.pow(height,2);	}
+	public void setBmi(Double weight, Double height) {	this.bmi = weight/Math.pow(height/100,2);	}
 
 	public Date getLmp() {	return lmp;	}
 	public void setLmp(Date lmp) {	this.lmp = lmp;	}
