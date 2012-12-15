@@ -1,21 +1,21 @@
 package com.j3ltd.web;
 
-import com.j3ltd.server.sessionremote.*;
-import com.j3ltd.server.entities.*;
-import com.j3ltd.server.exceptions.*;
-import com.j3ltd.web.messages.*;
-
-import com.mongodb.Mongo;
-import com.google.code.morphia.Datastore;
-import com.google.code.morphia.Morphia;
-
 import java.util.Date;
 import java.util.Locale;
 
-import javax.faces.context.*;
-import javax.faces.application.*;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
+import com.google.code.morphia.Datastore;
+import com.google.code.morphia.Morphia;
+import com.j3ltd.server.entities.Person;
+import com.j3ltd.server.entities.Record;
+import com.j3ltd.server.exceptions.PersonEntityExistsException;
+import com.j3ltd.server.sessionremote.EntityFacade;
+import com.j3ltd.web.messages.MessageFactory;
+import com.mongodb.Mongo;
 
 public class Register {
 
