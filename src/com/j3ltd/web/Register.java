@@ -72,7 +72,7 @@ public class Register {
 		return toReturn;
 	}
 	
-	public String record() throws Exception{
+	public String insertRecord() throws Exception{
 		Date RegisDate = new Date();
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");

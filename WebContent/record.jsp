@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
 <%@taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
@@ -24,7 +24,7 @@
 		  <f:facet name="footer">
 		    <h:panelGroup>
 		    <h:commandButton value="#{msg.submit}" 
-		      action="#{registrationBean.record}" />
+		      action="#{registrationBean.insertRecord}" />
 		    <h:commandButton value="#{msg.reset}" type="reset"/>
 		    </h:panelGroup>
 		  </f:facet>
@@ -34,7 +34,7 @@
 				  
 				  <h:outputLabel for="citizenID" value="#{msg.registrationID}"/>
 				  <h:panelGroup>
-				  <h:inputText id="citizenID" value="#{registrationBean.record.id}"
+				  <h:inputText id="citizenID" value="#{registrationBean.record.recordID}"
 				    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
 				  <h:outputText value=" "/><h:message for="citizenID" styleClass="formUserError"/>
 				  </h:panelGroup>
@@ -46,12 +46,19 @@
 				  <h:outputText value=" "/><h:message for="disease" styleClass="formUserError"/>
 				  </h:panelGroup>
 				  
-				  <h:outputLabel for="bp" value="#{msg.registrationBp}"/>
+				  <h:outputLabel for="systolic" value="#{msg.registrationSystolic}"/>
 				  <h:panelGroup>
-				  <h:inputText id="bp" value="#{registrationBean.record.bp}"
+				  <h:inputText id="systolic" value="#{registrationBean.record.systolic}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
-				  <h:outputText value=" "/><h:message for="bp" styleClass="formUserError"/>
+				  <h:outputText value=" "/><h:message for="systolic" styleClass="formUserError"/>
 				  </h:panelGroup> 
+
+				<h:outputLabel for="diastolic" value="#{msg.registrationDiastolic}"/>
+				  <h:panelGroup>
+				  <h:inputText id="diastolic" value="#{registrationBean.record.diastolic}"
+				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+				  <h:outputText value=" "/><h:message for="diastolic" styleClass="formUserError"/>
+				  </h:panelGroup>
 				
 				  <h:outputLabel for="temp" value="#{msg.registrationTemp}"/>
 				  <h:panelGroup>
@@ -76,7 +83,7 @@
 				  
 				  <h:outputLabel for="o2sat" value="#{msg.registrationO2sat}"/>
 				  <h:panelGroup>
-				  <h:inputText id="o2sat" value="#{registrationBean.record.breathrate}"
+				  <h:inputText id="o2sat" value="#{registrationBean.record.o2sat}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
 				  <h:outputText value=" "/><h:message for="o2sat" styleClass="formUserError"/>
 				  </h:panelGroup>
@@ -95,14 +102,7 @@
 				  <h:outputText value=" "/><h:message for="height" styleClass="formUserError"/>
 				  </h:panelGroup>  
 				  
-				  <h:outputLabel for="bmi" value="#{msg.registrationBmi}"/>
-				  <h:panelGroup>
-				  <h:inputText id="bmi" value="#{registrationBean.record.bmi}"
-				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
-				  <h:outputText value=" "/><h:message for="bmi" styleClass="formUserError"/>
-				  </h:panelGroup>
-				  
-				  <h:outputLabel for="lmp" value="#{msg.registrationImp}"/>
+				  <h:outputLabel for="lmp" value="#{msg.registrationLmp}"/>
 				  <h:panelGroup>
 				  <h:inputText id="lmp" value="#{registrationBean.record.lmp}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
@@ -118,31 +118,24 @@
 				  
 				  <h:outputLabel for="doctorid" value="#{msg.registrationDoctorid}"/>
 				  <h:panelGroup>
-				  <h:inputText id="doctorid" value="#{registrationBean.record.doctorid}"
+				  <h:inputText id="doctorid" value="#{registrationBean.record.doctorID}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
 				  <h:outputText value=" "/><h:message for="doctorid" styleClass="formUserError"/>
 				  </h:panelGroup>
 				  
 				  <h:outputLabel for="doctorfirstname" value="#{msg.registrationDoctorfirstname}"/>
 				  <h:panelGroup>
-				  <h:inputText id="doctorfirstname" value="#{registrationBean.record.doctorfirstname}"
+				  <h:inputText id="doctorfirstname" value="#{registrationBean.record.doctorFirstName}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
 				  <h:outputText value=" "/><h:message for="doctorfirstname" styleClass="formUserError"/>
 				  </h:panelGroup> 
 				  
 				  <h:outputLabel for="doctorlastname" value="#{msg.registrationDoctorlastname}"/>
 				  <h:panelGroup>
-				  <h:inputText id="doctorlastname" value="#{registrationBean.record.doctorlastname}"
+				  <h:inputText id="doctorlastname" value="#{registrationBean.record.doctorLastName}"
 				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
 				  <h:outputText value=" "/><h:message for="doctorlastname" styleClass="formUserError"/>
 				  </h:panelGroup>  
-				  
-				  <h:outputLabel for="cost" value="#{msg.registrationCost}"/>
-				  <h:panelGroup>
-				  <h:inputText id="cost" value="#{registrationBean.record.cost}"
-				  maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
-				  <h:outputText value=" "/><h:message for="cost" styleClass="formUserError"/>
-				  </h:panelGroup>
 		</h:panelGrid>
 		</div>
         </body>

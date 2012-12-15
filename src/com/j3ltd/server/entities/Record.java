@@ -12,6 +12,7 @@ public class Record implements Serializable {
 	private String PatientFirstName;
 	private String PatientLastName;
 	
+	private String DoctorID;
 	private String DoctorFirstName;
 	private String DoctorLastName;
   
@@ -44,6 +45,9 @@ public class Record implements Serializable {
 	public String getPatientLastName() {	return PatientLastName;	}
 	public void setPatientLastName(String PatientLastName) {	this.PatientLastName = PatientLastName;	}
 
+	
+	public String getDoctorID() {	return DoctorID;	}
+	public void setDoctorID(String doctorID) {	DoctorID = doctorID;	}
 	public String getDoctorFirstName() {	return DoctorFirstName;	}
 	public void setDoctorFirstName(String DoctorFirstName) {	this.DoctorFirstName = DoctorFirstName;	}
 	public String getDoctorLastName() {	return DoctorLastName;	}
