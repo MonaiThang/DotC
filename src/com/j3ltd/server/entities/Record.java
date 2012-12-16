@@ -34,6 +34,8 @@ public class Record implements Serializable {
 	private String	PrescriptionID;
 	
 	private java.util.Date timestamp;
+	private java.util.Date RegisDate;
+	private java.util.Date DiagDate;
 	
 	@Id
 	@GeneratedValue
@@ -108,4 +110,17 @@ public class Record implements Serializable {
 	public void setDiagnosis(String diagnosis) {
 		Diagnosis = diagnosis;
 	}
+	public java.util.Date getRegisDate() {
+		return RegisDate;
+	}
+	public void setRegisDate(java.util.Date regisDate) {
+		RegisDate = regisDate;
+	}
+	public java.util.Date getDiagDate() {
+		return DiagDate;
+	}
+	public void setDiagDate(java.util.Date diagDate) {
+		DiagDate = diagDate;
+	}
+	
 }

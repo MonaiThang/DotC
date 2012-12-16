@@ -73,6 +73,16 @@
 			<value>#{MedicalRecordBean}</value>
 		</managed-property>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>ManageRecordBean</managed-bean-name>
+		<managed-bean-class>com.j3ltd.web.ManageRecord</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>record</property-name>
+			<value>#{MedicalRecordBean}</value>
+		</managed-property>
+	</managed-bean>
 
 <!--.......................... Navigation Rules ...................-->
 	<!-- Welcome Page -->

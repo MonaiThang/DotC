@@ -84,6 +84,7 @@ public class Register {
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		System.out.println("Timestamping...");
+		this.record.setRegisDate(RegisDate);
 		this.record.setTimestamp(RegisDate);
 		this.record.setBmi(this.record.getWeight(), this.record.getHeight());
 		//Save the POJO
