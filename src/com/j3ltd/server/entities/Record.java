@@ -28,6 +28,8 @@ public class Record implements Serializable {
 	private java.util.Date lmp;
 	private String symptom;
 	private String disease;
+	private String Medication;
+	private String Diagnosis;
 	
 	private String	PrescriptionID;
 	
@@ -94,4 +96,16 @@ public class Record implements Serializable {
 	
 	public java.util.Date getTimestamp() {	return timestamp;	}
 	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}
+	public String getMedication() {
+		return Medication;
+	}
+	public void setMedication(String medication) {
+		Medication = medication;
+	}
+	public String getDiagnosis() {
+		return Diagnosis;
+	}
+	public void setDiagnosis(String diagnosis) {
+		Diagnosis = diagnosis;
+	}
 }

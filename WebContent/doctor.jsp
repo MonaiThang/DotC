@@ -2,6 +2,8 @@
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<f:view>
+<f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
 <html>
 <head>
 <title>Meet the doctor.</title>
@@ -95,18 +97,67 @@ $(document).ready(function(){
         <!-- End Social & Logo area -->
 
 </div>
-
-<div id="main">
+<div class="titlesnormal">
+	<div id="main">
     <!-- Start H1 Title -->
-    <div class="titlesnormal">
-    
-    	<h2>Doctor Module</h2>
-    	<h1>Please choose available doctor.</h1>
-    	
-        
-        <span></span>
-    
+	<h:form>
+			<div class="center">
+			
+				<h:panelGrid columns="2" styleClass="form" headerClass="tableHeader"
+					footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
+					<f:facet name="footer">
+						<h:panelGroup>
+							<h:commandButton value="#{msg.submit}"
+								action="#{registrationBean.insertRecord}"/>
+							<h:commandButton value="#{msg.reset}" type="reset"/>
+						</h:panelGroup>
+					</f:facet>
+					<H1>Patient's Record</H1>
+
+					<h:outputLabel value=" "/>
+					
+					
+					<h:outputLabel for="recordID" value="#{msg.registrationID}"/>
+					<h:panelGroup>
+						<h:inputText id="recordID" value="#{MedicalRecordBean.record.recordID}"
+							maxlength="255" size="30"/>
+						<f:verbatim><br/></f:verbatim>
+						<h:outputText value="" />
+						<h:message for="recordID" styleClass="formUserError"/>
+					</h:panelGroup>
+					
+					<h:outputLabel for="citizenID" value="#{msg.registrationCitizenID}"/>
+					<h:panelGroup>
+						<h:inputText id="citizenID" value="#{MedicalRecordBean.record.patientCitizenID}"
+							maxlength="255" size="30"/>
+						<f:verbatim><br/></f:verbatim>
+						<h:outputText value="" />
+						<h:message for="citizenID" styleClass="formUserError"/>
+					</h:panelGroup>
+					
+					<h:outputLabel for="Medication" value="#{msg.registrationMedication}"/>
+					<h:panelGroup>
+						<h:inputText id="Medication" value="#{MedicalRecordBean.record.medication}"
+							maxlength="255" size="30"/>
+						<f:verbatim><br/></f:verbatim>
+						<h:outputText value="" />
+						<h:message for="Medication" styleClass="formUserError"/>
+					</h:panelGroup>
+					
+					<h:outputLabel for="Diagnosis" value="#{msg.registrationDiagnosis}"/>
+					<h:panelGroup>
+						<h:inputText id="Diagnosis" value="#{MedicalRecordBean.record.diagnosis}"
+							maxlength="255" size="30"/>
+						<f:verbatim><br/></f:verbatim>
+						<h:outputText value="" />
+						<h:message for="Diagnosis" styleClass="formUserError"/>
+					</h:panelGroup>
+					
+				</h:panelGrid>
+			</div>
+		</h:form>
     </div>
+     </div>
     <!-- End H1 Title -->
     <!-- Start Main Body Wrap -->
     <div id="main-wrap">
@@ -338,3 +389,4 @@ $(document).ready(function(){
 </script> 
 </body>
 </html>
+</f:view>
