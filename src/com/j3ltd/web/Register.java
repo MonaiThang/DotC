@@ -8,8 +8,8 @@ import javax.faces.context.FacesContext;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
-import com.google.code.morphia.Datastore;
-import com.google.code.morphia.Morphia;
+import com.github.jmkgreen.morphia.Datastore;
+import com.github.jmkgreen.morphia.Morphia;
 import com.j3ltd.server.entities.Person;
 import com.j3ltd.server.entities.Record;
 import com.j3ltd.server.exceptions.PersonEntityExistsException;

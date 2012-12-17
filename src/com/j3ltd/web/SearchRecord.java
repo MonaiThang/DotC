@@ -2,9 +2,9 @@ package com.j3ltd.web;
 
 import java.util.List;
 
-import com.google.code.morphia.Datastore;
-import com.google.code.morphia.Morphia;
-import com.google.code.morphia.query.Query;
+import com.github.jmkgreen.morphia.Datastore;
+import com.github.jmkgreen.morphia.Morphia;
+import com.github.jmkgreen.morphia.query.Query;
 import com.j3ltd.server.entities.Record;
 import com.mongodb.Mongo;
 
