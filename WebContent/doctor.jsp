@@ -100,7 +100,9 @@ $(document).ready(function(){
 <div class="titlesnormal">
 	<div id="main">
     <!-- Start H1 Title -->
+    <H1>Patient's Record</H1>
 	<h:form>
+	
 			<div class="center">
 			
 				<h:panelGrid columns="2" styleClass="form" headerClass="tableHeader"
@@ -112,11 +114,7 @@ $(document).ready(function(){
 							<h:commandButton value="#{msg.reset}" type="reset"/>
 						</h:panelGroup>
 					</f:facet>
-					<H1>Patient's Record</H1>
 
-					<h:outputLabel value=" "/>
-					
-					
 					<h:outputLabel for="recordID" value="#{msg.registrationID}"/>
 					<h:panelGroup>
 						<h:inputText id="recordID" value="#{ManageRecordBean.record.recordID}"

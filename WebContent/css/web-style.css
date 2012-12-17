@@ -582,7 +582,7 @@ hr{
 /* 3rd width*/
 .boxes-third{
 	background-color:white;
-	width:22.8%;
+	width:17.8%;
 	height:45%;
 	float:left;
 	margin:15px 1%;
@@ -644,7 +644,7 @@ hr{
 	padding-top:10px;
 	font-family:'BebasNeueRegular',Arial, Helvetica, sans-serif;
 	color:#da803f;
-	font-size:30pt;
+	font-size:26pt;
 	text-align:center;
 }
 
@@ -735,7 +735,7 @@ hr{
 	margin:0px auto 28px auto;
 	border:1px solid #d5d5d5;
 	padding:10px 20px;
-	text-align:center;
+	text-align:left;
 	position: relative;
 }
 

@@ -115,6 +115,25 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
+                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    	<div class="featured-titles">
+                    		<h:outputLink value="record.jsf">Records</h:outputLink>
+                		</div>
+                </div>
+                <div class="featured-text"><br/><br/>For new medical records.</div>
+            
+            </div>
+            
+            <span class="box-arrow"></span>
+        
+        </div>
+        
+
+        <div class="boxes-third">
+        
+        	<div class="boxes-padding">
+            
+            	<div class="bti">
                     <div class="featured-images"><img src="images/gpluslogo.png" width="53" height="53" alt="Responsive"></div>
                     	<div class="featured-titles">
                     		<h:outputLink value="doctor.jsf">Doctor</h:outputLink>
@@ -135,10 +154,10 @@
             	<div class="bti">
                     <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
                     	<div class="featured-titles">
-                    		<h:outputLink value="Medicalrecord.jsf">Records</h:outputLink>
+                    		<h:outputLink value="Medicalrecord.jsf">Search</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text"><br/><br/>View your medical records.</div>
+                <div class="featured-text"><br/><br/>Search your medical records.</div>
             
             </div>
             
