@@ -120,7 +120,7 @@ $(document).ready(function(){
 					<h:outputLabel for="recordID" value="#{msg.registrationID}"/>
 					<h:panelGroup>
 						<h:inputText id="recordID" value="#{ManageRecordBean.record.recordID}"
-							maxlength="255" size="30"/>
+							maxlength="255" size="141"/>
 						<f:verbatim><br/></f:verbatim>
 						<h:outputText value="" />
 						<h:message for="recordID" styleClass="formUserError"/>
@@ -129,7 +129,7 @@ $(document).ready(function(){
 					<h:outputLabel for="citizenID" value="#{msg.registrationCitizenID}"/>
 					<h:panelGroup>
 						<h:inputText id="citizenID" value="#{ManageRecordBean.record.patientCitizenID}"
-							maxlength="255" size="30"/>
+							maxlength="255" size="141"/>
 						<f:verbatim><br/></f:verbatim>
 						<h:outputText value="" />
 						<h:message for="citizenID" styleClass="formUserError"/>
@@ -138,7 +138,7 @@ $(document).ready(function(){
 					<h:outputLabel for="Medication" value="#{msg.registrationMedication}"/>
 					<h:panelGroup>
 						<h:inputText id="Medication" value="#{ManageRecordBean.record.medication}"
-							maxlength="255" size="30"/>
+							maxlength="255" size="141"/>
 						<f:verbatim><br/></f:verbatim>
 						<h:outputText value="" />
 						<h:message for="Medication" styleClass="formUserError"/>
@@ -147,7 +147,7 @@ $(document).ready(function(){
 					<h:outputLabel for="Diagnosis" value="#{msg.registrationDiagnosis}"/>
 					<h:panelGroup>
 						<h:inputText id="Diagnosis" value="#{ManageRecordBean.record.diagnosis}"
-							maxlength="255" size="30"/>
+							maxlength="255" size="141"/>
 						<f:verbatim><br/></f:verbatim>
 						<h:outputText value="" />
 						<h:message for="Diagnosis" styleClass="formUserError"/>

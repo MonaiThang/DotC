@@ -102,7 +102,7 @@
 							</h:commandLink>
 						</div>
                 </div>
-                <div class="featured-text">For new patient must register before login.</div>
+                <div class="featured-text"><br/><br/>For new patient must register before login.</div>
             
             </div>
             
@@ -120,7 +120,7 @@
                     		<h:outputLink value="doctor.jsf">Doctor</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text">Meet the doctor here !!!</div>
+                <div class="featured-text"><br/><br/>Meet the doctor here !!!</div>
             
             </div>
             
@@ -135,10 +135,10 @@
             	<div class="bti">
                     <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
                     	<div class="featured-titles">
-                    		<h:outputLink value="Medicalrecord.jsf">Med Records</h:outputLink>
+                    		<h:outputLink value="Medicalrecord.jsf">Records</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text">View your medical records.</div>
+                <div class="featured-text"><br/><br/>View your medical records.</div>
             
             </div>
             
@@ -153,10 +153,10 @@
                 <div class="bti">
                     <div class="featured-images"><img src="images/google-icon.png" width="54" height="53" alt="Responsive"></div>
                     <div class="featured-titles">
-                    		<h:outputLink value="Pharmarcy.jsf">Pharmarcy</h:outputLink>
+                    		<h:outputLink value="Pharmarcy.jsf">Pharmacy</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text">After you finish meeting the doctor , please go to the Pharmarcy.</div>
+                <div class="featured-text"><br/><br/>After you finish meeting the doctor , please go to the Pharmarcy.</div>
             
             </div>
             
