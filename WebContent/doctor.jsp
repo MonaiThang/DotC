@@ -108,7 +108,7 @@ $(document).ready(function(){
 					<f:facet name="footer">
 						<h:panelGroup>
 							<h:commandButton value="#{msg.submit}"
-								action="#{registrationBean.insertRecord}"/>
+								action="#{ManageRecordBean.diagRecord}"/>
 							<h:commandButton value="#{msg.reset}" type="reset"/>
 						</h:panelGroup>
 					</f:facet>
