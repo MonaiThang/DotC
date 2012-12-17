@@ -30,15 +30,17 @@ public class ManageRecord {
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		Query<Record> q = ds.find(Record.class);
-		q.and(
-				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
-				q.criteria("RecordID").equal(this.record.getRecordID())
-		);
+//		Query<Record> q = ds.find(Record.class);
+//		q.and(
+//				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
+//				q.criteria("RecordID").equal(this.record.getRecordID())
+//		);
+		Query<Record> q = ds.createQuery(Record.class).field("PatientCitizenID").equal(this.record.getPatientCitizenID()).order("-RegisDate").limit(1);
 		UpdateOperations<Record> ops = ds.createUpdateOperations(Record.class).set("Medication", this.record.getMedication()).set("Diagnosis",this.record.getDiagnosis()).set("DiagDate",EditDate).set("timestamp",EditDate);
 		//Save the POJO
 		System.out.println("Saving...");
-		ds.updateFirst(q, ops);
+		//ds.updateFirst(q, ops);
+		ds.findAndModify(q, ops);
 		String toReturn = "failure";
 		return toReturn;
 	}
