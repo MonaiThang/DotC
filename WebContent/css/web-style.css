@@ -134,7 +134,7 @@ hr{
 	border:0px;
 }
 
-.social-google{
+.social-welcome{ /*google*/
 	width:46px;
 	display:block;
 	height:46px;
@@ -143,7 +143,7 @@ hr{
 	background-position: -7px -1px;
 }
 
-.social-google:hover{
+.social-welcome:hover{
 	width:46px;
 	display:block;
 	height:46px;
@@ -152,7 +152,7 @@ hr{
 	background-position: -7px -47px;
 }
 
-.social-facebook{
+.social-record{ /*facebook*/
 	width:46px;
 	display:block;
 	height:46px;
@@ -161,7 +161,7 @@ hr{
 	background-position: -53px -2px;
 }
 
-.social-facebook:hover{
+.social-record:hover{
 	width:46px;
 	display:block;
 	height:46px;
@@ -170,7 +170,7 @@ hr{
 	background-position: -53px -48px;
 }
 
-.social-twitter{
+.social-doctor{ /*twitter*/
 	width:46px;
 	display:block;
 	height:46px;
@@ -179,7 +179,7 @@ hr{
 	background-position: -102px -2px;
 }
 
-.social-twitter:hover{
+.social-doctor:hover{
 	width:46px;
 	display:block;
 	height:46px;
@@ -188,7 +188,7 @@ hr{
 	background-position: -102px -48px;
 }
 
-.social-linkedin{
+.social-pharmacy{ /*linkedin*/
 	width:46px;
 	display:block;
 	height:46px;
@@ -197,7 +197,7 @@ hr{
 	background-position: -147px -2px;
 }
 
-.social-linkedin:hover{
+.social-pharmacy:hover{
 	width:46px;
 	display:block;
 	height:46px;
@@ -206,7 +206,7 @@ hr{
 	background-position: -147px -48px;
 }
 
-.social-forrst{
+.social-search{ /*forrst*/
 	width:46px;
 	display:block;
 	height:46px;
@@ -215,7 +215,7 @@ hr{
 	background-position: -194px -2px;
 }
 
-.social-forrst:hover{
+.social-search:hover{
 	width:46px;
 	display:block;
 	height:46px;
@@ -224,7 +224,7 @@ hr{
 	background-position: -194px -48px;
 }
 
-.social-dribbble{
+.social-register{
 	width:46px;
 	display:block;
 	height:46px;
@@ -233,7 +233,7 @@ hr{
 	background-position: -242px -2px;
 }
 
-.social-dribbble:hover{
+.social-register:hover{ /*dribbble*/
 	width:46px;
 	display:block;
 	height:46px;

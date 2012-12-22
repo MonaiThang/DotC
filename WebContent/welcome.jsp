@@ -95,7 +95,7 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
-                	<div class="featured-images"><img src="images/responsive-icon.png" width="72" height="53" alt="Responsive"></div>
+                	<div class="featured-images"><img src="images/register.png" width="48" height="48" alt="Responsive"></div>
                 	    <div class="featured-titles">
 	                	    <h:commandLink  action="register" id="register">
 								<h:outputText value="#{msg.register}"/>
@@ -115,7 +115,7 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
-                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    <div class="featured-images"><img src="images/record.png" width="48" height="48" alt="Responsive"></div>
                     	<div class="featured-titles">
                     		<h:outputLink value="record.jsf">Records</h:outputLink>
                 		</div>
@@ -152,7 +152,7 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
-                    <div class="featured-images"><img src="images/rx.png" width="66" height="53" alt="Responsive"></div>
+                    <div class="featured-images"><img src="images/rx.png" width="48" height="48" alt="Responsive"></div>
                     	<div class="featured-titles">
                     		<h:outputLink value="Pharmarcy.jsf">Pharmacy</h:outputLink>
                 		</div>
@@ -170,7 +170,7 @@
         	<div class="boxes-padding">
             	
                 <div class="bti">
-                    <div class="featured-images"><img src="images/google-icon.png" width="54" height="53" alt="Responsive"></div>
+                    <div class="featured-images"><img src="images/search.png" width="48" height="48" alt="Responsive"></div>
                     <div class="featured-titles">
                     		<h:outputLink value="Medicalrecord.jsf">Search</h:outputLink>
                 		</div>

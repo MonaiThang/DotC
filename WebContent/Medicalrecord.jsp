@@ -80,11 +80,11 @@
         	<div class="social">
             	
                 <ul>
-                <li><a href="localhost:8080/DotC/welcome.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/register.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/record.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/doctor.jsf" class="social-facebook"></a></li>
-                <li><a href="localhost:8080/DotC/Pharmarcy.jsf" class="social-twitter"></a></li>
+                <li><a href="localhost:8080/DotC/welcome.jsf" class="social-welcome"></a></li>
+                <li><a href="localhost:8080/DotC/register.jsf" class="social-register"></a></li>
+                <li><a href="localhost:8080/DotC/record.jsf" class="social-record"></a></li>
+                <li><a href="localhost:8080/DotC/doctor.jsf" class="social-doctor"></a></li>
+                <li><a href="localhost:8080/DotC/Pharmarcy.jsf" class="social-pharmacy"></a></li>
                 </ul>
                 
             </div>
@@ -119,8 +119,7 @@
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
         	</h:form>
-       </div>
-</div>
+
         	
         	<h:dataTable value="#{SearchRecordBean.querySet}" var="q">
         	
@@ -149,7 +148,9 @@
         			<h:outputText value="#{q.doctorLastName}"/>
         		</h:column>
         	</h:dataTable>
-        
+ 
+        </div>
+</div>       
         <!-- Start Footer Bottom -->
     <div id="footerbottom">
     
@@ -163,11 +164,11 @@
             <div class="socialfooter">
                 
                 <ul>
-                <li><a href="localhost:8080/DotC/welcome.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/register.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/record.jsf" class="social-google"></a></li>
-                <li><a href="localhost:8080/DotC/doctor.jsf" class="social-facebook"></a></li>
-                <li><a href="localhost:8080/DotC/Pharmarcy.jsf" class="social-twitter"></a></li>
+                <li><a href="localhost:8080/DotC/welcome.jsf" class="social-welcome"></a></li>
+                <li><a href="localhost:8080/DotC/register.jsf" class="social-register"></a></li>
+                <li><a href="localhost:8080/DotC/record.jsf" class="social-record"></a></li>
+                <li><a href="localhost:8080/DotC/doctor.jsf" class="social-doctor"></a></li>
+                <li><a href="localhost:8080/DotC/Pharmarcy.jsf" class="social-pharmacy"></a></li>
                 </ul>
                 
             </div>
