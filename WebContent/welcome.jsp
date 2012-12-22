@@ -152,12 +152,12 @@
         	<div class="boxes-padding">
             
             	<div class="bti">
-                    <div class="featured-images"><img src="images/cleansleek-icon.png" width="66" height="53" alt="Responsive"></div>
+                    <div class="featured-images"><img src="images/rx.png" width="66" height="53" alt="Responsive"></div>
                     	<div class="featured-titles">
-                    		<h:outputLink value="Medicalrecord.jsf">Search</h:outputLink>
+                    		<h:outputLink value="Pharmarcy.jsf">Pharmacy</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text"><br/><br/>Search your medical records.</div>
+                <div class="featured-text"><br/><br/>View your prescription.</div>
             
             </div>
             
@@ -172,10 +172,10 @@
                 <div class="bti">
                     <div class="featured-images"><img src="images/google-icon.png" width="54" height="53" alt="Responsive"></div>
                     <div class="featured-titles">
-                    		<h:outputLink value="Pharmarcy.jsf">Pharmacy</h:outputLink>
+                    		<h:outputLink value="Medicalrecord.jsf">Search</h:outputLink>
                 		</div>
                 </div>
-                <div class="featured-text"><br/><br/>After you finish meeting the doctor , please go to the Pharmarcy.</div>
+                <div class="featured-text"><br/><br/>Search your medical record.</div>
             
             </div>
             
