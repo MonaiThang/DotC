@@ -178,7 +178,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr.Monai Thangsupanich<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project01.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/1.jpg" rel="prettyPhoto" title="Dr.Monai Thangsupanich"><img src="images/latest-projects/1.jpg" alt="DR.Monai Thangsupanich" /></a></div>
                                 <div class="text">Master of Health Care!!!<span class="textarrow"></span></div>
                             
                             </div>
@@ -190,7 +190,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Pisacha Srinuan<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project02.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/2.jpg" rel="prettyPhoto" title="DR.Pisacha Srinuan"><img src="images/latest-projects/2.jpg" alt="DR.Pisacha Srinuan" /></a></div>
                                 <div class="text">Master of Gundam!!!<span class="textarrow"></span></div>
                             
                             </div>
@@ -202,7 +202,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Chavit Denninnart<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project03.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/3.jpg" rel="prettyPhoto" title="DR.Chavit Denninnart"><img src="images/latest-projects/3.jpg" alt="DR.Chavit Denninnart" /></a></div>
                                 <div class="text">Master of Badminton!!!<span class="textarrow"></span></div>
                             
                             </div>
@@ -214,7 +214,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project01.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/4.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/4.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
                             
                             </div>
@@ -226,55 +226,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project02.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
-                            
-                            </div>
-                        
-                        </div>
-
-                        <div class="element3 web">
-                        
-                        	<div class="portfoliowrap">
-                                                
-                                <div class="title">Themeforest<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project03.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
-                            
-                            </div>
-                        
-                        </div>
-
-                        <div class="element3 graphic web">
-                        
-                        	<div class="portfoliowrap">
-                                                
-                                <div class="title">Graphicriver<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project01.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
-                            
-                            </div>
-                        
-                        </div>
-
-                        <div class="element3 Web">
-                        
-                        	<div class="portfoliowrap">
-                                                
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project02.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
-                            
-                            </div>
-                        
-                        </div>
-                        
-                        <div class="element3 web">
-                        
-                        	<div class="portfoliowrap">
-                                                
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project03.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/5.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/5.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
                             
                             </div>
@@ -286,7 +238,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Themeforest<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project01.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/6.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/6.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
                             
                             </div>
@@ -298,7 +250,7 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Graphicriver<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project02.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/7.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/7.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
                             
                             </div>
@@ -310,7 +262,19 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/largeimage.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/project03.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/8.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/8.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                            
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="element3 web">
+                        
+                        	<div class="portfoliowrap">
+                                                
+                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/9.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/9.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
                                 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
                             
                             </div>
