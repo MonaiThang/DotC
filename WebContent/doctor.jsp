@@ -86,7 +86,7 @@ $(document).ready(function(){
             
             <!-- Start Logo area -->
             <div id="logo">
-              <a href="https://hangoutsapi.talkgadget.google.com/hangouts?authuser=0&gid=1073697113757" style="text-decoration:none;">
+              <a href="https://plus.google.com/hangouts/_?gid=1073697113757" style="text-decoration:none;">
 			  <img src="https://ssl.gstatic.com/s2/oz/images/stars/hangout/1/gplus-hangout-60x230-normal.png"
 			    alt="Start a Hangout"
 			    style="border:0;width:230px;height:60px;"/>
