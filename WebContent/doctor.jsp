@@ -177,9 +177,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Dr.Monai Thangsupanich<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/1.jpg" rel="prettyPhoto" title="Dr.Monai Thangsupanich"><img src="images/latest-projects/1.jpg" alt="DR.Monai Thangsupanich" /></a></div>
-                                <div class="text">Master of Health Care!!!<span class="textarrow"></span></div>
+                                <div class="title">Dr.Napat Phetkuea<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/1.jpg" rel="prettyPhoto" title="Dr.Napat Phetkuea"><img src="images/latest-projects/1.jpg" alt="Coronary care unit." /></a></div>
+                                <div class="text">Coronary care unit.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -190,8 +190,8 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Pisacha Srinuan<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/2.jpg" rel="prettyPhoto" title="DR.Pisacha Srinuan"><img src="images/latest-projects/2.jpg" alt="DR.Pisacha Srinuan" /></a></div>
-                                <div class="text">Master of Gundam!!!<span class="textarrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/2.jpg" rel="prettyPhoto" title="DR.Pisacha Srinuan"><img src="images/latest-projects/2.jpg" alt="Operating room." /></a></div>
+                                <div class="text">Operating room.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -202,8 +202,8 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Chavit Denninnart<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/3.jpg" rel="prettyPhoto" title="DR.Chavit Denninnart"><img src="images/latest-projects/3.jpg" alt="DR.Chavit Denninnart" /></a></div>
-                                <div class="text">Master of Badminton!!!<span class="textarrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/3.jpg" rel="prettyPhoto" title="DR.Chavit Denninnart"><img src="images/latest-projects/3.jpg" alt="Psychiatric hospital." /></a></div>
+                                <div class="text">Psychiatric hospital.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -213,9 +213,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/4.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/4.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Kriaivit Techawitayapakorn<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/4.jpg" rel="prettyPhoto" title="DR.Kriaivit Techawitayapakorn"><img src="images/latest-projects/4.jpg" alt="Department of surgery." /></a></div>
+                                <div class="text">Department of surgery.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -225,9 +225,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/5.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/5.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Kitipol Kanda<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/5.jpg" rel="prettyPhoto" title="DR.Kitipol Kanda"><img src="images/latest-projects/5.jpg" alt="Intensive-care unit." /></a></div>
+                                <div class="text">Intensive-care unit.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -237,9 +237,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Themeforest<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/6.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/6.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Prapon Trakietikul<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/6.jpg" rel="prettyPhoto" title="DR.Prapon Trakietikul"><img src="images/latest-projects/6.jpg" alt="Emergency department." /></a></div>
+                                <div class="text">Emergency department.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -249,9 +249,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Graphicriver<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/7.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/7.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Sittichai Seeta<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/7.jpg" rel="prettyPhoto" title="DR.Sittichai Seeta"><img src="images/latest-projects/7.jpg" alt="Coronary care unit." /></a></div>
+                                <div class="text">Coronary care unit.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -261,9 +261,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/8.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/8.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Nuttapol Kietkobchai<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/8.jpg" rel="prettyPhoto" title="DR.Nuttapol Kietkobchai"><img src="images/latest-projects/8.jpg" alt="Physical therapy." /></a></div>
+                                <div class="text">Physical therapy.<span class="textarrow"></span></div>
                             
                             </div>
                         
@@ -273,9 +273,9 @@ $(document).ready(function(){
                         
                         	<div class="portfoliowrap">
                                                 
-                                <div class="title">Tuts Premium<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/9.jpg" rel="prettyPhoto" title="Lorem ipsum dolor sit amet"><img src="images/latest-projects/9.jpg" alt="Lorem ipsum dolor sit amet" /></a></div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non ipsum nunc<span class="textarrow"></span></div>
+                                <div class="title">DR.Supasit Janedittakarn<span class="titlearrow"></span></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/9.jpg" rel="prettyPhoto" title="DR.Supasit Janedittakarn"><img src="images/latest-projects/9.jpg" alt="Urgent care." /></a></div>
+                                <div class="text">Urgent care.<span class="textarrow"></span></div>
                             
                             </div>
                         
