@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
@@ -8,7 +7,6 @@
 <%try{%>
 <f:view>  
 <f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
-
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -20,7 +18,7 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
 		<link rel="shortcut icon" href="http://www.derby-web-design-agency.co.uk/themes/response/images/favicon.png" /> 
 		<link rel="bookmark icon" href="http://www.derby-web-design-agency.co.uk/themes/response/images/favicon.png" /> 
-		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<link href="css/web-style.css" rel="stylesheet" type="text/css">
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 		<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
@@ -94,11 +92,62 @@
 <!-- End Socialarea -->
 <div class="titlesnormal">
 	<div id="main">
-        	<h:form id="SearchRecordForm">
-        	<h1>Pharmacy</h1> 
+        	<h:form id="SearchPrescriptionForm">
+        	<h1>SEARCH PHARMACY</h1> 
         		
         		<!-- start coding here -->
+        		<h:panelGroup>
+	        		<h:panelGrid columns="2"  
+					  styleClass="form" 
+					  headerClass="tableHeader"
+					  footerClass="tableFooter"
+					  rowClasses="tableRowOdd, tableRowEven">
+					  
+		        		<h:outputLabel for="PrescriptionID" value="Prescription ID"/>
+	        			<h:inputText id="PrescriptionID" maxlength="32" value="#{SearchPrescriptionBean.prescription.prescriptionID}"/>
+	        			
+		        		<h:outputLabel for="PatientID" value="Patient's Citizen ID"/>
+	        			<h:inputText id="PatientID" maxlength="32" value="#{SearchPrescriptionBean.prescription.patientID}"/>
+	        			
+		        		<h:outputLabel for="PatientFirstname" value="Patient's First Name"/>
+	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{SearchPrescriptionBean.prescription.patientFirstName}"/>
+		        		
+		        		<h:outputLabel for="PatientLastname" value="Patient's Last Name"/>
+	        			<h:inputText id="PatientLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.patientLastName}"/>
+	    	    		
+	    	    		<h:outputLabel for="DoctorID" value="DoctorID"/>
+	        			<h:inputText id="DoctorID" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorID}"/>
+	        			
+	    	    		<h:outputLabel for="DoctorFirstname" value="Doctor's First Name"/>
+	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorFirstName}"/>
+	        			
+	        			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
+	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorLastName}"/>
+	        			
+	        			<h:outputLabel for="MedicineID" value="Medicine ID"/>
+	        			<h:inputText id="MedicineID" maxlength="50" value="#{SearchPrescriptionBean.prescription.medicineID}"/>
+	        			
+	        			<h:outputLabel for="MedicineName" value="Medicine Name"/>
+	        			<h:inputText id="MedicineName" maxlength="50" value="#{SearchPrescriptionBean.prescription.medicineName}"/>
+	        			
+	        			<h:outputLabel for="Amount" value="Amount"/>
+	        			<h:inputText id="Amount" maxlength="50" value="#{SearchPrescriptionBean.prescription.amount}"/>
+	        			
+	        			<h:outputLabel for="PrescribeDate" value="Prescribe Date"/>
+	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{SearchPrescriptionBean.prescription.prescribeDate}"/>
+	        			
+	        			<h:outputLabel for="timestamp" value="Timestamp"/>
+	        			<h:inputText id="timestamp" maxlength="50" value="#{SearchPrescriptionBean.prescription.timestamp}"/>
+	        		</h:panelGrid>
+        		</h:panelGroup>
         		
+        		<h:panelGroup>
+	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
+	        		<h:commandButton value="Reset" type="reset"/>
+        		</h:panelGroup>
+        		
+        		
+        	
         		<!-- end of coding -->
         	</h:form>
        </div>
