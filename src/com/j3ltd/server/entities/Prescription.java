@@ -15,6 +15,7 @@ public class Prescription implements Serializable {
 	private String	DoctorID;
 	private String	DoctorFirstName;
 	private String	DoctorLastName;
+	private java.util.Date	PrescribeDate;
 	private java.util.Date	timestamp;
 	
 	public String getPrescriptionID() {
@@ -76,6 +77,12 @@ public class Prescription implements Serializable {
 	}
 	public void setDoctorLastName(String doctorLastName) {
 		DoctorLastName = doctorLastName;
+	}
+	public java.util.Date getPrescribeDate() {
+		return PrescribeDate;
+	}
+	public void setPrescribeDate(java.util.Date prescribeDate) {
+		PrescribeDate = prescribeDate;
 	}
 	public java.util.Date getTimestamp() {
 		return timestamp;
