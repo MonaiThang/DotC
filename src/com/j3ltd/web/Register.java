@@ -55,12 +55,13 @@ public class Register {
 				person.setLocaleCountry(locale.getCountry());
 				person.setLocaleLanguage(locale.getLanguage());
 				
-				Context context = new InitialContext();
-				EntityFacade entities = (EntityFacade) context.lookup("EntityFacadeBean/remote");
-				person = entities.createPerson(person);
+				//Context context = new InitialContext();
+				//EntityFacade entities = (EntityFacade) context.lookup("EntityFacadeBean/remote");
+				//person = entities.createPerson(person);
 				toReturn = "success";
 			} 
-			catch (PersonEntityExistsException exist) {
+			//catch (PersonEntityExistsException exist) {
+				catch (Exception exist) {
 				MessageFactory msg = new MessageFactory();
 				FacesContext ctx = FacesContext.getCurrentInstance();
 				

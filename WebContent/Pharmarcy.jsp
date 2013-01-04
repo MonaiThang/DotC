@@ -124,23 +124,25 @@
 	        			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
 	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorLastName}"/>
 	        			
-	        			<h:outputLabel for="MedicineID" value="Medicine ID"/>
-	        			<h:inputText id="MedicineID" maxlength="50" value="#{SearchPrescriptionBean.prescription.medicineID}"/>
-	        			
-	        			<h:outputLabel for="MedicineName" value="Medicine Name"/>
-	        			<h:inputText id="MedicineName" maxlength="50" value="#{SearchPrescriptionBean.prescription.medicineName}"/>
-	        			
-	        			<h:outputLabel for="Amount" value="Amount"/>
-	        			<h:inputText id="Amount" maxlength="50" value="#{SearchPrescriptionBean.prescription.amount}"/>
-	        			
 	        			<h:outputLabel for="PrescribeDate" value="Prescribe Date"/>
 	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{SearchPrescriptionBean.prescription.prescribeDate}"/>
 	        			
 	        			<h:outputLabel for="timestamp" value="Timestamp"/>
 	        			<h:inputText id="timestamp" maxlength="50" value="#{SearchPrescriptionBean.prescription.timestamp}"/>
+	        		
+	        			<fieldset>
+				          <legend>Prescription Status</legend>
+				          <p>
+				             <label>Status : </label>
+				             <select id = "status">
+				               <option value = "yes">Yes</option>
+				               <option value = "no">No</option>
+				             </select>
+				          </p>
+				       </fieldset>
 	        		</h:panelGrid>
         		</h:panelGroup>
-        		
+        		<br/>
         		<h:panelGroup>
 	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
 	        		<h:commandButton value="Reset" type="reset"/>
