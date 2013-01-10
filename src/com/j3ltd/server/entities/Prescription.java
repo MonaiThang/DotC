@@ -2,6 +2,7 @@ package com.j3ltd.server.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Prescription implements Serializable {
@@ -10,7 +11,7 @@ public class Prescription implements Serializable {
 	private String			PatientID;
 	private String			PatientFirstName;
 	private String			PatientLastName;
-	private MedicineList	MedicineList;
+	private List<Medicine>	MedicineList;
 	private String			DoctorID;
 	private String			DoctorFirstName;
 	private String			DoctorLastName;
@@ -44,10 +45,10 @@ public class Prescription implements Serializable {
 	public void setPatientLastName(String patientLastName) {
 		PatientLastName = patientLastName;
 	}
-	public MedicineList getMedicineList() {
+	public List<Medicine> getMedicineList() {
 		return MedicineList;
 	}
-	public void setMedicineList(MedicineList medicineList) {
+	public void setMedicineList(List<Medicine> medicineList) {
 		MedicineList = medicineList;
 	}
 	public String getDoctorID() {

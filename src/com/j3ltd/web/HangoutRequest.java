@@ -15,19 +15,16 @@ import com.github.jmkgreen.morphia.Datastore;
 import com.github.jmkgreen.morphia.Morphia;
 import com.github.jmkgreen.morphia.query.Query;
 import com.j3ltd.server.entities.Medicine;
-import com.j3ltd.server.entities.MedicineList;
 import com.j3ltd.server.entities.Person;
 import com.j3ltd.server.entities.Prescription;
 import com.mongodb.Mongo;
 
 public class HangoutRequest extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	MedicineList RxList;
 	List<Medicine> tempRxList;
 	Medicine Rx;
 	Prescription prescription;
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException,UnknownHostException{
-		RxList = new MedicineList();
 		tempRxList = new ArrayList<Medicine>();
 		prescription = new Prescription();
 		prescription.setPatientID(request.getParameter("PatientID").toString());
@@ -37,19 +34,18 @@ public class HangoutRequest extends HttpServlet{
 		int i = 1;
 		for(String rawRx : rawRxList){
 			Rx = new Medicine();
-			Rx.setRawString(rawRx.trim());
 			String[] RxAttribute = rawRx.split(",");
+			Rx.setId(String.valueOf(i));
 			Rx.setType(RxAttribute[0].trim());
 			Rx.setName(RxAttribute[1].trim());
 			Rx.setDose(RxAttribute[2].trim());
 			Rx.setAmount(Integer.parseInt(RxAttribute[3].trim()));
 			Rx.setUsageDirection(RxAttribute[4].trim());
-			Rx.setId(String.valueOf(i));
+			Rx.setRawString(notePrescription(Rx));
 			tempRxList.add(Rx);
 			i++;
 		}
-		RxList.setMedicineList(tempRxList);
-		prescription.setMedicineList(RxList);
+		prescription.setMedicineList(tempRxList);
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");
 		Mongo mongo = new Mongo("localhost",27017);
@@ -70,6 +66,9 @@ public class HangoutRequest extends HttpServlet{
 		System.out.println("Sent POST request to backBean");
 		insertPrescription();
 		System.out.println("Finish inserting to MongoDB");
+	}
+	public String notePrescription(Medicine rx){
+		return rx.getName()+" "+rx.getType()+" "+String.valueOf(rx.getAmount())+"x"+rx.getDose()+" : "+rx.getUsageDirection();
 	}
 	public String insertPrescription() throws UnknownHostException{
 		String toReturn = "failure";
