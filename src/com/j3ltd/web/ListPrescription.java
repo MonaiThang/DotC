@@ -19,7 +19,7 @@ public class ListPrescription {
 	public void setPrescription(Prescription prescription) {
 		this.prescription = prescription;
 	}
-	
+
 	public List<Prescription> getQuerySet() {
 		return querySet;
 	}
@@ -38,11 +38,11 @@ public class ListPrescription {
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-//		Query<Record> q = ds.find(Record.class);
-//		q.and(
-//				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
-//				q.criteria("RecordID").equal(this.record.getRecordID())
-//		);
+		//		Query<Record> q = ds.find(Record.class);
+		//		q.and(
+		//				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
+		//				q.criteria("RecordID").equal(this.record.getRecordID())
+		//		);
 		Query<Prescription> q = ds.createQuery(Prescription.class);
 		querySet = q.asList();
 		System.out.println("Query Result:");

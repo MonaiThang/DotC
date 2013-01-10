@@ -26,13 +26,11 @@ public class Register {
 
 	public Person getPerson() {	return person;	}
 	public void setPerson(Person person) {	this.person = person;	}
-	
+
 	public Record getRecord() {	return record;	}
 	public void setRecord(Record record) {	this.record = record;	}
-	
+
 	public String register() throws Exception {
-		//ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
-		//Map<String, String[]> paramValues = ec.getRequestParameterValuesMap();
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");
 		Mongo mongo = new Mongo("localhost",27017);
@@ -45,26 +43,26 @@ public class Register {
 		//Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.person);
-		
+
 		String toReturn = "failure";
-		   
+
 		if (validateData()) {
 			try {
 				// save locale information, in case the user chose a language on the welcome page
 				Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
 				person.setLocaleCountry(locale.getCountry());
 				person.setLocaleLanguage(locale.getLanguage());
-				
+
 				//Context context = new InitialContext();
 				//EntityFacade entities = (EntityFacade) context.lookup("EntityFacadeBean/remote");
 				//person = entities.createPerson(person);
 				toReturn = "success";
 			} 
 			//catch (PersonEntityExistsException exist) {
-				catch (Exception exist) {
+			catch (Exception exist) {
 				MessageFactory msg = new MessageFactory();
 				FacesContext ctx = FacesContext.getCurrentInstance();
-				
+
 				ctx.addMessage("registerForm:email", 
 						new FacesMessage(FacesMessage.SEVERITY_ERROR, 
 								msg.getMessage("errorEmailExists"), null));
@@ -72,7 +70,7 @@ public class Register {
 		}
 		return toReturn;
 	}
-	
+
 	public String insertRecord() throws Exception{
 		Date RegisDate = new Date();
 		//Prepare Morphia Framework
@@ -91,17 +89,17 @@ public class Register {
 		//Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.record);
-		
+
 		String toReturn = "failure";
-		
+
 		return toReturn;
 	}
-	
+
 	private boolean validateData() {
 		boolean toReturn = true;
 		MessageFactory msg = new MessageFactory();
 		FacesContext ctx = FacesContext.getCurrentInstance();
-		
+
 		// check emailConfirm is same as email
 		if (!emailConfirm.equals(person.getEmail())) {
 			ctx.addMessage("registerForm:emailConfirm", 
@@ -118,7 +116,7 @@ public class Register {
 		}
 		return toReturn;
 	}
-	
+
 	public String getEmailConfirm() {
 		return emailConfirm;
 	}

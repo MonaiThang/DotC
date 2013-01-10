@@ -13,7 +13,5 @@ public class EntityManager {
 
 	public void persist(Person toCreate) {
 		// TODO Auto-generated method stub
-		
 	}
-
 }

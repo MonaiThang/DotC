@@ -6,27 +6,32 @@ import java.io.Serializable;
 public class Medicine implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String	id;
+	private String	type;
 	private String	name;
-	private String	unit;
 	private String	dose;
-	private int		amount;
+	private int	amount;
+	private String	usageDirection;
+	private String	rawString;
+
+	@Id
+	@GeneratedValue
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getUnit() {
-		return unit;
-	}
-	public void setUnit(String unit) {
-		this.unit = unit;
 	}
 	public String getDose() {
 		return dose;
@@ -39,5 +44,17 @@ public class Medicine implements Serializable {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	public String getUsageDirection() {
+		return usageDirection;
+	}
+	public void setUsageDirection(String usageDirection) {
+		this.usageDirection = usageDirection;
+	}
+	public String getRawString() {
+		return rawString;
+	}
+	public void setRawString(String rawString) {
+		this.rawString = rawString;
 	}
 }

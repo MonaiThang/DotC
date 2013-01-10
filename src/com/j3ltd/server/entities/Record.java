@@ -7,15 +7,15 @@ import java.util.Date;
 public class Record implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String RecordID;
-	
+
 	private String PatientCitizenID;
 	private String PatientFirstName;
 	private String PatientLastName;
-	
+
 	private String DoctorID;
 	private String DoctorFirstName;
 	private String DoctorLastName;
-  
+
 	private int systolic;
 	private int diastolic;
 	private Double temp;
@@ -30,13 +30,13 @@ public class Record implements Serializable {
 	private String disease;
 	private String Medication;
 	private String Diagnosis;
-	
+
 	private String	PrescriptionID;
-	
+
 	private java.util.Date timestamp;
 	private java.util.Date RegisDate;
 	private java.util.Date DiagDate;
-	
+
 	@Id
 	@GeneratedValue
 	public String getRecordID() {	return RecordID;	}
@@ -49,7 +49,7 @@ public class Record implements Serializable {
 	public String getPatientLastName() {	return PatientLastName;	}
 	public void setPatientLastName(String PatientLastName) {	this.PatientLastName = PatientLastName;	}
 
-	
+
 	public String getDoctorID() {	return DoctorID;	}
 	public void setDoctorID(String doctorID) {	DoctorID = doctorID;	}
 	public String getDoctorFirstName() {	return DoctorFirstName;	}
@@ -95,7 +95,7 @@ public class Record implements Serializable {
 
 	public String getPrescriptionID() {	return PrescriptionID;	}
 	public void setPrescriptionID(String prescriptionID) {	PrescriptionID = prescriptionID;	}
-	
+
 	public java.util.Date getTimestamp() {	return timestamp;	}
 	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}
 	public String getMedication() {
@@ -122,5 +122,5 @@ public class Record implements Serializable {
 	public void setDiagDate(java.util.Date diagDate) {
 		DiagDate = diagDate;
 	}
-	
+
 }

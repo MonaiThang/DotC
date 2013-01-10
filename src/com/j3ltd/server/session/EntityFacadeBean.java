@@ -1,10 +1,12 @@
 package com.j3ltd.server.session;
 
-import com.j3ltd.server.entities.*;
-import com.j3ltd.server.exceptions.*;
+import javax.persistence.PersistenceContext;
 
-import javax.persistence.*;
-import com.j3ltd.server.sessionremote.*;
+import com.j3ltd.server.entities.Person;
+import com.j3ltd.server.exceptions.PersonEmailException;
+import com.j3ltd.server.exceptions.PersonEntityExistsException;
+import com.j3ltd.server.exceptions.PersonPasswordException;
+import com.j3ltd.server.sessionremote.EntityFacade;
 
 @Stateless
 public class EntityFacadeBean implements EntityFacade {
@@ -19,9 +21,7 @@ public class EntityFacadeBean implements EntityFacade {
 	 *  @throws PersonPasswordException if password is < 6 characters long
 	 *  @throws PersonEmailException if email is blank or null
 	 */
-	public Person createPerson(Person toCreate) 
-	  throws PersonEntityExistsException,  PersonPasswordException,
-	         PersonEmailException {	
+	public Person createPerson(Person toCreate) throws PersonEntityExistsException,PersonPasswordException,PersonEmailException {	
 		String email = toCreate.getEmail();
 		if (email == null || email.trim().length() == 0) {
 			throw new PersonEmailException("Length is zero");

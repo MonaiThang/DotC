@@ -13,7 +13,7 @@ public class SearchRecord {
 	private List<Record> querySet;
 	public Record getRecord() {	return record;	}
 	public void setRecord(Record record) {	this.record = record;	}
-	
+
 	public String search() throws Exception{
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");
@@ -28,11 +28,11 @@ public class SearchRecord {
 		Query<Record> q = ds.createQuery(Record.class);
 		//Create criteria
 		q.or(
-				q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
-				q.criteria("PatientFirstName").equal(this.record.getPatientFirstName()),
-				q.criteria("PatientLastName").equal(this.record.getPatientLastName()),
-				q.criteria("DoctorFirstName").equal(this.record.getDoctorFirstName()),
-				q.criteria("DoctorLastName").equal(this.record.getDoctorLastName())
+			q.criteria("PatientCitizenID").equal(this.record.getPatientCitizenID()),
+			q.criteria("PatientFirstName").equal(this.record.getPatientFirstName()),
+			q.criteria("PatientLastName").equal(this.record.getPatientLastName()),
+			q.criteria("DoctorFirstName").equal(this.record.getDoctorFirstName()),
+			q.criteria("DoctorLastName").equal(this.record.getDoctorLastName())
 		);
 		querySet = q.asList();
 		System.out.println("Query Result:");
@@ -47,6 +47,6 @@ public class SearchRecord {
 	public void setQuerySet(List<Record> querySet) {
 		this.querySet = querySet;
 	}
-	
-	
+
+
 }

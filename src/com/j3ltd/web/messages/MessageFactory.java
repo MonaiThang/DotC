@@ -1,18 +1,20 @@
 package com.j3ltd.web.messages;
 
-import java.util.*;
-import javax.faces.context.*;
-import java.text.*;
+import java.text.MessageFormat;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+import javax.faces.context.FacesContext;
 
 public class MessageFactory {
 	ResourceBundle bundle;
 	Locale locale;
-	
+
 	public MessageFactory() {
 		locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
-    	bundle = ResourceBundle.getBundle("com.j3ltd.web.messages.ApplicationMessages", locale);
+		bundle = ResourceBundle.getBundle("com.j3ltd.web.messages.ApplicationMessages", locale);
 	}
-	
+
 	public String getMessage(String key) {
 		return bundle.getString(key);
 	}

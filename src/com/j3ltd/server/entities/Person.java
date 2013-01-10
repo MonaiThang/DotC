@@ -1,6 +1,7 @@
 package com.j3ltd.server.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class Person implements Serializable 
@@ -13,9 +14,9 @@ public class Person implements Serializable
 	private String 	age;
 	private String 	gender;
 	private String 	maritalStatus;
-	private java.util.Date 	dateOfBirth;
-	private java.util.Date 	iddateissued;
-	private java.util.Date 	iddateexpired;
+	private Date 	dateOfBirth;
+	private Date 	iddateissued;
+	private Date 	iddateexpired;
 
 	private Address	actualaddress;
 	private Address	currentaddress;
@@ -39,10 +40,10 @@ public class Person implements Serializable
 	public void setId(String id) {
 		this.id = id;
 	}  
-	public java.util.Date getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(java.util.Date dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public String getFirstName() {
@@ -117,16 +118,16 @@ public class Person implements Serializable
 	public void setReligion(String religion) {
 		this.religion = religion;
 	}
-	public java.util.Date getIddateissued() {
+	public Date getIddateissued() {
 		return iddateissued;
 	}
-	public void setIddateissued(java.util.Date iddateissued) {
+	public void setIddateissued(Date iddateissued) {
 		this.iddateissued = iddateissued;
 	}
-	public java.util.Date getIddateexpired() {
+	public Date getIddateexpired() {
 		return iddateexpired;
 	}
-	public void setIddateexpired(java.util.Date iddateexpired) {
+	public void setIddateexpired(Date iddateexpired) {
 		this.iddateexpired = iddateexpired;
 	}
 	public Address getActualaddress() {

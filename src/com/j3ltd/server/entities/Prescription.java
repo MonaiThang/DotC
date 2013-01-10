@@ -1,23 +1,25 @@
 package com.j3ltd.server.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 public class Prescription implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String	PrescriptionID;
-	private String	PatientID;
-	private String	PatientFirstName;
-	private String	PatientLastName;
-	private	String	MedicineID;
-	private String	MedicineName;
-	private int		Amount;
-	private String	DoctorID;
-	private String	DoctorFirstName;
-	private String	DoctorLastName;
-	private java.util.Date	PrescribeDate;
-	private java.util.Date	timestamp;
-	
+	private String			PrescriptionID;
+	private String			PatientID;
+	private String			PatientFirstName;
+	private String			PatientLastName;
+	private MedicineList	MedicineList;
+	private String			DoctorID;
+	private String			DoctorFirstName;
+	private String			DoctorLastName;
+	private String			Status;
+	private Date			PrescribeDate;
+	private Date			timestamp;
+
+	@Id
+	@GeneratedValue
 	public String getPrescriptionID() {
 		return PrescriptionID;
 	}
@@ -42,23 +44,11 @@ public class Prescription implements Serializable {
 	public void setPatientLastName(String patientLastName) {
 		PatientLastName = patientLastName;
 	}
-	public String getMedicineID() {
-		return MedicineID;
+	public MedicineList getMedicineList() {
+		return MedicineList;
 	}
-	public void setMedicineID(String medicineID) {
-		MedicineID = medicineID;
-	}
-	public String getMedicineName() {
-		return MedicineName;
-	}
-	public void setMedicineName(String medicineName) {
-		MedicineName = medicineName;
-	}
-	public int getAmount() {
-		return Amount;
-	}
-	public void setAmount(int amount) {
-		Amount = amount;
+	public void setMedicineList(MedicineList medicineList) {
+		MedicineList = medicineList;
 	}
 	public String getDoctorID() {
 		return DoctorID;
@@ -78,16 +68,22 @@ public class Prescription implements Serializable {
 	public void setDoctorLastName(String doctorLastName) {
 		DoctorLastName = doctorLastName;
 	}
-	public java.util.Date getPrescribeDate() {
+	public String getStatus() {
+		return Status;
+	}
+	public void setStatus(String status) {
+		Status = status;
+	}
+	public Date getPrescribeDate() {
 		return PrescribeDate;
 	}
-	public void setPrescribeDate(java.util.Date prescribeDate) {
+	public void setPrescribeDate(Date prescribeDate) {
 		PrescribeDate = prescribeDate;
 	}
-	public java.util.Date getTimestamp() {
+	public Date getTimestamp() {
 		return timestamp;
 	}
-	public void setTimestamp(java.util.Date timestamp) {
+	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
 	}
 }
