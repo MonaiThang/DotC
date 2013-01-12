@@ -76,7 +76,8 @@
     <!-- Start H1 Title -->
     <div class="titles">
     <div class="featured-titles">
-    	<div class="pageTitle"><h:outputText value="#{msg.welcome}"/></div>
+    	<div class="pageTitle"><h:outputText value="#{msg.dotc}"/></div>
+    	<div class="pageTitle"><h:outputText value="#{msg.doctoronthecloud}"/></div>
     	<div class="featured-text">A low-cost simple telehealth solution for rural areas.</div>
          <f:facet name="header">
 			<h:outputText value="#{msg.welcomeBoxTitle}"/>
