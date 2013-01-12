@@ -4,9 +4,16 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+import org.bson.types.ObjectId;
+
+import com.github.jmkgreen.morphia.annotations.Entity;
+import com.github.jmkgreen.morphia.annotations.Id;
+
+@Entity("Prescription")
 public class Prescription implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	private ObjectId		id;
 	private String			PrescriptionID;
 	private String			PatientID;
 	private String			PatientFirstName;
@@ -19,8 +26,6 @@ public class Prescription implements Serializable {
 	private Date			PrescribeDate;
 	private Date			timestamp;
 
-	@Id
-	@GeneratedValue
 	public String getPrescriptionID() {
 		return PrescriptionID;
 	}

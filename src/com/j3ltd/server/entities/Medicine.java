@@ -2,19 +2,21 @@ package com.j3ltd.server.entities;
 
 import java.io.Serializable;
 
-@Entity
+import com.github.jmkgreen.morphia.annotations.Entity;
+import com.github.jmkgreen.morphia.annotations.Id;
+
+@Entity("Medicine")
 public class Medicine implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
 	private String	id;
 	private String	type;
 	private String	name;
 	private String	dose;
-	private int	amount;
+	private int		amount;
 	private String	usageDirection;
 	private String	rawString;
 
-	@Id
-	@GeneratedValue
 	public String getId() {
 		return id;
 	}

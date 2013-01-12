@@ -238,24 +238,6 @@
 						<h:outputText value="" />
 						<h:message for="doctorid" styleClass="formUserError"/>
 					</h:panelGroup>
-					
-					<h:outputLabel for="doctorfirstname" value="#{msg.registrationDoctorfirstname}"/>
-					<h:panelGroup>
-						<h:inputText id="doctorfirstname" value="#{registrationBean.record.doctorFirstName}"
-							maxlength="45" size="12" />
-						<f:verbatim><br/></f:verbatim>
-						<h:outputText value="" />
-						<h:message for="doctorfirstname" styleClass="formUserError"/>
-					</h:panelGroup>
-					
-					<h:outputLabel for="doctorlastname" value="#{msg.registrationDoctorlastname}"/>
-					<h:panelGroup>
-						<h:inputText id="doctorlastname" value="#{registrationBean.record.doctorLastName}"
-							maxlength="45" size="12" />
-						<f:verbatim><br/></f:verbatim>
-						<h:outputText value="" />
-						<h:message for="doctorlastname" styleClass="formUserError"/>
-					</h:panelGroup>
 				</h:panelGrid>
 			</div>
 		</h:form>

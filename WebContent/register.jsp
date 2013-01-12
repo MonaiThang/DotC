@@ -121,9 +121,9 @@
 		  <h1>Personal Information.</h1>
 		  <h:outputLabel value=" "/>
 	
-		  <h:outputLabel for="citizenID" value="#{msg.registrationID}"/>
+		  <h:outputLabel for="citizenID" value="#{msg.registrationCitizenID}"/>
 		  <h:panelGroup>
-		  <h:inputText id="citizenID" value="#{registrationBean.person.id}"
+		  <h:inputText id="citizenID" value="#{registrationBean.person.citizenid}"
 		    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="citizenID" styleClass="formUserError"/>
 		  </h:panelGroup>

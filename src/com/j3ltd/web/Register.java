@@ -5,15 +5,12 @@ import java.util.Locale;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 
 import com.github.jmkgreen.morphia.Datastore;
 import com.github.jmkgreen.morphia.Morphia;
+import com.github.jmkgreen.morphia.query.Query;
 import com.j3ltd.server.entities.Person;
 import com.j3ltd.server.entities.Record;
-import com.j3ltd.server.exceptions.PersonEntityExistsException;
-import com.j3ltd.server.sessionremote.EntityFacade;
 import com.j3ltd.web.messages.MessageFactory;
 import com.mongodb.Mongo;
 
@@ -82,6 +79,14 @@ public class Register {
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
+		Query<Person> qp = ds.createQuery(Person.class).field("citizenid").equal(this.record.getPatientCitizenID());
+		Person patient = qp.get();
+		this.record.setPatientFirstName(patient.getFirstName());
+		this.record.setPatientLastName(patient.getLastName());
+		Query<Person> qd = ds.createQuery(Person.class).field("citizenid").equal(this.record.getDoctorID());
+		Person doctor = qd.get();
+		this.record.setDoctorFirstName(doctor.getFirstName());
+		this.record.setDoctorLastName(doctor.getLastName());
 		System.out.println("Timestamping...");
 		this.record.setRegisDate(RegisDate);
 		this.record.setTimestamp(RegisDate);

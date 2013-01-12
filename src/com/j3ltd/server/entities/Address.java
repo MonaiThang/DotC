@@ -2,11 +2,12 @@ package com.j3ltd.server.entities;
 
 import java.io.Serializable;
 
-@Entity
+import com.github.jmkgreen.morphia.annotations.Embedded;
+
+@Embedded
 public class Address implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
-	private int id;
 	private String line1;
 	private String line2;
 	private String line3;
@@ -14,14 +15,6 @@ public class Address implements Serializable
 	private String postcode;
 	private String country;
 
-	@Id
-	@GeneratedValue
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getLine1() {
 		return line1;
 	}

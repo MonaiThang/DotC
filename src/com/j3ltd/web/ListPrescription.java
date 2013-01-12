@@ -30,13 +30,9 @@ public class ListPrescription {
 
 	public String listPrescription() throws Exception {
 		//Prepare Morphia Framework
-		System.out.println("Setting up MongoDB...");
 		Mongo mongo = new Mongo("localhost",27017);
-		System.out.println("Setting up Morphia...");
 		Morphia morphia = new Morphia();
-		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
-		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		//		Query<Record> q = ds.find(Record.class);
 		//		q.and(

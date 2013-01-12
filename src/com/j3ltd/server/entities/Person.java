@@ -3,11 +3,20 @@ package com.j3ltd.server.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
+import org.bson.types.ObjectId;
+
+import com.github.jmkgreen.morphia.annotations.Embedded;
+import com.github.jmkgreen.morphia.annotations.Entity;
+import com.github.jmkgreen.morphia.annotations.Id;
+
+
+@Entity("Person")
 public class Person implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
-	private String	id;
+	@Id
+	private ObjectId id;
+	private String	citizenid;
 	private String 	password;
 	private String 	firstName;
 	private String 	lastName;
@@ -17,8 +26,9 @@ public class Person implements Serializable
 	private Date 	dateOfBirth;
 	private Date 	iddateissued;
 	private Date 	iddateexpired;
-
+	@Embedded
 	private Address	actualaddress;
+	@Embedded
 	private Address	currentaddress;
 
 	private String	phone;
@@ -28,18 +38,23 @@ public class Person implements Serializable
 	private String	bloodgroup;
 	private String	nationality;
 	private String	religion;
-	private String	localelanguage;
-	private String	localecountry;
+	private String	localeLanguage;
+	private String	localeCountry;
 	private String	email;
 
-	@Id
-	@GeneratedValue
-	public String getId() {
+	
+	public ObjectId getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(ObjectId id) {
 		this.id = id;
-	}  
+	}
+	public String getCitizenid() {
+		return citizenid;
+	}
+	public void setCitizenid(String citizenid) {
+		this.citizenid = citizenid;
+	}
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
@@ -55,7 +70,7 @@ public class Person implements Serializable
 	public String getGender() {
 		return gender;
 	}
-	public void setGenders(String gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getLastName() {
@@ -149,16 +164,16 @@ public class Person implements Serializable
 		this.age = age;
 	}
 	public String getLocaleLanguage() {
-		return localelanguage;
+		return localeLanguage;
 	}
-	public void setLocaleLanguage(String localelanguage) {
-		this.localelanguage = localelanguage;
+	public void setLocaleLanguage(String localeLanguage) {
+		this.localeLanguage = localeLanguage;
 	}
 	public String getLocaleCountry() {
-		return localecountry;
+		return localeCountry;
 	}
-	public void setLocaleCountry(String localecountry) {
-		this.localecountry = localecountry;
+	public void setLocaleCountry(String localeCountry) {
+		this.localeCountry = localeCountry;
 	}
 	public String getEmail() {
 		return email;

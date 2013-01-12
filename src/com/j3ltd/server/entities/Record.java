@@ -3,9 +3,16 @@ package com.j3ltd.server.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
+import org.bson.types.ObjectId;
+
+import com.github.jmkgreen.morphia.annotations.Entity;
+import com.github.jmkgreen.morphia.annotations.Id;
+
+@Entity("Record")
 public class Record implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	private ObjectId id;
 	private String RecordID;
 
 	private String PatientCitizenID;
@@ -37,8 +44,6 @@ public class Record implements Serializable {
 	private java.util.Date RegisDate;
 	private java.util.Date DiagDate;
 
-	@Id
-	@GeneratedValue
 	public String getRecordID() {	return RecordID;	}
 	public void setRecordID(String RecordID) {	this.RecordID = RecordID;	}
 

@@ -55,14 +55,22 @@ public class HangoutRequest extends HttpServlet{
 		morphia.mapPackage("com.j3ltd.server.entities");
 		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		Query<Person> qp = ds.createQuery(Person.class).field("id").equal(prescription.getPatientID());
+		Query<Person> qp = ds.createQuery(Person.class).field("citizenid").equal(prescription.getPatientID());
 		Person patient = qp.get();
 		prescription.setPatientFirstName(patient.getFirstName());
 		prescription.setPatientLastName(patient.getLastName());
-		Query<Person> qd = ds.createQuery(Person.class).field("id").equal(prescription.getDoctorID());
+		Query<Person> qd = ds.createQuery(Person.class).field("citizenid").equal(prescription.getDoctorID());
 		Person doctor = qd.get();
 		prescription.setDoctorFirstName(doctor.getFirstName());
 		prescription.setDoctorLastName(doctor.getLastName());
+		if(ds.createQuery(Prescription.class).countAll()==0)
+			prescription.setPrescriptionID("1");
+		else {
+			Query<Prescription> q = ds.createQuery(Prescription.class).order("-PrescriptionID");
+			Prescription temp = q.get();
+			long l = Long.parseLong(temp.getPrescriptionID())+1;
+			prescription.setPrescriptionID(String.valueOf(l));
+		}
 		System.out.println("Sent POST request to backBean");
 		insertPrescription();
 		System.out.println("Finish inserting to MongoDB");

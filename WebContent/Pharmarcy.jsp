@@ -135,8 +135,8 @@
 				          <p>
 				             <label>Status : </label>
 				             <select id = "status">
-				               <option value = "yes">Yes</option>
-				               <option value = "no">No</option>
+				               <option value = "Pending">Pending</option>
+				               <option value = "Received">Received</option>
 				             </select>
 				          </p>
 				       </fieldset>
