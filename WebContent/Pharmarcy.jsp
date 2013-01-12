@@ -25,6 +25,7 @@
 		<script src="js/twitter.js"></script> 
 		<script src="js/jquery.isotope.min.js"></script>      
 		<script src="js/custom.js"></script>   
+		<script type="text/javascript" src="js/style-table.js"></script>
 		<script>
 		$(document).ready(function(){
 		
@@ -141,15 +142,11 @@
 				          </p>
 				       </fieldset>
 	        		</h:panelGrid>
-        		</h:panelGroup>
-        		<br/>
-        		<h:panelGroup>
+
 	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
-        		
-        		
-        	
+
         		<!-- end of coding -->
         	</h:form>
        </div>

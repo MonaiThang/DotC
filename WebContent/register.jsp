@@ -27,6 +27,7 @@
 		<script src="js/twitter.js"></script> 
 		<script src="js/jquery.isotope.min.js"></script>      
 		<script src="js/custom.js"></script>   
+		<script type="text/javascript" src="js/style-table.js"></script>
 		<script>
 		$(document).ready(function(){
 		
@@ -153,7 +154,7 @@
 		  <h:outputLabel for="age" value="#{msg.registrationAge}"/>
 		  <h:panelGroup>
 		  <h:inputText id="age" value="#{registrationBean.person.age}"
-		    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
+		    maxlength="255" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="age" styleClass="formUserError"/>
 		  </h:panelGroup>
 		   
@@ -178,7 +179,7 @@
 		  <h:outputLabel for="email" value="*#{msg.registrationEmail}"/>
 		  <h:panelGroup>
 		  <h:inputText id="email" value="#{registrationBean.person.email}" 
-		    maxlength="255" size="50" 
+		    maxlength="255" size="30" 
 		    required="true">
 		      <f:validator validatorId="EmailValidator"/>
 		  </h:inputText><f:verbatim><br/></f:verbatim>
@@ -188,7 +189,7 @@
 		  <h:outputLabel for="emailConfirm" value="*#{msg.registrationEmailConfirm}"/>
 		  <h:panelGroup>
 		  <h:inputText id="emailConfirm" value="#{registrationBean.emailConfirm}" 
-		    maxlength="255" size="50" 
+		    maxlength="255" size="30" 
 		    required="true"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="emailConfirm" styleClass="formUserError"/>
 		  </h:panelGroup>
@@ -196,7 +197,7 @@
 		  <h:outputLabel for="password" value="*#{msg.registrationPassword}"/>
 		  <h:panelGroup>
 		  <h:inputSecret id="password" value="#{registrationBean.person.password}" 
-		    maxlength="64" size="20" 
+		    maxlength="64" size="30" 
 		    required="true" redisplay="true">
 		      <f:validateLength minimum="6"/>
 		  </h:inputSecret><f:verbatim><br/></f:verbatim>
@@ -206,7 +207,7 @@
 		  <h:outputLabel for="passwordConfirm" value="*#{msg.registrationPasswordConfirm}"/>
 		  <h:panelGroup>
 		  <h:inputSecret id="passwordConfirm" value="#{registrationBean.passwordConfirm}" 
-		    maxlength="64" size="20" 
+		    maxlength="64" size="30" 
 		    required="true" redisplay="true"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="passwordConfirm" styleClass="formUserError"/>
 		  </h:panelGroup>
@@ -246,14 +247,14 @@
 		    <h:outputLabel for="cpostcode" value="#{msg.registrationPostcode}"/>
 		  <h:panelGroup>
 		  <h:inputText id="cpostcode" value="#{registrationBean.person.currentaddress.postcode}"
-		    maxlength="50" size="20"/><f:verbatim><br/></f:verbatim>
+		    maxlength="50" size="50"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="cpostcode" styleClass="formUserError"/>  
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="ccountry" value="#{msg.registrationCountry}"/>
 		  <h:panelGroup>
 		  <h:inputText id="ccountry" value="#{registrationBean.person.currentaddress.country}"
-		    maxlength="150" size="40"/><f:verbatim><br/></f:verbatim>
+		    maxlength="150" size="50"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="ccountry" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
@@ -288,14 +289,14 @@
 		  <h:outputLabel for="apostcode" value="#{msg.registrationPostcode}"/>
 		  <h:panelGroup>
 		  <h:inputText id="apostcode" value="#{registrationBean.person.actualaddress.postcode}"
-		    maxlength="50" size="20"/><f:verbatim><br/></f:verbatim>
+		    maxlength="50" size="50"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="apostcode" styleClass="formUserError"/>  
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="acountry" value="#{msg.registrationCountry}"/>
 		  <h:panelGroup>
 		  <h:inputText id="acountry" value="#{registrationBean.person.actualaddress.country}"
-		    maxlength="150" size="40"/><f:verbatim><br/></f:verbatim>
+		    maxlength="150" size="50"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="acountry" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
@@ -304,49 +305,49 @@
 		  <h:outputLabel for="phone" value="#{msg.registrationPhone}"/>
 		  <h:panelGroup>
 		  <h:inputText id="phone" value="#{registrationBean.person.phone}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="phone" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="mobile" value="#{msg.registrationMobile}"/>
 		  <h:panelGroup>
 		  <h:inputText id="mobile" value="#{registrationBean.person.mobile}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="mobile" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="emergenncycall" value="#{msg.registrationEmergencyCall}"/>
 		  <h:panelGroup>
 		  <h:inputText id="emergenncycall" value="#{registrationBean.person.emergenncycall}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="emergenncycall" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
 		    <h:outputLabel for="career" value="#{msg.registrationCareer}"/>
 		  <h:panelGroup>
 		  <h:inputText id="career" value="#{registrationBean.person.career}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="career" styleClass="formUserError"/>
 		  </h:panelGroup>
 		    
 		    <h:outputLabel for="bloodgroup" value="#{msg.registrationBloodGroup}"/>
 		  <h:panelGroup>
 		  <h:inputText id="bloodgroup" value="#{registrationBean.person.bloodgroup}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="bloodgroup" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="nationality" value="#{msg.registrationNationality}"/>
 		  <h:panelGroup>
 		  <h:inputText id="nationality" value="#{registrationBean.person.nationality}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="nationality" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
 		  <h:outputLabel for="religion" value="#{msg.registrationReligion}"/>
 		  <h:panelGroup>
 		  <h:inputText id="religion" value="#{registrationBean.person.religion}"
-		    maxlength="45" size="12"/><f:verbatim><br/></f:verbatim>
+		    maxlength="45" size="20"/><f:verbatim><br/></f:verbatim>
 		  <h:outputText value=" "/><h:message for="religion" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  

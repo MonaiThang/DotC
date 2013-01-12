@@ -26,7 +26,8 @@
 		<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
 		<script src="js/twitter.js"></script> 
 		<script src="js/jquery.isotope.min.js"></script>      
-		<script src="js/custom.js"></script>   
+		<script src="js/custom.js"></script>
+		<script type="text/javascript" src="js/style-table.js"></script>
 		<script>
 		$(document).ready(function(){
 		
@@ -120,31 +121,31 @@
         		</h:panelGroup>
         	</h:form>
 
-        	
+			<br/>
         	<h:dataTable value="#{SearchRecordBean.querySet}" var="q">
         	
         		<h:column>
-        			<f:facet name="header">Record ID</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.recordID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header">Patient's Citizen ID</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.patientCitizenID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header">Patient's First Name</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.patientFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header">Patient's Last Name</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.patientLastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header">Doctor's First Name</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.doctorFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header">Doctor's Last Name</f:facet>
+        			<f:facet name="header"></f:facet>
         			<h:outputText value="#{q.doctorLastName}"/>
         		</h:column>
         	</h:dataTable>

@@ -20,7 +20,8 @@
 <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
 <script src="js/twitter.js"></script> 
 <script src="js/jquery.isotope.min.js"></script>      
-<script src="js/custom.js"></script>   
+<script src="js/custom.js"></script>  
+<script type="text/javascript" src="js/style-table.js"></script> 
 <script>
 $(document).ready(function(){
 
@@ -178,7 +179,22 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr.Napat Phetkuea<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/1.jpg" rel="prettyPhoto" title="Dr.Napat Phetkuea"><img src="images/latest-projects/1.jpg" alt="Coronary care unit." /></a></div>
+                                <div class="portfolioimage">
+                                	<a href="images/latest-projects/larger-images/1.jpg" 
+                                		rel="prettyPhoto" 
+                                		title="Dr.Napat Phetkuea">
+                                	
+                                	<img src="images/latest-projects/1.jpg" 
+                                		alt="Coronary care unit.
+                                		     Specialist:xxxxxxx xxxxxxx
+                                		     xxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxxxxxxxxx
+                                		     Working hour:7:00-15:00"
+                               			/>
+                                	</a></div>
                                 <div class="text">Coronary care unit.<span class="textarrow"></span></div>
                             
                             </div>
@@ -190,7 +206,17 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Pisacha Srinuan<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/2.jpg" rel="prettyPhoto" title="DR.Pisacha Srinuan"><img src="images/latest-projects/2.jpg" alt="Operating room." /></a></div>
+                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/2.jpg" rel="prettyPhoto" title="DR.Pisacha Srinuan">
+                                <img src="images/latest-projects/2.jpg" 
+                                alt="Operating room. 				
+                                Specialist:xxxxxxx xxxxxxx
+                                		     xxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxxxxxxxxx
+                                		     Working hour:8:00-20:00" />
+                                </a></div>
                                 <div class="text">Operating room.<span class="textarrow"></span></div>
                             
                             </div>
@@ -202,7 +228,17 @@ $(document).ready(function(){
                         	<div class="portfoliowrap">
                                                 
                                 <div class="title">Dr. Chavit Denninnart<span class="titlearrow"></span></div>
-                                <div class="portfolioimage"><a href="images/latest-projects/larger-images/3.jpg" rel="prettyPhoto" title="DR.Chavit Denninnart"><img src="images/latest-projects/3.jpg" alt="Psychiatric hospital." /></a></div>
+                                <div class="portfolioimage">
+                                <a href="images/latest-projects/larger-images/3.jpg" rel="prettyPhoto" title="DR.Chavit Denninnart">
+                                <img src="images/latest-projects/3.jpg" alt="Psychiatric hospital.
+                                Specialist:xxxxxxx xxxxxxx
+                                		     xxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxx
+                                		     xxxxxxxxxxxxxxxxxxxxxxxxxx
+                                		     Working hour:12:00-22:00" />
+                                </a></div>
                                 <div class="text">Psychiatric hospital.<span class="textarrow"></span></div>
                             
                             </div>

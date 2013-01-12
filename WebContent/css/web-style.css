@@ -6,6 +6,83 @@ body{
 	background-image: url(../images/bg.png);
 	background-repeat: repeat;
 }
+/*table odd*/
+tbody tr.odd td {
+		background:#bcd9e1;
+}
+table, caption, td, tr, th {
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	}
+table {
+	border-collapse:collapse;
+	margin-bottom:15px;
+	width:100%;
+	}
+
+	caption {
+		text-align:left;
+		font-size:15px;
+		padding-bottom:10px;
+		}
+	table td,
+	table th {
+		padding:5px;
+		border:1px solid #fff;
+		border-width:0 1px 1px 0;
+		}
+	thead th {
+		background:#91c5d4;
+		}
+
+		thead th[colspan],
+		thead th[rowspan] {
+			background:#66a9bd;
+			}
+
+	tbody th,
+	tfoot th {
+		text-align:left;
+		background:#91c5d4;
+		}
+thead th[colspan] { background:#66a9bd; }
+	tbody td,
+	tfoot td {
+		text-align:center;
+		background:#d5eaf0;
+		}
+	tfoot th {
+		background:#b0cc7f;
+		}
+
+	tfoot td {
+		background:#d7e1c5;
+		font-weight:bold;
+		}
+table#travel {
+	border-collapse:collapse;
+	margin-bottom:15px;
+	width:100%;
+	}
+
+	table#travel caption {
+		text-align:left;
+		font-size:15px;
+		padding-bottom:10px;
+		}
+
+	table#travel table td,
+	table#travel table th {
+		padding:5px;
+		border:1px solid #fff;
+		border-width:0 1px 1px 0;
+		}
+
+	table#travel thead th {
+		background:#91c5d4;
+		}
+/*end table*/
 
 h1, h2, h3, h4, h5, h6{
 	font-family: 'BebasNeueRegular',Arial, Helvetica, sans-serif;
@@ -536,6 +613,7 @@ hr{
 	float:left;
 	min-height:100px;
 	margin-top:-27px;
+	padding-bottom: 40px;
 }
 
 #main-wrap{
