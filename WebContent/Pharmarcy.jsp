@@ -126,12 +126,16 @@
 	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorLastName}"/>
 	        			
 	        			<h:outputLabel for="PrescribeDate" value="Prescribe Date"/>
-	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{SearchPrescriptionBean.prescription.prescribeDate}"/>
+	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{SearchPrescriptionBean.prescription.prescribeDate}">
+	        				<f:convertDateTime pattern="dd/MM/yyyy"/>
+	        			</h:inputText>
 	        			
 	        			<h:outputLabel for="timestamp" value="Timestamp"/>
-	        			<h:inputText id="timestamp" maxlength="50" value="#{SearchPrescriptionBean.prescription.timestamp}"/>
+	        			<h:inputText id="timestamp" maxlength="50" value="#{SearchPrescriptionBean.prescription.timestamp}">
+	        				<f:convertDateTime pattern="dd/MM/yyyy"/>
+	        			</h:inputText>
 	        		
-	        			<fieldset>
+<!--        			<fieldset>
 				          <legend>Prescription Status</legend>
 				          <p>
 				             <label>Status : </label>
@@ -140,7 +144,14 @@
 				               <option value = "Received">Received</option>
 				             </select>
 				          </p>
-				       </fieldset>
+				       </fieldset>-->
+						<h:outputLabel for="status" value="Prescription Status" />
+						<h:selectOneMenu id="status" value="#{SearchPrescriptionBean.prescription.status}">  
+							<f:selectItem itemValue="Pending" itemLabel="Pending" />
+							<f:selectItem itemValue="Paid" itemLabel="Paid" />
+							<f:selectItem itemValue="Ready" itemLabel="Ready" />
+							<f:selectItem itemValue="Received" itemLabel="Received" />
+						</h:selectOneMenu>
 	        		</h:panelGrid>
 
 	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
@@ -149,6 +160,43 @@
 
         		<!-- end of coding -->
         	</h:form>
+        	
+        	<br/>
+        	<h:dataTable value="#{SearchPrescriptionBean.querySet}" var="q">
+        	
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.prescriptionID}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.patientID}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.patientFirstName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.patientLastName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.rawStringList}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.doctorFirstName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.doctorLastName}"/>
+        		</h:column>
+        		<h:column>
+        			<f:facet name="header"></f:facet>
+        			<h:outputText value="#{q.status}"/>
+        		</h:column>
+        	</h:dataTable>
        </div>
 </div>
 

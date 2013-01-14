@@ -25,7 +25,14 @@ public class Prescription implements Serializable {
 	private String			Status;
 	private Date			PrescribeDate;
 	private Date			timestamp;
+	private String			rawStringList;
 
+	public ObjectId getId() {
+		return id;
+	}
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
 	public String getPrescriptionID() {
 		return PrescriptionID;
 	}
@@ -91,5 +98,11 @@ public class Prescription implements Serializable {
 	}
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
+	}
+	public String getRawStringList() {
+		return rawStringList;
+	}
+	public void setRawStringList(String rawString) {
+		this.rawStringList = rawString;
 	}
 }

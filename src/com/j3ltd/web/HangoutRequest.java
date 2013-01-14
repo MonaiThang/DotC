@@ -24,6 +24,7 @@ public class HangoutRequest extends HttpServlet{
 	List<Medicine> tempRxList;
 	Medicine Rx;
 	Prescription prescription;
+	String temp;
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException,UnknownHostException{
 		tempRxList = new ArrayList<Medicine>();
 		prescription = new Prescription();
@@ -32,6 +33,7 @@ public class HangoutRequest extends HttpServlet{
 		String PostRx = request.getParameter("RxList").toString();
 		String[] rawRxList = PostRx.split(";");
 		int i = 1;
+		temp = "";
 		for(String rawRx : rawRxList){
 			Rx = new Medicine();
 			String[] RxAttribute = rawRx.split(",");
@@ -43,9 +45,14 @@ public class HangoutRequest extends HttpServlet{
 			Rx.setUsageDirection(RxAttribute[4].trim());
 			Rx.setRawString(notePrescription(Rx));
 			tempRxList.add(Rx);
+			if(i==1)
+				temp+=Rx.getRawString();
+			else
+				temp+="\n"+Rx.getRawString();
 			i++;
 		}
 		prescription.setMedicineList(tempRxList);
+		prescription.setRawStringList(temp);
 		//Prepare Morphia Framework
 		System.out.println("Setting up MongoDB...");
 		Mongo mongo = new Mongo("localhost",27017);

@@ -42,7 +42,6 @@ public class Person implements Serializable
 	private String	localeCountry;
 	private String	email;
 
-	
 	public ObjectId getId() {
 		return id;
 	}

@@ -44,6 +44,13 @@ public class Record implements Serializable {
 	private java.util.Date RegisDate;
 	private java.util.Date DiagDate;
 
+	
+	public ObjectId getId() {
+		return id;
+	}
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
 	public String getRecordID() {	return RecordID;	}
 	public void setRecordID(String RecordID) {	this.RecordID = RecordID;	}
 
