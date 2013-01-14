@@ -91,6 +91,14 @@ public class Register {
 		this.record.setRegisDate(RegisDate);
 		this.record.setTimestamp(RegisDate);
 		this.record.setBmi(this.record.getWeight(), this.record.getHeight());
+		if(ds.createQuery(Record.class).countAll()==0)
+			this.record.setPrescriptionID("1");
+		else {
+			Query<Record> q = ds.createQuery(Record.class).order("-RecordID");
+			Record temp = q.get();
+			long l = Long.parseLong(temp.getPrescriptionID())+1;
+			this.record.setPrescriptionID(String.valueOf(l));
+		}
 		//Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.record);

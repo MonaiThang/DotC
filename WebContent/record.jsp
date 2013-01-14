@@ -112,14 +112,6 @@
 					<!-- <h:outputFormat value="#{msg.registrationRecords}"></h:outputFormat> -->
 					<h1>Medical Record</h1>
 		  			<h:outputLabel value=" "/>
-					<h:outputLabel for="recordID" value="#{msg.registrationID}"/>
-					<h:panelGroup>
-						<h:inputText id="recordID" value="#{registrationBean.record.recordID}"
-							maxlength="255" size="30"/>
-						<f:verbatim><br/></f:verbatim>
-						<h:outputText value="" />
-						<h:message for="recordID" styleClass="formUserError"/>
-					</h:panelGroup>
 					
 					<h:outputLabel for="citizenID" value="#{msg.registrationCitizenID}"/>
 					<h:panelGroup>
