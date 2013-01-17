@@ -100,29 +100,29 @@
         		<h:panelGroup>
 	        		<h:panelGrid columns="10" styleClass="form" headerClass="tableHeader" footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
 		        		<h:outputLabel for="PatientCitizenID" value="Patient's Citizen ID"/>
-	        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{SearchRecordBean.record.patientCitizenID}"/>
+	        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{ManageRecordBean.record.patientCitizenID}"/>
 	        			
 		        		<h:outputLabel for="PatientFirstname" value="Patient's First Name"/>
-	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{SearchRecordBean.record.patientFirstName}"/>
+	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{ManageRecordBean.record.patientFirstName}"/>
 		        		
 		        		<h:outputLabel for="PatientLastname" value="Patient's Last Name"/>
-	        			<h:inputText id="PatientLastName" maxlength="50" value="#{SearchRecordBean.record.patientLastName}"/>
+	        			<h:inputText id="PatientLastName" maxlength="50" value="#{ManageRecordBean.record.patientLastName}"/>
 	    	    		
 	    	    		<h:outputLabel for="DoctorFirstname" value="Doctor's First Name"/>
-	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{SearchRecordBean.record.doctorFirstName}"/>
+	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{ManageRecordBean.record.doctorFirstName}"/>
 	        			
 	        			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
-	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchRecordBean.record.doctorLastName}"/>
+	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{ManageRecordBean.record.doctorLastName}"/>
 	        		</h:panelGrid>
         		</h:panelGroup>
         		<h:panelGroup>
-	        		<h:commandButton value="Search" type="submit" action="#{SearchRecordBean.search}" />
+	        		<h:commandButton value="Search" type="submit" action="#{ManageRecordBean.searchRecord}" />
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
         	</h:form>
 
 			<br/>
-        	<h:dataTable value="#{SearchRecordBean.querySet}" var="q">
+        	<h:dataTable value="#{ManageRecordBean.querySet}" var="q">
         	
         		<h:column>
         			<f:facet name="header"></f:facet>

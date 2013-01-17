@@ -105,22 +105,10 @@
 					  rowClasses="tableRowOdd, tableRowEven">
 					  
 		        		<h:outputLabel for="PrescriptionID" value="Prescription ID"/>
-	        			<h:inputText id="PrescriptionID" maxlength="32" value="#{SearchPrescriptionBean.prescription.prescriptionID}"/>
+	        			<h:inputText id="PrescriptionID" maxlength="32" value="#{ManagePrescriptionBean.prescription.prescriptionID}"/>
 	        			
-		        		
-	        		
-                        <!--<fieldset>
-				          <legend>Prescription Status</legend>
-				          <p>
-				             <label>Status : </label>
-				             <select id = "status">
-				               <option value = "Pending">Pending</option>
-				               <option value = "Received">Received</option>
-				             </select>
-				          </p>
-				       </fieldset>-->
 						<h:outputLabel for="status" value="Prescription Status" />
-						<h:selectOneMenu id="status" value="#{SearchPrescriptionBean.prescription.status}">  
+						<h:selectOneMenu id="status" value="#{ManagePrescriptionBean.prescription.status}">  
 							<f:selectItem itemValue="Pending" itemLabel="Pending" />
 							<f:selectItem itemValue="Paid" itemLabel="Paid" />
 							<f:selectItem itemValue="Ready" itemLabel="Ready" />
@@ -128,7 +116,7 @@
 						</h:selectOneMenu>
 	        		</h:panelGrid>
 
-	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
+	        		<h:commandButton value="Search" type="submit" action="#{ManagePrescriptionBean.changePrescriptionStatus}" />
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
 

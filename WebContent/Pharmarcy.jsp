@@ -105,33 +105,33 @@
 					  rowClasses="tableRowOdd, tableRowEven">
 					  
 		        		<h:outputLabel for="PrescriptionID" value="Prescription ID"/>
-	        			<h:inputText id="PrescriptionID" maxlength="32" value="#{SearchPrescriptionBean.prescription.prescriptionID}"/>
+	        			<h:inputText id="PrescriptionID" maxlength="32" value="#{ManagePrescriptionBean.prescription.prescriptionID}"/>
 	        			
 		        		<h:outputLabel for="PatientID" value="Patient's Citizen ID"/>
-	        			<h:inputText id="PatientID" maxlength="32" value="#{SearchPrescriptionBean.prescription.patientID}"/>
+	        			<h:inputText id="PatientID" maxlength="32" value="#{ManagePrescriptionBean.prescription.patientID}"/>
 	        			
 		        		<h:outputLabel for="PatientFirstname" value="Patient's First Name"/>
-	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{SearchPrescriptionBean.prescription.patientFirstName}"/>
+	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{ManagePrescriptionBean.prescription.patientFirstName}"/>
 		        		
 		        		<h:outputLabel for="PatientLastname" value="Patient's Last Name"/>
-	        			<h:inputText id="PatientLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.patientLastName}"/>
+	        			<h:inputText id="PatientLastName" maxlength="50" value="#{ManagePrescriptionBean.prescription.patientLastName}"/>
 	    	    		
 	    	    		<h:outputLabel for="DoctorID" value="DoctorID"/>
-	        			<h:inputText id="DoctorID" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorID}"/>
+	        			<h:inputText id="DoctorID" maxlength="50" value="#{ManagePrescriptionBean.prescription.doctorID}"/>
 	        			
 	    	    		<h:outputLabel for="DoctorFirstname" value="Doctor's First Name"/>
-	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorFirstName}"/>
+	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{ManagePrescriptionBean.prescription.doctorFirstName}"/>
 	        			
 	        			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
-	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{SearchPrescriptionBean.prescription.doctorLastName}"/>
+	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{ManagePrescriptionBean.prescription.doctorLastName}"/>
 	        			
 	        			<h:outputLabel for="PrescribeDate" value="Prescribe Date"/>
-	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{SearchPrescriptionBean.prescription.prescribeDate}">
+	        			<h:inputText id="PrescribeDate" maxlength="50" value="#{ManagePrescriptionBean.prescription.prescribeDate}">
 	        				<f:convertDateTime pattern="dd/MM/yyyy"/>
 	        			</h:inputText>
 	        			
 	        			<h:outputLabel for="timestamp" value="Timestamp"/>
-	        			<h:inputText id="timestamp" maxlength="50" value="#{SearchPrescriptionBean.prescription.timestamp}">
+	        			<h:inputText id="timestamp" maxlength="50" value="#{ManagePrescriptionBean.prescription.timestamp}">
 	        				<f:convertDateTime pattern="dd/MM/yyyy"/>
 	        			</h:inputText>
 	        		
@@ -146,7 +146,7 @@
 				          </p>
 				       </fieldset>-->
 						<h:outputLabel for="status" value="Prescription Status" />
-						<h:selectOneMenu id="status" value="#{SearchPrescriptionBean.prescription.status}">  
+						<h:selectOneMenu id="status" value="#{ManagePrescriptionBean.prescription.status}">  
 							<f:selectItem itemValue="Pending" itemLabel="Pending" />
 							<f:selectItem itemValue="Paid" itemLabel="Paid" />
 							<f:selectItem itemValue="Ready" itemLabel="Ready" />
@@ -154,7 +154,7 @@
 						</h:selectOneMenu>
 	        		</h:panelGrid>
 
-	        		<h:commandButton value="Search" type="submit" action="#{SearchPrescriptionBean.listPrescription}" />
+	        		<h:commandButton value="Search" type="submit" action="#{ManagePrescriptionBean.listPrescription}" />
 	        		<h:commandButton value="Reset" type="reset"/>
         		</h:panelGroup>
 
@@ -162,7 +162,7 @@
         	</h:form>
         	
         	<br/>
-        	<h:dataTable value="#{SearchPrescriptionBean.querySet}" var="q">
+        	<h:dataTable value="#{ManagePrescriptionBean.querySet}" var="q">
         	
         		<h:column>
         			<f:facet name="header"></f:facet>

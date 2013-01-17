@@ -20,7 +20,7 @@ public class Person implements Serializable
 	private String 	password;
 	private String 	firstName;
 	private String 	lastName;
-	private String 	age;
+	private int 	age;
 	private String 	gender;
 	private String 	maritalStatus;
 	private Date 	dateOfBirth;
@@ -156,10 +156,10 @@ public class Person implements Serializable
 	public void setCurrentaddress(Address currentaddress) {
 		this.currentaddress = currentaddress;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getLocaleLanguage() {

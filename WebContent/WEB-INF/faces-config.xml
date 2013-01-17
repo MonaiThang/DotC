@@ -69,16 +69,6 @@
 	</managed-bean>
 
 	<managed-bean>
-		<managed-bean-name>SearchRecordBean</managed-bean-name>
-		<managed-bean-class>com.j3ltd.web.SearchRecord</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
-		<managed-property>
-			<property-name>record</property-name>
-			<value>#{MedicalRecordBean}</value>
-		</managed-property>
-	</managed-bean>
-
-	<managed-bean>
 		<managed-bean-name>ManageRecordBean</managed-bean-name>
 		<managed-bean-class>com.j3ltd.web.ManageRecord</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
@@ -89,8 +79,8 @@
 	</managed-bean>
 
 	<managed-bean>
-		<managed-bean-name>SearchPrescriptionBean</managed-bean-name>
-		<managed-bean-class>com.j3ltd.web.ListPrescription</managed-bean-class>
+		<managed-bean-name>ManagePrescriptionBean</managed-bean-name>
+		<managed-bean-class>com.j3ltd.web.ManagePrescription</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 		<managed-property>
 			<property-name>prescription</property-name>

@@ -143,10 +143,12 @@
 		  <h:outputText value=" "/><h:message for="lastName" styleClass="formUserError"/>
 		  </h:panelGroup>
 		  
-		  <h:outputLabel for="gerder" value="#{msg.registrationGender}"/>
+		  <h:outputLabel for="gender" value="#{msg.registrationGender}"/>
 		  <h:panelGroup>
-		  <h:inputText id="gender" value="#{registrationBean.person.gender}"
-		    maxlength="255" size="30"/><f:verbatim><br/></f:verbatim>
+		<h:selectOneMenu id="gender" value="#{registrationBean.person.gender}">  
+			<f:selectItem itemValue="Male" itemLabel="Male" />
+			<f:selectItem itemValue="Female" itemLabel="Female" />
+		</h:selectOneMenu>
 		  <h:outputText value=" "/><h:message for="gender" styleClass="formUserError"/>
 		  </h:panelGroup>
 		   
