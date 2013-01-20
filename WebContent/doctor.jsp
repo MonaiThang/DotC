@@ -339,7 +339,7 @@ $(document).ready(function(){
     	<div class="footerwrap">
         
         	<!-- Start Copyright Div -->
-            <div id="Copyright">&copy;DotC 2012.
+            <div id="Copyright">&copy;DotC 2013.
             <!-- End Copyright Div -->
 
             <!-- Start Social area -->

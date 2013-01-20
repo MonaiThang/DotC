@@ -23,6 +23,16 @@
 	</managed-bean>
 
 	<managed-bean>
+		<managed-bean-name>HRBean</managed-bean-name>
+		<managed-bean-class>com.j3ltd.web.HumanResources</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>doctor</property-name>
+			<value>#{DoctorBean}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
 		<managed-bean-name>registrationBean</managed-bean-name>
 		<managed-bean-class>com.j3ltd.web.Register</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
@@ -39,6 +49,20 @@
 	<managed-bean>
 		<managed-bean-name>registeringPersonBean</managed-bean-name>
 		<managed-bean-class>com.j3ltd.server.entities.Person</managed-bean-class>
+		<managed-bean-scope>none</managed-bean-scope>
+		<managed-property>
+			<property-name>actualaddress</property-name>
+			<value>#{addressBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>currentaddress</property-name>
+			<value>#{addressBean}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>DoctorBean</managed-bean-name>
+		<managed-bean-class>com.j3ltd.server.entities.Doctor</managed-bean-class>
 		<managed-bean-scope>none</managed-bean-scope>
 		<managed-property>
 			<property-name>actualaddress</property-name>

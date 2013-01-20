@@ -9,7 +9,7 @@
 <f:loadBundle basename="com.j3ltd.web.messages.ApplicationMessages" var="msg"/>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Pharmacy.</title>
 		<meta name="description" content="Response Premium Html Responsive Template - Portfolio Section" />
 		<meta name="keywords" content="Responsive Html, Responsive Template, Response, Filtered Portfolio" />
@@ -206,7 +206,7 @@
     	<div class="footerwrap">
         
         	<!-- Start Copyright Div -->
-            <div id="Copyright">&copy;DotC 2012.
+            <div id="Copyright">&copy;DotC 2013.
             <!-- End Copyright Div -->
 
             <!-- Start Social area -->

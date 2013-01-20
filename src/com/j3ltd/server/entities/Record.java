@@ -1,6 +1,7 @@
 package com.j3ltd.server.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
@@ -38,7 +39,7 @@ public class Record implements Serializable {
 	private String Medication;
 	private String Diagnosis;
 
-	private String	PrescriptionID;
+	private ArrayList<String>	PrescriptionID;
 
 	private java.util.Date timestamp;
 	private java.util.Date RegisDate;
@@ -105,8 +106,8 @@ public class Record implements Serializable {
 	public String getDisease() {	return disease;	}
 	public void setDisease(String disease) {	this.disease = disease;	}
 
-	public String getPrescriptionID() {	return PrescriptionID;	}
-	public void setPrescriptionID(String prescriptionID) {	PrescriptionID = prescriptionID;	}
+	public ArrayList<String> getPrescriptionID() {	return PrescriptionID;	}
+	public void setPrescriptionID(ArrayList<String> prescriptionID) {	PrescriptionID = prescriptionID;	}
 
 	public java.util.Date getTimestamp() {	return timestamp;	}
 	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}

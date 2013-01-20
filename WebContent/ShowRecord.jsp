@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Search your record.</title>
+		<title>Show record.</title>
 		<meta name="description" content="Response Premium Html Responsive Template - Portfolio Section" />
 		<meta name="keywords" content="Responsive Html, Responsive Template, Response, Filtered Portfolio" />
 		<meta name="apple-mobile-web-app-capable" content="yes" /> 
@@ -93,64 +93,55 @@
 </div>
 <!-- End Socialarea -->
 <div class="titlesnormal">
-	<div id="main">
-        	<h:form id="SearchRecordForm">
-        	<h1>Search your record</h1> 
-        		<h:panelGroup>
-	        		<h:panelGrid columns="10" styleClass="form" headerClass="tableHeader" footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
-		        		<h:outputLabel for="PatientCitizenID" value="Patient's Citizen ID"/>
-	        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{ManageRecordBean.record.patientCitizenID}"/>
-	        			
-		        		<h:outputLabel for="PatientFirstname" value="Patient's First Name"/>
-	        			<h:inputText id="PatientFirstName" maxlength="50" value="#{ManageRecordBean.record.patientFirstName}"/>
-		        		
-		        		<h:outputLabel for="PatientLastname" value="Patient's Last Name"/>
-	        			<h:inputText id="PatientLastName" maxlength="50" value="#{ManageRecordBean.record.patientLastName}"/>
-	    	    		
-	    	    		<h:outputLabel for="DoctorFirstname" value="Doctor's First Name"/>
-	        			<h:inputText id="DoctorFirstName" maxlength="50" value="#{ManageRecordBean.record.doctorFirstName}"/>
-	        			
-	        			<h:outputLabel for="DoctorLastname" value="Doctor's Last Name"/>
-	        			<h:inputText id="DoctorLastName" maxlength="50" value="#{ManageRecordBean.record.doctorLastName}"/>
-	        		</h:panelGrid>
-        		</h:panelGroup>
-        		<h:panelGroup>
-	        		<h:commandButton value="Search" type="submit" action="#{ManageRecordBean.searchRecord}" />
-	        		<h:commandButton value="Reset" type="reset"/>
-        		</h:panelGroup>
-        	</h:form>
+		<div id="main">
+			<h:form id="SearchRecordForm">
+				<h1>Show Record</h1>
+				<h:panelGroup>
+					<h:panelGrid columns="10" styleClass="form"
+						headerClass="tableHeader" footerClass="tableFooter"
+						rowClasses="tableRowOdd, tableRowEven">
+						<h:outputLabel for="RecordID" value="Record ID" />
+						<h:inputText id="RecordID" maxlength="32"
+							value="#{ManageRecordBean.record.recordID}" />
+					</h:panelGrid>
+				</h:panelGroup>
+				<h:panelGroup>
+					<h:commandButton value="Search" type="submit"
+						action="#{ManageRecordBean.showRecord}" />
+					<h:commandButton value="Reset" type="reset" />
+				</h:panelGroup>
+			</h:form>
 
-			<br/>
-        	<h:dataTable value="#{ManageRecordBean.querySet}" var="q">
-        	
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.recordID}"/>
-        		</h:column>
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.patientCitizenID}"/>
-        		</h:column>
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.patientFirstName}"/>
-        		</h:column>
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.patientLastName}"/>
-        		</h:column>
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.doctorFirstName}"/>
-        		</h:column>
-        		<h:column>
-        			<f:facet name="header"></f:facet>
-        			<h:outputText value="#{q.doctorLastName}"/>
-        		</h:column>
-        	</h:dataTable>
- 
-        </div>
-</div>       
+			<br />
+			<h2>Record Detail</h2>
+			<h:dataTable value="#{ManageRecordBean.record}" var="q">
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.recordID}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.patientCitizenID}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.patientFirstName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.patientLastName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.doctorFirstName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:outputText value="#{q.doctorLastName}" />
+				</h:column>
+			</h:dataTable>
+		</div>
+	</div>       
         <!-- Start Footer Bottom -->
     <div id="footerbottom">
     

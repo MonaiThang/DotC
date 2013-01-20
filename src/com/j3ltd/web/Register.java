@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import com.github.jmkgreen.morphia.Datastore;
 import com.github.jmkgreen.morphia.Morphia;
 import com.github.jmkgreen.morphia.query.Query;
+import com.j3ltd.server.entities.Doctor;
 import com.j3ltd.server.entities.Person;
 import com.j3ltd.server.entities.Record;
 import com.j3ltd.web.messages.MessageFactory;
@@ -26,6 +27,22 @@ public class Register {
 
 	public Record getRecord() {	return record;	}
 	public void setRecord(Record record) {	this.record = record;	}
+	
+	public String getEmailConfirm() {
+		return emailConfirm;
+	}
+
+	public void setEmailConfirm(String emailConfirm) {
+		this.emailConfirm = emailConfirm;
+	}
+
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
+	}
 
 	public String register() throws Exception {
 		//Prepare Morphia Framework
@@ -83,8 +100,8 @@ public class Register {
 		Person patient = qp.get();
 		this.record.setPatientFirstName(patient.getFirstName());
 		this.record.setPatientLastName(patient.getLastName());
-		Query<Person> qd = ds.createQuery(Person.class).field("citizenid").equal(this.record.getDoctorID());
-		Person doctor = qd.get();
+		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid").equal(this.record.getDoctorID());
+		Doctor doctor = qd.get();
 		this.record.setDoctorFirstName(doctor.getFirstName());
 		this.record.setDoctorLastName(doctor.getLastName());
 		System.out.println("Timestamping...");
@@ -128,21 +145,5 @@ public class Register {
 			toReturn = false;
 		}
 		return toReturn;
-	}
-
-	public String getEmailConfirm() {
-		return emailConfirm;
-	}
-
-	public void setEmailConfirm(String emailConfirm) {
-		this.emailConfirm = emailConfirm;
-	}
-
-	public String getPasswordConfirm() {
-		return passwordConfirm;
-	}
-
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
 	}
 }

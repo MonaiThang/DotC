@@ -1,5 +1,6 @@
 package com.j3ltd.server.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
@@ -38,7 +39,8 @@ public class Doctor {
 	private String	localeCountry;
 	private String	email;
 	
-	private String[] specialization;
+	private String	rawSpecialization;
+	private ArrayList<String> specialization;
 
 	public ObjectId getId() {
 		return id;
@@ -178,10 +180,16 @@ public class Doctor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String[] getSpecialization() {
+	public String getRawSpecialization() {
+		return rawSpecialization;
+	}
+	public void setRawSpecialization(String rawSpecialization) {
+		this.rawSpecialization = rawSpecialization;
+	}
+	public ArrayList<String> getSpecialization() {
 		return specialization;
 	}
-	public void setSpecialization(String[] specialization) {
+	public void setSpecialization(ArrayList<String> specialization) {
 		this.specialization = specialization;
 	}
 }
