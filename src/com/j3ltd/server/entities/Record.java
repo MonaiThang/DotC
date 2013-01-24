@@ -40,6 +40,7 @@ public class Record implements Serializable {
 	private String Diagnosis;
 
 	private ArrayList<String>	PrescriptionID;
+	private String rawPrescriptionIDList;
 
 	private java.util.Date timestamp;
 	private java.util.Date RegisDate;
@@ -108,7 +109,14 @@ public class Record implements Serializable {
 
 	public ArrayList<String> getPrescriptionID() {	return PrescriptionID;	}
 	public void setPrescriptionID(ArrayList<String> prescriptionID) {	PrescriptionID = prescriptionID;	}
-
+	
+	public String getRawPrescriptionIDList() {
+		return rawPrescriptionIDList;
+	}
+	public void setRawPrescriptionIDList(String rawPrescriptionIDList) {
+		this.rawPrescriptionIDList = rawPrescriptionIDList;
+	}
+	
 	public java.util.Date getTimestamp() {	return timestamp;	}
 	public void setTimestamp(java.util.Date timestamp) {	this.timestamp = timestamp;	}
 	public String getMedication() {

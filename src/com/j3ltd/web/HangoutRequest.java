@@ -28,7 +28,7 @@ public class HangoutRequest extends HttpServlet{
 	Medicine Rx;
 	Prescription prescription;
 	Record record;
-	String temp;
+	String temp,tempP;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException,UnknownHostException{
 		tempRxList = new ArrayList<Medicine>();
@@ -41,10 +41,6 @@ public class HangoutRequest extends HttpServlet{
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		Query<Record> qr = ds.createQuery(Record.class).field("RecordID").equal(request.getParameter("RecordID").toString());
 		record = qr.get();
-		if(record.getPrescriptionID()==null)
-			tempPrescriptionID = new ArrayList<String>();
-		else
-			tempPrescriptionID = record.getPrescriptionID();
 		prescription = new Prescription();
 		//prescription.setPatientID(request.getParameter("PatientID").toString());
 		prescription.setDoctorID(request.getParameter("DoctorID").toString());
@@ -79,6 +75,7 @@ public class HangoutRequest extends HttpServlet{
 		Doctor doctor = qd.get();
 		prescription.setDoctorFirstName(doctor.getFirstName());
 		prescription.setDoctorLastName(doctor.getLastName());
+		//Generating Prescription ID
 		if(ds.createQuery(Prescription.class).countAll()==0)
 			prescription.setPrescriptionID("1");
 		else {
@@ -87,8 +84,18 @@ public class HangoutRequest extends HttpServlet{
 			long l = Long.parseLong(temp.getPrescriptionID())+1;
 			prescription.setPrescriptionID(String.valueOf(l));
 		}
+		//Generating Prescription ID List to Record
+		tempP = "";
+		if(record.getPrescriptionID()==null) {
+			tempPrescriptionID = new ArrayList<String>();
+			tempP = prescription.getPrescriptionID().trim();
+		}
+		else {
+			tempPrescriptionID = record.getPrescriptionID();
+			tempP = record.getRawPrescriptionIDList().concat(",").concat(prescription.getPrescriptionID()).trim();
+		}
 		tempPrescriptionID.add(prescription.getPrescriptionID());
-		UpdateOperations<Record> ops = ds.createUpdateOperations(Record.class).set("PrescriptionID",tempPrescriptionID).set("DiagDate",EditDate).set("timestamp",EditDate);
+		UpdateOperations<Record> ops = ds.createUpdateOperations(Record.class).set("PrescriptionID",tempPrescriptionID).set("rawPrescriptionIDList",tempP).set("DiagDate",EditDate).set("timestamp",EditDate);
 		ds.findAndModify(qr,ops);
 		System.out.println("Sent POST request to backBean");
 		insertPrescription();

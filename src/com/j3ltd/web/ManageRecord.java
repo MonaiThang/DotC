@@ -98,34 +98,34 @@ public class ManageRecord {
 		Query<Record> q = ds.createQuery(Record.class).field("RecordID").equal(this.record.getRecordID());
 		//Create criteria
 		record = q.get();
-		System.out.println("Query Result:");
-		System.out.println(record.getId());
-		System.out.println(record.getRecordID());
-		System.out.println(record.getPatientCitizenID());
-		System.out.println(record.getPatientFirstName());
-		System.out.println(record.getPatientLastName());
-		System.out.println(record.getDoctorID());
-		System.out.println(record.getDoctorFirstName());
-		System.out.println(record.getDoctorLastName());
-		System.out.println(record.getSystolic());
-		System.out.println(record.getDiastolic());
-		System.out.println(record.getPulse());
-		System.out.println(record.getBreathrate());
-		System.out.println(record.getO2sat());
-		System.out.println(record.getWeight());
-		System.out.println(record.getHeight());
-		System.out.println(record.getBmi());
-		System.out.println(record.getLmp());
-		System.out.println(record.getSymptom());
-		System.out.println(record.getDisease());
-		System.out.println(record.getMedication());
-		System.out.println(record.getDiagnosis());
-		for(String i : record.getPrescriptionID()){
-			System.out.println(i);
-		}
-		System.out.println(record.getTimestamp());
-		System.out.println(record.getRegisDate());
-		System.out.println(record.getDiagDate());
+//		System.out.println("Query Result:");
+//		System.out.println(record.getId());
+//		System.out.println(record.getRecordID());
+//		System.out.println(record.getPatientCitizenID());
+//		System.out.println(record.getPatientFirstName());
+//		System.out.println(record.getPatientLastName());
+//		System.out.println(record.getDoctorID());
+//		System.out.println(record.getDoctorFirstName());
+//		System.out.println(record.getDoctorLastName());
+//		System.out.println(record.getSystolic());
+//		System.out.println(record.getDiastolic());
+//		System.out.println(record.getPulse());
+//		System.out.println(record.getBreathrate());
+//		System.out.println(record.getO2sat());
+//		System.out.println(record.getWeight());
+//		System.out.println(record.getHeight());
+//		System.out.println(record.getBmi());
+//		System.out.println(record.getLmp());
+//		System.out.println(record.getSymptom());
+//		System.out.println(record.getDisease());
+//		System.out.println(record.getMedication());
+//		System.out.println(record.getDiagnosis());
+//		for(String i : record.getPrescriptionID()){
+//			System.out.println(i);
+//		}
+//		System.out.println(record.getTimestamp());
+//		System.out.println(record.getRegisDate());
+//		System.out.println(record.getDiagDate());
 		return null;
 	}
 }

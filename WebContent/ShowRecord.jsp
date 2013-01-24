@@ -113,33 +113,62 @@
 			</h:form>
 
 			<br />
-			<h2>Record Detail</h2>
-			<h:dataTable value="#{ManageRecordBean.record}" var="q">
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.recordID}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.patientCitizenID}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.patientFirstName}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.patientLastName}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.doctorFirstName}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header"></f:facet>
-					<h:outputText value="#{q.doctorLastName}" />
-				</h:column>
-			</h:dataTable>
+<%-- 			<h2>Record Detail</h2> --%>
+			<h:panelGrid id="RecordSesult" columns="2">
+				<f:facet name="header">
+					<h:outputText value="Record Detail"/>
+				</f:facet>
+				<h:outputLabel for="HeaderRecordID" value="Record ID"/>
+				<h:outputLabel for="RecordID" value="#{ManageRecordBean.record.recordID}"/>
+				<h:outputLabel for="HeaderPatientCitizenID" value="Patient's Citizen ID"/>
+				<h:outputLabel for="PatientCitizenID" value="#{ManageRecordBean.record.patientCitizenID}"/>
+				<h:outputLabel for="HeaderPatientFirstName" value="Patient's First Name"/>
+				<h:outputLabel for="PatientFirstName" value="#{ManageRecordBean.record.patientFirstName}"/>
+				<h:outputLabel for="HeaderPatientLastName" value="Patient's Last Name"/>
+				<h:outputLabel for="PatientLastName" value="#{ManageRecordBean.record.patientLastName}"/>
+				<h:outputLabel for="HeaderDoctorCitizenID" value="Primary Doctor's Citizen ID"/>
+				<h:outputLabel for="DoctorCitizenID" value="#{ManageRecordBean.record.doctorID}"/>
+				<h:outputLabel for="HeaderDoctorFirstName" value="Primary Doctor's First Name"/>
+				<h:outputLabel for="DoctorFirstName" value="#{ManageRecordBean.record.doctorFirstName}"/>
+				<h:outputLabel for="HeaderDoctorLastName" value="Primary Doctor's Last Name"/>
+				<h:outputLabel for="DoctorLastName" value="#{ManageRecordBean.record.doctorLastName}"/>
+				<h:outputLabel for="HeaderSystolic" value="Systolic"/>
+				<h:outputLabel for="Systolic" value="#{ManageRecordBean.record.systolic}"/>
+				<h:outputLabel for="HeaderDiastolic" value="Diastolic"/>
+				<h:outputLabel for="Diastolic" value="#{ManageRecordBean.record.diastolic}"/>
+				<h:outputLabel for="HeaderTemperature" value="Temperature"/>
+				<h:outputLabel for="Temperature" value="#{ManageRecordBean.record.temp}"/>
+				<h:outputLabel for="HeaderPulse" value="Pulse"/>
+				<h:outputLabel for="Pulse" value="#{ManageRecordBean.record.pulse}"/>
+				<h:outputLabel for="HeaderBreathRate" value="BreathRate"/>
+				<h:outputLabel for="BreathRate" value="#{ManageRecordBean.record.breathrate}"/>
+				<h:outputLabel for="HeaderO2Sat" value="Oxygen (O2) Saturation"/>
+				<h:outputLabel for="O2Sat" value="#{ManageRecordBean.record.o2sat}"/>
+				<h:outputLabel for="HeaderWeight" value="Weight"/>
+				<h:outputLabel for="Weight" value="#{ManageRecordBean.record.weight}"/>
+				<h:outputLabel for="HeaderHeight" value="Height"/>
+				<h:outputLabel for="Height" value="#{ManageRecordBean.record.height}"/>
+				<h:outputLabel for="HeaderBMI" value="Body Mass Index (BMI)"/>
+				<h:outputLabel for="BMI" value="#{ManageRecordBean.record.bmi}"/>
+				<h:outputLabel for="HeaderLMP" value="Last Menstrual Period (LMP)"/>
+				<h:outputLabel for="LMP" value="#{ManageRecordBean.record.lmp}"/>
+				<h:outputLabel for="HeaderSymptom" value="Symptom"/>
+				<h:outputLabel for="Symptom" value="#{ManageRecordBean.record.symptom}"/>
+				<h:outputLabel for="HeaderDisease" value="Disease"/>
+				<h:outputLabel for="Disease" value="#{ManageRecordBean.record.disease}"/>
+				<h:outputLabel for="HeaderMedication" value="Medication"/>
+				<h:outputLabel for="Medication" value="#{ManageRecordBean.record.medication}"/>
+				<h:outputLabel for="HeaderDiagnosis" value="Diagnosis"/>
+				<h:outputLabel for="Diagnosis" value="#{ManageRecordBean.record.diagnosis}"/>
+				<h:outputLabel for="HeaderPrescriptionID" value="Prescription ID"/>
+				<h:outputLabel for="PrescriptionID" value="#{ManageRecordBean.record.rawPrescriptionIDList}"/>
+				<h:outputLabel for="HeaderTimestamp" value="Timestamp"/>
+				<h:outputLabel for="Timestamp" value="#{ManageRecordBean.record.timestamp}"/>
+				<h:outputLabel for="HeaderRegisDate" value="Registration Date"/>
+				<h:outputLabel for="RegisDate" value="#{ManageRecordBean.record.regisDate}"/>
+				<h:outputLabel for="HeaderDiagDate" value="Diagnosis Date"/>
+				<h:outputLabel for="DiagDate" value="#{ManageRecordBean.record.diagDate}"/>				
+			</h:panelGrid>
 		</div>
 	</div>       
         <!-- Start Footer Bottom -->
