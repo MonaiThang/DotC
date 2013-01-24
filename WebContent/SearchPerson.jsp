@@ -118,51 +118,55 @@
 
 			<br />
 			<h2>Patient</h2>
+			<div style="text-align: center">
 			<h:dataTable value="#{HRBean.querySetp}" var="qp">
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Citizen ID"/></f:facet>
         			<h:outputText value="#{qp.citizenid}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="First Name"/></f:facet>
         			<h:outputText value="#{qp.firstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Last Name"/></f:facet>
         			<h:outputText value="#{qp.lastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Date Of Birth"/></f:facet>
         			<h:outputText value="#{qp.dateOfBirth}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Blood Type"/></f:facet>
         			<h:outputText value="#{qp.bloodgroup}"/>
         		</h:column>
         	</h:dataTable>
+        	</div>
         	<h2>Doctor</h2>
+        	<div style="text-align: center">
 			<h:dataTable value="#{HRBean.querySetd}" var="qd">
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Citizen ID"/></f:facet>
         			<h:outputText value="#{qd.citizenid}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="First Name"/></f:facet>
         			<h:outputText value="#{qd.firstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Last Name"/></f:facet>
         			<h:outputText value="#{qd.lastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Date Of Birth"/></f:facet>
         			<h:outputText value="#{qd.dateOfBirth}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Specialization"/></f:facet>
         			<h:outputText value="#{qd.rawSpecialization}"/>
         		</h:column>
         	</h:dataTable>
+        	</div>
 		</div>
 	</div>       
         <!-- Start Footer Bottom -->

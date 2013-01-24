@@ -162,41 +162,44 @@
         	</h:form>
         	
         	<br/>
+        	<h2>Prescription</h2>
+        	<div style="text-align: center">
         	<h:dataTable value="#{ManagePrescriptionBean.querySet}" var="q">
         	
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="ID"/></f:facet>
         			<h:outputText value="#{q.prescriptionID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient Citizen ID"/></f:facet>
         			<h:outputText value="#{q.patientID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient First Name"/></f:facet>
         			<h:outputText value="#{q.patientFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient Last Name"/></f:facet>
         			<h:outputText value="#{q.patientLastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Medicine"/></f:facet>
         			<h:outputText value="#{q.rawStringList}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Doctor First Name"/></f:facet>
         			<h:outputText value="#{q.doctorFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Doctor Last Name"/></f:facet>
         			<h:outputText value="#{q.doctorLastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Status"/></f:facet>
         			<h:outputText value="#{q.status}"/>
         		</h:column>
         	</h:dataTable>
+        	</div>
        </div>
 </div>
 

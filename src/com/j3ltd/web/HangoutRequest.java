@@ -69,6 +69,7 @@ public class HangoutRequest extends HttpServlet{
 		prescription.setRawStringList(temp);
 		Query<Person> qp = ds.createQuery(Person.class).field("citizenid").equal(record.getPatientCitizenID());
 		Person patient = qp.get();
+		prescription.setPatientID(patient.getCitizenid());
 		prescription.setPatientFirstName(patient.getFirstName());
 		prescription.setPatientLastName(patient.getLastName());
 		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid").equal(prescription.getDoctorID());

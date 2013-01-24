@@ -97,7 +97,7 @@
         	<h:form id="SearchRecordForm">
         	<h1>Search your record</h1> 
         		<h:panelGroup>
-	        		<h:panelGrid columns="10" styleClass="form" headerClass="tableHeader" footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
+	        		<h:panelGrid columns="6" styleClass="form" headerClass="tableHeader" footerClass="tableFooter" rowClasses="tableRowOdd, tableRowEven">
 		        		<h:outputLabel for="PatientCitizenID" value="Patient's Citizen ID"/>
 	        			<h:inputText id="PatientCitizenID" maxlength="32" value="#{ManageRecordBean.record.patientCitizenID}"/>
 	        			
@@ -121,34 +121,35 @@
         	</h:form>
 
 			<br/>
+			<h2>Record</h2>
+			<div style="text-align: center">
         	<h:dataTable value="#{ManageRecordBean.querySet}" var="q">
-        	
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="ID"/></f:facet>
         			<h:outputText value="#{q.recordID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient Citizen ID"/></f:facet>
         			<h:outputText value="#{q.patientCitizenID}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient First Name"/></f:facet>
         			<h:outputText value="#{q.patientFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Patient Last Name"/></f:facet>
         			<h:outputText value="#{q.patientLastName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Doctor First Name"/></f:facet>
         			<h:outputText value="#{q.doctorFirstName}"/>
         		</h:column>
         		<h:column>
-        			<f:facet name="header"></f:facet>
+        			<f:facet name="header"><h:outputText value="Doctor Last Name"/></f:facet>
         			<h:outputText value="#{q.doctorLastName}"/>
         		</h:column>
         	</h:dataTable>
- 
+			</div>
         </div>
 </div>       
         <!-- Start Footer Bottom -->
