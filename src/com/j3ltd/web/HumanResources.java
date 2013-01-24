@@ -1,6 +1,7 @@
 package com.j3ltd.web;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.faces.application.FacesMessage;
@@ -8,14 +9,54 @@ import javax.faces.context.FacesContext;
 
 import com.github.jmkgreen.morphia.Datastore;
 import com.github.jmkgreen.morphia.Morphia;
+import com.github.jmkgreen.morphia.query.Query;
 import com.j3ltd.server.entities.Doctor;
+import com.j3ltd.server.entities.Person;
 import com.j3ltd.web.messages.MessageFactory;
 import com.mongodb.Mongo;
 
 public class HumanResources {
+	String CitizenID;
+	String FirstName;
+	String LastName;
+	Person person;
 	Doctor doctor;
 	private String passwordConfirm;
 	private String emailConfirm;
+	private List<Person> querySetp;
+	private List<Doctor> querySetd;
+	
+	public String getCitizenID() {
+		return CitizenID;
+	}
+
+	public void setCitizenID(String citizenID) {
+		CitizenID = citizenID;
+	}
+
+	public String getFirstName() {
+		return FirstName;
+	}
+
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
+	}
+
+	public String getLastName() {
+		return LastName;
+	}
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 
 	public Doctor getDoctor() {
 		return doctor;
@@ -39,6 +80,22 @@ public class HumanResources {
 
 	public void setEmailConfirm(String emailConfirm) {
 		this.emailConfirm = emailConfirm;
+	}
+
+	public List<Person> getQuerySetp() {
+		return querySetp;
+	}
+
+	public void setQuerySetp(List<Person> querySetp) {
+		this.querySetp = querySetp;
+	}
+
+	public List<Doctor> getQuerySetd() {
+		return querySetd;
+	}
+
+	public void setQuerySetd(List<Doctor> querySetd) {
+		this.querySetd = querySetd;
 	}
 
 	public String addDoctor() throws Exception {
@@ -96,4 +153,34 @@ public class HumanResources {
 		}
 		return toReturn;
 	}
+	
+	public String searchPerson() throws Exception {
+		System.out.println("Setting up MongoDB...");
+		Mongo mongo = new Mongo("localhost",27017);
+		System.out.println("Setting up Morphia...");
+		Morphia morphia = new Morphia();
+		System.out.println("Mapping Entities...");
+		morphia.mapPackage("com.j3ltd.server.entities");
+		System.out.println("Create Datastore...");
+		Datastore ds = morphia.createDatastore(mongo, "dotc");
+		Query<Person> qp = ds.createQuery(Person.class);
+//		setCitizenID(this.doctor.getCitizenid());
+//		setFirstName(this.doctor.getFirstName());
+//		setLastName(this.doctor.getLastName());
+		qp.or(
+			qp.criteria("citizenid").equal(CitizenID),
+			qp.criteria("firstName").equal(FirstName),
+			qp.criteria("lastName").equal(LastName)
+		);
+		querySetp = qp.asList();
+		Query<Doctor> qd = ds.createQuery(Doctor.class);
+		qd.or(
+			qd.criteria("citizenid").equal(CitizenID),
+			qd.criteria("firstName").equal(FirstName),
+			qd.criteria("lastName").equal(LastName)
+		);
+		querySetd = qd.asList();
+		return null;
+	}
+	
 }

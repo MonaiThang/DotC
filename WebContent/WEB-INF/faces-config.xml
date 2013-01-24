@@ -30,6 +30,10 @@
 			<property-name>doctor</property-name>
 			<value>#{DoctorBean}</value>
 		</managed-property>
+		<managed-property>
+			<property-name>person</property-name>
+			<value>#{registeringPersonBean}</value>
+		</managed-property>
 	</managed-bean>
 
 	<managed-bean>
