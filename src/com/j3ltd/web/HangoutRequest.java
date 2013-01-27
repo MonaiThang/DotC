@@ -22,33 +22,35 @@ import com.j3ltd.server.entities.Prescription;
 import com.j3ltd.server.entities.Record;
 import com.mongodb.Mongo;
 
-public class HangoutRequest extends HttpServlet{
+public class HangoutRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	List<Medicine> tempRxList;
 	Medicine Rx;
 	Prescription prescription;
 	Record record;
-	String temp,tempP;
+	String temp, tempP;
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException,UnknownHostException{
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException, UnknownHostException {
 		tempRxList = new ArrayList<Medicine>();
 		Date EditDate = new Date();
 		ArrayList<String> tempPrescriptionID;
-		//Prepare Morphia Framework
-		Mongo mongo = new Mongo("localhost",27017);
+		// Prepare Morphia Framework
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
 		morphia.mapPackage("com.j3ltd.server.entities");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		Query<Record> qr = ds.createQuery(Record.class).field("RecordID").equal(request.getParameter("RecordID").toString());
+		Query<Record> qr = ds.createQuery(Record.class).field("RecordID")
+				.equal(request.getParameter("RecordID").toString());
 		record = qr.get();
 		prescription = new Prescription();
-		//prescription.setPatientID(request.getParameter("PatientID").toString());
+		// prescription.setPatientID(request.getParameter("PatientID").toString());
 		prescription.setDoctorID(request.getParameter("DoctorID").toString());
 		String PostRx = request.getParameter("RxList").toString();
 		String[] rawRxList = PostRx.split(";");
 		int i = 1;
 		temp = "";
-		for(String rawRx : rawRxList){
+		for (String rawRx : rawRxList) {
 			Rx = new Medicine();
 			String[] RxAttribute = rawRx.split(",");
 			Rx.setId(String.valueOf(i));
@@ -59,72 +61,74 @@ public class HangoutRequest extends HttpServlet{
 			Rx.setUsageDirection(RxAttribute[4].trim());
 			Rx.setRawString(notePrescription(Rx));
 			tempRxList.add(Rx);
-			if(i==1)
-				temp+=Rx.getRawString();
+			if (i == 1)
+				temp += Rx.getRawString();
 			else
-				temp+="\n"+Rx.getRawString();
+				temp += "\n" + Rx.getRawString();
 			i++;
 		}
 		prescription.setMedicineList(tempRxList);
 		prescription.setRawStringList(temp);
-		Query<Person> qp = ds.createQuery(Person.class).field("citizenid").equal(record.getPatientCitizenID());
+		Query<Person> qp = ds.createQuery(Person.class).field("citizenid")
+				.equal(record.getPatientCitizenID());
 		Person patient = qp.get();
 		prescription.setPatientID(patient.getCitizenid());
 		prescription.setPatientFirstName(patient.getFirstName());
 		prescription.setPatientLastName(patient.getLastName());
-		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid").equal(prescription.getDoctorID());
+		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid")
+				.equal(prescription.getDoctorID());
 		Doctor doctor = qd.get();
 		prescription.setDoctorFirstName(doctor.getFirstName());
 		prescription.setDoctorLastName(doctor.getLastName());
-		//Generating Prescription ID
-		if(ds.createQuery(Prescription.class).countAll()==0)
+		// Generating Prescription ID
+		if (ds.createQuery(Prescription.class).countAll() == 0)
 			prescription.setPrescriptionID("1");
 		else {
-			Query<Prescription> q = ds.createQuery(Prescription.class).order("-PrescriptionID");
+			Query<Prescription> q = ds.createQuery(Prescription.class).order(
+					"-PrescriptionID");
 			Prescription temp = q.get();
-			long l = Long.parseLong(temp.getPrescriptionID())+1;
+			long l = Long.parseLong(temp.getPrescriptionID()) + 1;
 			prescription.setPrescriptionID(String.valueOf(l));
 		}
-		//Generating Prescription ID List to Record
+		// Generating Prescription ID List to Record
 		tempP = "";
-		if(record.getPrescriptionID()==null) {
+		if (record.getPrescriptionID() == null) {
 			tempPrescriptionID = new ArrayList<String>();
 			tempP = prescription.getPrescriptionID().trim();
-		}
-		else {
+		} else {
 			tempPrescriptionID = record.getPrescriptionID();
-			tempP = record.getRawPrescriptionIDList().concat(",").concat(prescription.getPrescriptionID()).trim();
+			tempP = record.getRawPrescriptionIDList().concat(",")
+					.concat(prescription.getPrescriptionID()).trim();
 		}
 		tempPrescriptionID.add(prescription.getPrescriptionID());
-		UpdateOperations<Record> ops = ds.createUpdateOperations(Record.class).set("PrescriptionID",tempPrescriptionID).set("rawPrescriptionIDList",tempP).set("DiagDate",EditDate).set("timestamp",EditDate);
-		ds.findAndModify(qr,ops);
+		UpdateOperations<Record> ops = ds.createUpdateOperations(Record.class)
+				.set("PrescriptionID", tempPrescriptionID)
+				.set("rawPrescriptionIDList", tempP).set("DiagDate", EditDate)
+				.set("timestamp", EditDate);
+		ds.findAndModify(qr, ops);
 		System.out.println("Sent POST request to backBean");
 		insertPrescription();
 		System.out.println("Finish inserting to MongoDB");
 	}
 
-	public String notePrescription(Medicine rx){
-		return rx.getName()+" "+rx.getType()+" "+String.valueOf(rx.getAmount())+"x"+rx.getDose()+" : "+rx.getUsageDirection();
+	public String notePrescription(Medicine rx) {
+		return rx.getName() + " " + rx.getType() + " "
+				+ String.valueOf(rx.getAmount()) + "x" + rx.getDose() + " : "
+				+ rx.getUsageDirection();
 	}
 
-	public String insertPrescription() throws UnknownHostException{
+	public String insertPrescription() throws UnknownHostException {
 		String toReturn = "failure";
 		Date PrescribeDate = new Date();
-		//Prepare Morphia Framework
-		System.out.println("Setting up MongoDB...");
-		Mongo mongo = new Mongo("localhost",27017);
-		System.out.println("Setting up Morphia...");
+		// Prepare Morphia Framework
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
-		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
-		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		System.out.println("Timestamping...");
 		prescription.setPrescribeDate(PrescribeDate);
 		prescription.setTimestamp(PrescribeDate);
 		prescription.setStatus("Pending");
-		//Save the POJO
-		System.out.println("Saving...");
+		// Save the POJO
 		ds.save(prescription);
 		return toReturn;
 	}

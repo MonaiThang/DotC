@@ -10,18 +10,27 @@ import com.j3ltd.server.sessionremote.EntityFacade;
 
 @Stateless
 public class EntityFacadeBean implements EntityFacade {
-	@PersistenceContext(unitName="shoestringPU") EntityManager em;
+	@PersistenceContext(unitName = "shoestringPU")
+	EntityManager em;
+
 	/**
-	 * Perform last minute validation, then if OK save 
-	 * entities (Person and Address in Person)
-	 * @param toCreate person record to persist
-	 * @return person record just created, with the
-	 *     primary key set to that just insrted.
-	 *  @throws PersonEntityExistsException if email given exists
-	 *  @throws PersonPasswordException if password is < 6 characters long
-	 *  @throws PersonEmailException if email is blank or null
+	 * Perform last minute validation, then if OK save entities (Person and
+	 * Address in Person)
+	 * 
+	 * @param toCreate
+	 *            person record to persist
+	 * @return person record just created, with the primary key set to that just
+	 *         insrted.
+	 * @throws PersonEntityExistsException
+	 *             if email given exists
+	 * @throws PersonPasswordException
+	 *             if password is < 6 characters long
+	 * @throws PersonEmailException
+	 *             if email is blank or null
 	 */
-	public Person createPerson(Person toCreate) throws PersonEntityExistsException,PersonPasswordException,PersonEmailException {	
+	public Person createPerson(Person toCreate)
+			throws PersonEntityExistsException, PersonPasswordException,
+			PersonEmailException {
 		String email = toCreate.getEmail();
 		if (email == null || email.trim().length() == 0) {
 			throw new PersonEmailException("Length is zero");
@@ -31,7 +40,9 @@ public class EntityFacadeBean implements EntityFacade {
 			throw new PersonPasswordException("Length is less than 6");
 		}
 		if (getPerson(email) != null) {
-			throw new PersonEntityExistsException("Person record already exists with an email of " + toCreate.getEmail());
+			throw new PersonEntityExistsException(
+					"Person record already exists with an email of "
+							+ toCreate.getEmail());
 		}
 		em.persist(toCreate);
 		return toCreate;

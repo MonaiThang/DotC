@@ -22,12 +22,22 @@ public class Register {
 	private String passwordConfirm;
 	private String emailConfirm;
 
-	public Person getPerson() {	return person;	}
-	public void setPerson(Person person) {	this.person = person;	}
+	public Person getPerson() {
+		return person;
+	}
 
-	public Record getRecord() {	return record;	}
-	public void setRecord(Record record) {	this.record = record;	}
-	
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public Record getRecord() {
+		return record;
+	}
+
+	public void setRecord(Record record) {
+		this.record = record;
+	}
+
 	public String getEmailConfirm() {
 		return emailConfirm;
 	}
@@ -45,78 +55,73 @@ public class Register {
 	}
 
 	public String register() throws Exception {
-		//Prepare Morphia Framework
-		System.out.println("Setting up MongoDB...");
-		Mongo mongo = new Mongo("localhost",27017);
-		System.out.println("Setting up Morphia...");
+		// Prepare Morphia Framework
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
-		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
-		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		//Save the POJO
+		// Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.person);
-
 		String toReturn = "failure";
-
 		if (validateData()) {
 			try {
-				// save locale information, in case the user chose a language on the welcome page
-				Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+				// save locale information, in case the user chose a language on
+				// the welcome page
+				Locale locale = FacesContext.getCurrentInstance().getViewRoot()
+						.getLocale();
 				person.setLocaleCountry(locale.getCountry());
 				person.setLocaleLanguage(locale.getLanguage());
 
-				//Context context = new InitialContext();
-				//EntityFacade entities = (EntityFacade) context.lookup("EntityFacadeBean/remote");
-				//person = entities.createPerson(person);
+				// Context context = new InitialContext();
+				// EntityFacade entities = (EntityFacade)
+				// context.lookup("EntityFacadeBean/remote");
+				// person = entities.createPerson(person);
 				toReturn = "success";
-			} 
-			//catch (PersonEntityExistsException exist) {
+			}
+			// catch (PersonEntityExistsException exist) {
 			catch (Exception exist) {
 				MessageFactory msg = new MessageFactory();
 				FacesContext ctx = FacesContext.getCurrentInstance();
 
-				ctx.addMessage("registerForm:email", 
-						new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-								msg.getMessage("errorEmailExists"), null));
-			}					
+				ctx.addMessage(
+						"registerForm:email",
+						new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+								.getMessage("errorEmailExists"), null));
+			}
 		}
 		return toReturn;
 	}
 
-	public String insertRecord() throws Exception{
+	public String insertRecord() throws Exception {
 		Date RegisDate = new Date();
-		//Prepare Morphia Framework
-		System.out.println("Setting up MongoDB...");
-		Mongo mongo = new Mongo("localhost",27017);
-		System.out.println("Setting up Morphia...");
+		// Prepare Morphia Framework
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
-		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
-		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		Query<Person> qp = ds.createQuery(Person.class).field("citizenid").equal(this.record.getPatientCitizenID());
+		Query<Person> qp = ds.createQuery(Person.class).field("citizenid")
+				.equal(this.record.getPatientCitizenID());
 		Person patient = qp.get();
 		this.record.setPatientFirstName(patient.getFirstName());
 		this.record.setPatientLastName(patient.getLastName());
-		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid").equal(this.record.getDoctorID());
+		Query<Doctor> qd = ds.createQuery(Doctor.class).field("citizenid")
+				.equal(this.record.getDoctorID());
 		Doctor doctor = qd.get();
 		this.record.setDoctorFirstName(doctor.getFirstName());
 		this.record.setDoctorLastName(doctor.getLastName());
-		System.out.println("Timestamping...");
 		this.record.setRegisDate(RegisDate);
 		this.record.setTimestamp(RegisDate);
 		this.record.setBmi(this.record.getWeight(), this.record.getHeight());
-		if(ds.createQuery(Record.class).countAll()==0)
+		if (ds.createQuery(Record.class).countAll() == 0)
 			this.record.setRecordID("1");
 		else {
 			Query<Record> q = ds.createQuery(Record.class).order("-RecordID");
 			Record temp = q.get();
-			long l = Long.parseLong(temp.getRecordID())+1;
+			long l = Long.parseLong(temp.getRecordID()) + 1;
 			this.record.setRecordID(String.valueOf(l));
 		}
-		//Save the POJO
+		// Save the POJO
 		System.out.println("Saving...");
 		ds.save(this.record);
 
@@ -132,16 +137,18 @@ public class Register {
 
 		// check emailConfirm is same as email
 		if (!emailConfirm.equals(person.getEmail())) {
-			ctx.addMessage("registerForm:emailConfirm", 
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-							msg.getMessage("errorEmailConfirm"), null));
+			ctx.addMessage(
+					"registerForm:emailConfirm",
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+							.getMessage("errorEmailConfirm"), null));
 			toReturn = false;
 		}
 		// check passwordConfirm is same as password
 		if (!passwordConfirm.equals(person.getPassword())) {
-			ctx.addMessage("registerForm:passwordConfirm", 
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-							msg.getMessage("errorPasswordConfirm"), null));
+			ctx.addMessage(
+					"registerForm:passwordConfirm",
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+							.getMessage("errorPasswordConfirm"), null));
 			toReturn = false;
 		}
 		return toReturn;

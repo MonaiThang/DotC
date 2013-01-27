@@ -14,7 +14,7 @@
 	<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cashier - Doctor on the Cloud</title>
+<title>Pharmacy - Doctor on the Cloud</title>
 <meta name="description"
 	content="Response Premium Html Responsive Template - Portfolio Section" />
 <meta name="keywords"
@@ -105,7 +105,7 @@
 	<div class="titlesnormal">
 		<div id="main">
 			<h:form id="SearchPrescriptionForm">
-				<h1>Cashier</h1>
+				<h1>SEARCH PHARMACY</h1>
 				<!-- start coding here -->
 				<h:panelGroup>
 					<h:panelGrid columns="2" styleClass="form"
@@ -114,6 +114,44 @@
 						<h:outputLabel for="PrescriptionID" value="Prescription ID" />
 						<h:inputText id="PrescriptionID" maxlength="32"
 							value="#{ManagePrescriptionBean.prescription.prescriptionID}" />
+						<h:outputLabel for="PatientID" value="Patient's Citizen ID" />
+						<h:inputText id="PatientID" maxlength="32"
+							value="#{ManagePrescriptionBean.prescription.patientID}" />
+						<h:outputLabel for="PatientFirstname" value="Patient's First Name" />
+						<h:inputText id="PatientFirstName" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.patientFirstName}" />
+						<h:outputLabel for="PatientLastname" value="Patient's Last Name" />
+						<h:inputText id="PatientLastName" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.patientLastName}" />
+						<h:outputLabel for="DoctorID" value="DoctorID" />
+						<h:inputText id="DoctorID" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.doctorID}" />
+						<h:outputLabel for="DoctorFirstname" value="Doctor's First Name" />
+						<h:inputText id="DoctorFirstName" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.doctorFirstName}" />
+						<h:outputLabel for="DoctorLastname" value="Doctor's Last Name" />
+						<h:inputText id="DoctorLastName" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.doctorLastName}" />
+						<h:outputLabel for="PrescribeDate" value="Prescribe Date" />
+						<h:inputText id="PrescribeDate" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.prescribeDate}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>
+						<h:outputLabel for="timestamp" value="Timestamp" />
+						<h:inputText id="timestamp" maxlength="50"
+							value="#{ManagePrescriptionBean.prescription.timestamp}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>
+						<!--        			<fieldset>
+				          <legend>Prescription Status</legend>
+				          <p>
+				             <label>Status : </label>
+				             <select id = "status">
+				               <option value = "Pending">Pending</option>
+				               <option value = "Received">Received</option>
+				             </select>
+				          </p>
+				       </fieldset>-->
 						<h:outputLabel for="status" value="Prescription Status" />
 						<h:selectOneMenu id="status"
 							value="#{ManagePrescriptionBean.prescription.status}">
@@ -124,12 +162,65 @@
 						</h:selectOneMenu>
 					</h:panelGrid>
 					<h:commandButton value="Search" type="submit"
-						action="#{ManagePrescriptionBean.changePrescriptionStatus}" />
+						action="#{ManagePrescriptionBean.listPrescription}" />
 					<h:commandButton value="Reset" type="reset" />
 				</h:panelGroup>
 				<!-- end of coding -->
 			</h:form>
 			<br />
+			<h2>Prescription</h2>
+			<div style="text-align: center">
+				<h:dataTable value="#{ManagePrescriptionBean.querySet}" var="q">
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="ID" />
+						</f:facet>
+						<h:outputText value="#{q.prescriptionID}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Patient Citizen ID" />
+						</f:facet>
+						<h:outputText value="#{q.patientID}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Patient First Name" />
+						</f:facet>
+						<h:outputText value="#{q.patientFirstName}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Patient Last Name" />
+						</f:facet>
+						<h:outputText value="#{q.patientLastName}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Medicine" />
+						</f:facet>
+						<h:outputText value="#{q.rawStringList}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Doctor First Name" />
+						</f:facet>
+						<h:outputText value="#{q.doctorFirstName}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Doctor Last Name" />
+						</f:facet>
+						<h:outputText value="#{q.doctorLastName}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{q.status}" />
+					</h:column>
+				</h:dataTable>
+			</div>
 		</div>
 	</div>
 	<!-- Start Footer Bottom -->

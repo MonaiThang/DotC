@@ -25,7 +25,7 @@ public class HumanResources {
 	private String emailConfirm;
 	private List<Person> querySetp;
 	private List<Doctor> querySetd;
-	
+
 	public String getCitizenID() {
 		return CitizenID;
 	}
@@ -101,33 +101,33 @@ public class HumanResources {
 	public String addDoctor() throws Exception {
 		String[] temp = this.doctor.getRawSpecialization().split(",");
 		ArrayList<String> s = new ArrayList<String>();
-		Mongo mongo = new Mongo("localhost",27017);
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
 		morphia.mapPackage("com.j3ltd.server.entities");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
-		for(String sp : temp){
+		for (String sp : temp) {
 			s.add(sp);
 		}
 		this.doctor.setSpecialization(s);
 		ds.save(this.doctor);
 		String toReturn = "failure";
-
 		if (validateData()) {
 			try {
-				// save locale information, in case the user chose a language on the welcome page
-				Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
+				// save locale information, in case the user chose a language on
+				// the welcome page
+				Locale locale = FacesContext.getCurrentInstance().getViewRoot()
+						.getLocale();
 				doctor.setLocaleCountry(locale.getCountry());
 				doctor.setLocaleLanguage(locale.getLanguage());
 				toReturn = "success";
-			} 
-			catch (Exception exist) {
+			} catch (Exception exist) {
 				MessageFactory msg = new MessageFactory();
 				FacesContext ctx = FacesContext.getCurrentInstance();
-
-				ctx.addMessage("registerForm:email", 
-						new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-								msg.getMessage("errorEmailExists"), null));
-			}					
+				ctx.addMessage(
+						"registerForm:email",
+						new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+								.getMessage("errorEmailExists"), null));
+			}
 		}
 		return toReturn;
 	}
@@ -139,48 +139,39 @@ public class HumanResources {
 
 		// check emailConfirm is same as email
 		if (!emailConfirm.equals(doctor.getEmail())) {
-			ctx.addMessage("registerForm:emailConfirm", 
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-							msg.getMessage("errorEmailConfirm"), null));
+			ctx.addMessage(
+					"registerForm:emailConfirm",
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+							.getMessage("errorEmailConfirm"), null));
 			toReturn = false;
 		}
 		// check passwordConfirm is same as password
 		if (!passwordConfirm.equals(doctor.getPassword())) {
-			ctx.addMessage("registerForm:passwordConfirm", 
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, 
-							msg.getMessage("errorPasswordConfirm"), null));
+			ctx.addMessage(
+					"registerForm:passwordConfirm",
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, msg
+							.getMessage("errorPasswordConfirm"), null));
 			toReturn = false;
 		}
 		return toReturn;
 	}
-	
+
 	public String searchPerson() throws Exception {
-		System.out.println("Setting up MongoDB...");
-		Mongo mongo = new Mongo("localhost",27017);
-		System.out.println("Setting up Morphia...");
+		Mongo mongo = new Mongo("localhost", 27017);
 		Morphia morphia = new Morphia();
-		System.out.println("Mapping Entities...");
 		morphia.mapPackage("com.j3ltd.server.entities");
-		System.out.println("Create Datastore...");
 		Datastore ds = morphia.createDatastore(mongo, "dotc");
 		Query<Person> qp = ds.createQuery(Person.class);
-//		setCitizenID(this.doctor.getCitizenid());
-//		setFirstName(this.doctor.getFirstName());
-//		setLastName(this.doctor.getLastName());
-		qp.or(
-			qp.criteria("citizenid").equal(CitizenID),
-			qp.criteria("firstName").equal(FirstName),
-			qp.criteria("lastName").equal(LastName)
-		);
+		qp.or(qp.criteria("citizenid").equal(CitizenID),
+				qp.criteria("firstName").equal(FirstName),
+				qp.criteria("lastName").equal(LastName));
 		querySetp = qp.asList();
 		Query<Doctor> qd = ds.createQuery(Doctor.class);
-		qd.or(
-			qd.criteria("citizenid").equal(CitizenID),
-			qd.criteria("firstName").equal(FirstName),
-			qd.criteria("lastName").equal(LastName)
-		);
+		qd.or(qd.criteria("citizenid").equal(CitizenID),
+				qd.criteria("firstName").equal(FirstName),
+				qd.criteria("lastName").equal(LastName));
 		querySetd = qd.asList();
 		return null;
 	}
-	
+
 }

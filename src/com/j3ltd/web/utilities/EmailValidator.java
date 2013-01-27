@@ -10,7 +10,8 @@ import javax.faces.validator.ValidatorException;
 import com.j3ltd.web.messages.MessageFactory;
 
 public class EmailValidator implements Validator {
-	public void validate(FacesContext context, UIComponent component, Object toValidate) {
+	public void validate(FacesContext context, UIComponent component,
+			Object toValidate) {
 		boolean isValid = true;
 		String value = null;
 
@@ -27,13 +28,13 @@ public class EmailValidator implements Validator {
 		int atIndex = value.indexOf('@');
 		if (atIndex < 0) {
 			isValid = false;
-		}
-		else if (value.lastIndexOf('.') < atIndex) {
+		} else if (value.lastIndexOf('.') < atIndex) {
 			isValid = false;
 		}
-		if ( !isValid ) {
+		if (!isValid) {
 			MessageFactory msg = new MessageFactory();
-			FacesMessage errMsg = new FacesMessage(msg.getMessage("errorEmailFormat"));
+			FacesMessage errMsg = new FacesMessage(
+					msg.getMessage("errorEmailFormat"));
 			throw new ValidatorException(errMsg);
 		}
 	}

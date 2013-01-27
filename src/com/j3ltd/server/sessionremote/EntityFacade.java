@@ -7,7 +7,9 @@ import com.j3ltd.server.exceptions.PersonPasswordException;
 
 @Remote
 public interface EntityFacade {
-	public Person createPerson(Person toCreate) 
-			throws PersonEntityExistsException, PersonPasswordException, PersonEmailException;
+	public Person createPerson(Person toCreate)
+			throws PersonEntityExistsException, PersonPasswordException,
+			PersonEmailException;
+
 	public Person getPerson(String email) throws PersonEmailException;
 }
