@@ -87,15 +87,15 @@
 			<!-- Start Social area -->
 			<div class="social">
 				<ul>
-					<li><a href="localhost:8080/DotC/welcome.jsf"
+					<li><a href="http://158.108.38.86:8080/DotC/welcome.jsf"
 						class="social-welcome"></a></li>
-					<li><a href="localhost:8080/DotC/record.jsf"
+					<li><a href="http://158.108.38.86:8080/DotC/record.jsf"
 						class="social-record"></a></li>
-					<li><a href="localhost:8080/DotC/doctor.jsf"
+					<li><a href="http://158.108.38.86:8080/DotC/doctor.jsf"
 						class="social-doctor"></a></li>
-					<li><a href="localhost:8080/DotC/Pharmacy.jsf"
+					<li><a href="http://158.108.38.86:8080/DotC/Pharmacy.jsf"
 						class="social-pharmacy"></a></li>
-					<li><a href="localhost:8080/DotC/Medicalrecord.jsf"
+					<li><a href="http://158.108.38.86:8080/DotC/Medicalrecord.jsf"
 						class="social-search"></a></li>
 				</ul>
 			</div>
@@ -459,9 +459,13 @@
 						<h:outputLabel for="bloodgroup"
 							value="#{msg.registrationBloodGroup}" />
 						<h:panelGroup>
-							<h:inputText id="bloodgroup"
-								value="#{registrationBean.person.bloodgroup}" maxlength="45"
-								size="20" />
+							<h:selectOneMenu id="bloodgroup"
+								value="#{registrationBean.person.bloodgroup}">
+								<f:selectItem itemValue="A" itemLabel="A" />
+								<f:selectItem itemValue="B" itemLabel="B" />
+								<f:selectItem itemValue="AB" itemLabel="AB" />
+								<f:selectItem itemValue="O" itemLabel="O" />
+							</h:selectOneMenu>
 							<f:verbatim>
 								<br />
 							</f:verbatim>
@@ -506,15 +510,16 @@
 				<!-- Start Social area -->
 				<div class="socialfooter">
 					<ul>
-						<li><a href="localhost:8080/DotC/welcome.jsf"
+						<li><a href="http://158.108.38.86:8080/DotC/welcome.jsf"
 							class="social-welcome"></a></li>
-						<li><a href="localhost:8080/DotC/record.jsf"
+						<li><a href="http://158.108.38.86:8080/DotC/record.jsf"
 							class="social-record"></a></li>
-						<li><a href="localhost:8080/DotC/doctor.jsf"
+						<li><a href="http://158.108.38.86:8080/DotC/doctor.jsf"
 							class="social-doctor"></a></li>
-						<li><a href="localhost:8080/DotC/Pharmacy.jsf"
+						<li><a href="http://158.108.38.86:8080/DotC/Pharmacy.jsf"
 							class="social-pharmacy"></a></li>
-						<li><a href="localhost:8080/DotC/Medicalrecord.jsf"
+						<li><a
+							href="http://158.108.38.86:8080/DotC/Medicalrecord.jsf"
 							class="social-search"></a></li>
 					</ul>
 				</div>

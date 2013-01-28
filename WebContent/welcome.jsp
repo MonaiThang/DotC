@@ -83,7 +83,7 @@
 					<div class="pageTitle">
 						<h:outputText value="#{msg.doctoronthecloud}" />
 					</div>
-					<div class="featured-text">A low-cost simple telehealth
+					<div class="featured-text">A cost-effective simple telemedicine
 						solution for rural areas.</div>
 					<f:facet name="header">
 						<h:outputText value="#{msg.welcomeBoxTitle}" />
@@ -103,9 +103,10 @@
 									alt="Responsive">
 							</div>
 							<div class="featured-titles">
-								<h:commandLink action="register" id="register">
-									<h:outputText value="#{msg.register}" />
-								</h:commandLink>
+<%-- 								<h:commandLink action="register" id="register"> --%>
+<%-- 									<h:outputText value="#{msg.register}" /> --%>
+<%-- 								</h:commandLink> --%>
+								<h:outputLink value="register.jsf">Register</h:outputLink>
 							</div>
 						</div>
 						<div class="featured-text">
