@@ -32,7 +32,6 @@
 <script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-<script src="js/twitter.js"></script>
 <script src="js/jquery.isotope.min.js"></script>
 <script src="js/custom.js"></script>
 <script type="text/javascript" src="js/style-table.js"></script>
