@@ -830,14 +830,13 @@ hr{
 }
 
 .titlesnormal span{
-	background-image: url(../images/arrow-down.png);
 	background-repeat: no-repeat;
-	margin-left: -16px;
-	position: absolute;
-	left: 50%;
-	bottom: -17px;
+	margin-left: 0px;
+	position: relative;
+	left: 67%;
+	bottom: 24px;
 	display:block;
-	width:32px;
+	width:150px;
 	height:18px;
 }
 
